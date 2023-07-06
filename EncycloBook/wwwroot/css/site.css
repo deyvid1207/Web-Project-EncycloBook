@@ -12416,7 +12416,7 @@ html {
 .paragraph {
     font-size: 2.25rem;
     line-height: 2rem;
-    min-width: 110%;
+    min-width: 220%;
 }
 
 .page-section {
@@ -12426,6 +12426,7 @@ html {
     .page-section .page-section-heading {
         font-size: 2.25rem;
         line-height: 2rem;
+
      
     }
 
@@ -12433,9 +12434,12 @@ html {
     .page-section .page-section-heading {
         font-size: 3rem;
         line-height: 2.5rem;
+        margin-top: 0.7em;
     }
 }
-
+.lowernavbar {
+    margin-top: 3em;
+}
 .divider-custom {
     margin: 1.25rem 0 1.5rem;
     width: 100%;
@@ -12679,6 +12683,11 @@ html {
    background-color: teal
   
 }
+ Userbutton {
+    max-width: 70%;
+
+    background-color: teal
+}
     .row button:hover {
         background-color:steelblue;
     }
@@ -12690,10 +12699,23 @@ html {
 .col-lg-4 ms-auto{
     margin: 0 auto;
 }
+.divgrid {
+    margin-left: 6em;
+}
 .row{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2.5fr 2fr;
 }
 .row div{
     width: 55%;
+}
+.btn-new {
+    margin-left: 8em;
+    min-width: 100%;
+}
+.par-new {
+    margin-left: 1em;
+}
+.divgrid {
+    margin-left: 4em;
 }

@@ -4805,27 +4805,47 @@ textarea.form-control-lg {
 .card-group > .card {
     margin-bottom: var(--bs-card-group-margin);
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.rowscard {
+    display:"inline-flex";
+}
 @media (min-width: 576px) {
     .card-group {
         display: flex;
         flex-flow: row wrap;
+        justify-content: space-between;
     }
 
         .card-group > .card {
-            flex: 1 0 0%;
-            margin-bottom: 0;
+            flex: 0 0 calc(33.33% - 10px); /* Adjust the percentage and spacing as needed */
+            margin-bottom: 20px; /* Add margin between the cards */
         }
 
             .card-group > .card + .card {
                 margin-left: 0;
                 border-left: 0;
             }
-
-            .card-group > .card:not(:last-child) {
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-            }
+   
+    .card-group > .card:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 
                 .card-group > .card:not(:last-child) .card-img-top,
                 .card-group > .card:not(:last-child) .card-header {
@@ -12702,9 +12722,10 @@ html {
 .divgrid {
     margin-left: 6em;
 }
-.row{
+.row {
     display: grid;
-    grid-template-columns: 2.5fr 2fr;
+    grid-template-columns: 4fr 3fr;
+    column-gap: 10px;
 }
 .row div{
     width: 55%;
@@ -12718,4 +12739,11 @@ html {
 }
 .divgrid {
     margin-left: 4em;
+}
+.div-right {
+    margin: 0 auto;
+    margin-left: inherit;
+}
+.div-left {
+    margin: 0 auto;
 }

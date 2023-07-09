@@ -2,9 +2,9 @@
 
 namespace EncycloBook.Controllers
 {
-    public class TestController : Controller
+    public class PostController : Controller
     {
-        public IActionResult Test()
+        public IActionResult ViewAll()
         {
             return View();
         }

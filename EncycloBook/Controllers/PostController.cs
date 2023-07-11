@@ -8,5 +8,9 @@ namespace EncycloBook.Controllers
         {
             return View();
         }
+        public IActionResult Publish()
+        {
+            return View();
+        }
     }
 }

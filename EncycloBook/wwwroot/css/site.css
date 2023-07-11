@@ -3262,6 +3262,10 @@ textarea.form-control-lg {
     --bs-btn-disabled-bg: #198754;
     --bs-btn-disabled-border-color: #198754;
 }
+.btn-publish {
+    background-color:teal;
+     
+}
 
 .btn-info {
     --bs-btn-color: #000;
@@ -3466,7 +3470,13 @@ textarea.form-control-lg {
     --bs-btn-disabled-border-color: #f8f9fa;
     --bs-gradient: none;
 }
-
+.divplv {
+    margin-top: 20em;
+    margin-left: 22em;
+}
+.selcenter {
+    margin-left: 1.5em;
+}
 .btn-outline-dark {
     --bs-btn-color: #212529;
     --bs-btn-border-color: #212529;
@@ -4810,9 +4820,23 @@ textarea.form-control-lg {
     display: inline-block;
 }
 
+.cenbut {
+    margin-left: 4em;
+}
+.srcbrf {
+    max-width: 65%;
+}
+.hgstar {
+    width: 38px;
+    margin-bottom: 0.5em;
+}s
+.form-inline {
+    
+    margin-left: 35em;
+}
 .dropdown-content {
-    display: none;
-    position: absolute;
+    display: initial;
+ 
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -8374,6 +8398,8 @@ textarea.form-control-lg {
 .my-1 {
     margin-top: 0.25rem !important;
     margin-bottom: 0.25rem !important;
+    margin-left: 0.5em;
+}
 }
 
 .my-2 {

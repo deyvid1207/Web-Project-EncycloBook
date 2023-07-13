@@ -1,10 +1,12 @@
-﻿using EncycloBookData.Models;
+﻿using EncycloBookData;
+using EncycloBookData.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace EncycloBook.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<PostUser>
     {
         DbSet<Animal> Animals { get; set; } = null!;
         DbSet<Plant> Plants { get; set; } = null!;

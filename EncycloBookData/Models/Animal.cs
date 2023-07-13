@@ -45,7 +45,7 @@ namespace EncycloBookData.Models
         [ForeignKey("Publisher")]
         public string PublisherId { get; set; }
         [Required]
-        public IdentityUser Publisher { get; set; } = null!;
+        public PostUser Publisher { get; set; } = null!;
 
 
         public ICollection<Comment> Comments { get; set; }

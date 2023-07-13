@@ -2862,6 +2862,7 @@ textarea.form-control-lg {
     .input-group .btn {
         position: relative;
         z-index: 2;
+
     }
 
         .input-group .btn:focus {
@@ -4819,12 +4820,18 @@ textarea.form-control-lg {
     position: relative;
     display: inline-block;
 }
-
+.gapsrc{
+    gap:1em; 
+}
+}
+.dvscs{
+    margin-left:10em;
+}
 .cenbut {
     margin-left: 4em;
 }
 .srcbrf {
-    max-width: 65%;
+    max-width: 95%;
 }
 .hgstar {
     width: 38px;
@@ -5414,6 +5421,13 @@ textarea.form-control-lg {
 .list-group-numbered {
     list-style-type: none;
     counter-reset: section;
+}
+.mrgl {
+ 
+    margin-left: 0.5em;
+}
+.slcmr {
+    margin-left: 1em;
 }
 
     .list-group-numbered > .list-group-item::before {

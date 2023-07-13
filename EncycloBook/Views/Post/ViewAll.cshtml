@@ -1,7 +1,18 @@
-﻿@using System.Web;
+﻿@using EncycloBookData;
 @using Microsoft.AspNetCore.Identity;
-@inject SignInManager<IdentityUser> SignInManager
+@using EncycloBookData;
+@inject SignInManager<PostUser> SignInManager
+@inject UserManager<PostUser> UserManager
 
+@{
+    bool isAuth = false;
+    PostUser user = null;
+    if (User.Identity.IsAuthenticated)
+    {
+        isAuth = true;
+        user = UserManager.Users.First(x => x.Email == User.Identity.Name);
+    }
+}
 
 <section class="page-section portfolio" id="portfolio">
     <div class="container">
@@ -18,7 +29,8 @@
             <div class="input-group srcbrf">
                 <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                 <button type="button" class="btn btn-outline-primary">search</button>
-                <select class="select" data-mdb-filter="true">
+                <div class="row mrgl ">
+                    <select class="select slcmr" data-mdb-filter="true">
                     <option value="1">Alphabetically</option>
                     <option value="1">Most Liked</option>
                     <option value="1">Most Commented</option>
@@ -26,32 +38,23 @@
                     <option value="1">Oldest</option>
                     <option value="1">By Users</option>
                 </select>
-                @if (User.Identity.IsAuthenticated)
-                {
+                @if (isAuth){
 
                     <button class="btn btn-primary ">Publish!</button>
 
                 }
                 else
                 {
-                    <a href="/Identity/Account/Register" class="btn btn-primary ">Register to publish!!</a>
+                        <a href="/Identity/Account/Register" class="btn btn-primary slcmr">Register to publish!!</a>
                 }
+                </div>
             </div>
  
         
         </div>
     </div>
 </section>
-<div class="dropdown">
-    <div class="dropdown-content">
-        <a href="#">Alphabetically</a>
-        <a href="#">Most Liked</a>
-        <a href="#">Most Commented</a>
-        <a href="#">Most Recent</a>
-        <a href="#">Oldest</a>
-        <a href="#">By Users</a>
-    </div>
-</div>
+ 
 <div class="card-group">
     <div class="card" style="width: 18rem;">
         <img src="https://thumbs.dreamstime.com/b/bacteria-5604862.jpg" class="card-img-top" alt="Card Image">
@@ -74,12 +77,19 @@
 
             </a>
             <p>0</p>
+           
 
             </div>
+            @if(isAuth) { 
             <p class="card-text">Comments: 0</p>
             <a href="#" class="btn btn-primary">Details</a>
-            @* if owner*@
+            
             <a href="#" class="btn btn-primary">Edit</a>
+            }
+            else
+            {
+                <a href="/Identity/Account/Register" class="btn btn-primary">Register to view details!</a>
+            }
             <p class="card-text">Published on: 12/3/2021.</p>
         </div>
     </div>

@@ -4,6 +4,7 @@ using EncycloBook.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EncycloBookData.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230712092929_PostUserFixed")]
+    partial class PostUserFixed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,6 +59,9 @@ namespace EncycloBookData.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<Guid?>("PostUserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("PublishedOn")
                         .HasColumnType("datetime2");
 
@@ -65,6 +70,8 @@ namespace EncycloBookData.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PostUserId");
 
                     b.HasIndex("PublisherId");
 
@@ -105,6 +112,9 @@ namespace EncycloBookData.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<Guid?>("PostUserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("PublishedOn")
                         .HasColumnType("datetime2");
 
@@ -113,6 +123,8 @@ namespace EncycloBookData.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PostUserId");
 
                     b.HasIndex("PublisherId");
 
@@ -147,10 +159,6 @@ namespace EncycloBookData.Migrations
                     b.Property<DateTime>("PublishedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PublisherId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int?>("VirusId")
                         .HasColumnType("int");
 
@@ -163,8 +171,6 @@ namespace EncycloBookData.Migrations
                     b.HasIndex("FungusId");
 
                     b.HasIndex("PlantId");
-
-                    b.HasIndex("PublisherId");
 
                     b.HasIndex("VirusId");
 
@@ -217,6 +223,9 @@ namespace EncycloBookData.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<Guid?>("PostUserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("PublishedOn")
                         .HasColumnType("datetime2");
 
@@ -225,6 +234,8 @@ namespace EncycloBookData.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PostUserId");
 
                     b.HasIndex("PublisherId");
 
@@ -274,6 +285,9 @@ namespace EncycloBookData.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<Guid?>("PostUserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("PublishedOn")
                         .HasColumnType("datetime2");
 
@@ -282,66 +296,19 @@ namespace EncycloBookData.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PostUserId");
 
                     b.HasIndex("PublisherId");
 
                     b.ToTable("Plants");
                 });
 
-            modelBuilder.Entity("EncycloBookData.Models.Virus", b =>
+            modelBuilder.Entity("EncycloBookData.Models.PostUser", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("ImgURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Likes")
-                        .HasMaxLength(20)
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<DateTime>("PublishedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("PublisherId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("VirusFamily")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("VirusHost")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PublisherId");
-
-                    b.ToTable("Viruses");
-                });
-
-            modelBuilder.Entity("EncycloBookData.PostUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -403,10 +370,66 @@ namespace EncycloBookData.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+            modelBuilder.Entity("EncycloBookData.Models.Virus", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("ImgURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Likes")
+                        .HasMaxLength(20)
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<Guid?>("PostUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("PublishedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PublisherId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("VirusFamily")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("VirusHost")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostUserId");
+
+                    b.HasIndex("PublisherId");
+
+                    b.ToTable("Viruses");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -430,7 +453,7 @@ namespace EncycloBookData.Migrations
                     b.ToTable("AspNetRoles", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -444,9 +467,8 @@ namespace EncycloBookData.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -455,7 +477,59 @@ namespace EncycloBookData.Migrations
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("IdentityUser");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -469,9 +543,8 @@ namespace EncycloBookData.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -480,7 +553,7 @@ namespace EncycloBookData.Migrations
                     b.ToTable("AspNetUserClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
                     b.Property<string>("LoginProvider")
                         .HasMaxLength(128)
@@ -493,9 +566,8 @@ namespace EncycloBookData.Migrations
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -504,13 +576,13 @@ namespace EncycloBookData.Migrations
                     b.ToTable("AspNetUserLogins", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("RoleId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -519,10 +591,10 @@ namespace EncycloBookData.Migrations
                     b.ToTable("AspNetUserRoles", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LoginProvider")
                         .HasMaxLength(128)
@@ -542,8 +614,12 @@ namespace EncycloBookData.Migrations
 
             modelBuilder.Entity("EncycloBookData.Models.Animal", b =>
                 {
-                    b.HasOne("EncycloBookData.PostUser", "Publisher")
+                    b.HasOne("EncycloBookData.Models.PostUser", null)
                         .WithMany("Animals")
+                        .HasForeignKey("PostUserId");
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Publisher")
+                        .WithMany()
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -553,8 +629,12 @@ namespace EncycloBookData.Migrations
 
             modelBuilder.Entity("EncycloBookData.Models.Bacteria", b =>
                 {
-                    b.HasOne("EncycloBookData.PostUser", "Publisher")
+                    b.HasOne("EncycloBookData.Models.PostUser", null)
                         .WithMany("Bacterias")
+                        .HasForeignKey("PostUserId");
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Publisher")
+                        .WithMany()
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -580,23 +660,19 @@ namespace EncycloBookData.Migrations
                         .WithMany("Comments")
                         .HasForeignKey("PlantId");
 
-                    b.HasOne("EncycloBookData.PostUser", "Publisher")
-                        .WithMany()
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("EncycloBookData.Models.Virus", null)
                         .WithMany("Comments")
                         .HasForeignKey("VirusId");
-
-                    b.Navigation("Publisher");
                 });
 
             modelBuilder.Entity("EncycloBookData.Models.Fungus", b =>
                 {
-                    b.HasOne("EncycloBookData.PostUser", "Publisher")
+                    b.HasOne("EncycloBookData.Models.PostUser", null)
                         .WithMany("Fungi")
+                        .HasForeignKey("PostUserId");
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Publisher")
+                        .WithMany()
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -606,8 +682,12 @@ namespace EncycloBookData.Migrations
 
             modelBuilder.Entity("EncycloBookData.Models.Plant", b =>
                 {
-                    b.HasOne("EncycloBookData.PostUser", "Publisher")
+                    b.HasOne("EncycloBookData.Models.PostUser", null)
                         .WithMany("Plants")
+                        .HasForeignKey("PostUserId");
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Publisher")
+                        .WithMany()
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -617,8 +697,12 @@ namespace EncycloBookData.Migrations
 
             modelBuilder.Entity("EncycloBookData.Models.Virus", b =>
                 {
-                    b.HasOne("EncycloBookData.PostUser", "Publisher")
+                    b.HasOne("EncycloBookData.Models.PostUser", null)
                         .WithMany("Viruses")
+                        .HasForeignKey("PostUserId");
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Publisher")
+                        .WithMany()
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -626,51 +710,51 @@ namespace EncycloBookData.Migrations
                     b.Navigation("Publisher");
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
-                    b.HasOne("EncycloBookData.PostUser", null)
+                    b.HasOne("EncycloBookData.Models.PostUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("EncycloBookData.PostUser", null)
+                    b.HasOne("EncycloBookData.Models.PostUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EncycloBookData.PostUser", null)
+                    b.HasOne("EncycloBookData.Models.PostUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.HasOne("EncycloBookData.PostUser", null)
+                    b.HasOne("EncycloBookData.Models.PostUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -697,12 +781,7 @@ namespace EncycloBookData.Migrations
                     b.Navigation("Comments");
                 });
 
-            modelBuilder.Entity("EncycloBookData.Models.Virus", b =>
-                {
-                    b.Navigation("Comments");
-                });
-
-            modelBuilder.Entity("EncycloBookData.PostUser", b =>
+            modelBuilder.Entity("EncycloBookData.Models.PostUser", b =>
                 {
                     b.Navigation("Animals");
 
@@ -713,6 +792,11 @@ namespace EncycloBookData.Migrations
                     b.Navigation("Plants");
 
                     b.Navigation("Viruses");
+                });
+
+            modelBuilder.Entity("EncycloBookData.Models.Virus", b =>
+                {
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

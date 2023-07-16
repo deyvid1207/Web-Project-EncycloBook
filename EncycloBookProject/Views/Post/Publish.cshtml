@@ -11,9 +11,9 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- About Section Heading-->
-            <form class="form-inline">
+            <form class="form-inline" method="post">
                 <div class="dvscs">
-                    <select name="pref" class="custom-select selcenter  my-1 mr-sm-2 form-control-lg" id="inlineFormCustomSelectPref">
+                    <select name="pref" id="pref" class="custom-select selcenter  my-1 mr-sm-2 form-control-lg">
                         <option selected>Select...</option>
                         <option value="Bacteria">Bacteria</option>
                         <option value="Virus">Virus</option>
@@ -27,7 +27,7 @@
                         <label class="custom-control-label" for="customControlInline">Remember my preference</label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary  my-1 cenbut btn-lg btn-publish">Submit</button>
+                    <button type="submit" asp-controller="Publish" asp-action="RedirectAct" class="btn btn-primary  my-1 cenbut btn-lg btn-publish">Submit</button>
                 </div>
             </form>
 

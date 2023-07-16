@@ -1,0 +1,78 @@
+﻿@using EncycloData.Models;
+ 
+@model Animal
+<style>
+
+    .post-view {
+        background-color: #f7f7f7;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 1000em;
+        margin: 0 auto;
+        margin-top: 10em;
+    }
+
+    .top-heading {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .form-control {
+        margin-bottom: 10px;
+    }
+
+    .width-control {
+      max-width: 50%
+    }
+
+
+    label {
+        font-weight: bold;
+    }
+
+    textarea {
+        height: 120px;
+    }
+
+    .poer-cs {
+        margin-left: 3em;
+    }
+
+    .poer-cs1 {
+        margin-left: 1.9em;
+    }
+
+    .poer-cs2 {
+        margin-left: 6em;
+    }
+</style>
+
+<div class="post-view">
+    <h1 class="top-heading">Post an Animal</h1>
+    <form method="post" class="centr">
+        <div class="row">
+            <div class="">
+                <label class="poer-cs" for="inputEmail4">Animal Name</label>
+                <input class="form-control" id="inputEmail4" asp-for="@Model.Name" placeholder="Animal Name">
+   
+                <label  for="inputPassword4">Animal Country of origin</label>
+                <input class="form-control" id="inputPassword4" asp-for="@Model.Location" placeholder="Animal Country">
+                <label class="poer-cs1" for="inputPassword4">Animal Image link</label>
+                <input asp-for="@Model.ImgURL" placeholder="Image URL">
+            </div>
+        </div>
+        <div class="">
+            <label class="poer-cs" for="inputPassword4">Animal Family</label>
+            <input class="form-control width-control" asp-for="@Model.AnimalClass" placeholder="Animal Family">
+           
+        
+        </div>
+        <div>
+            <label class="poer-cs2" for="inputPassword4 ">Animal Description</label>
+            <textarea class="form-control width-control" asp-for="@Model.Description" placeholder="Animal Description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post!</button>
+    </form>
+</div>

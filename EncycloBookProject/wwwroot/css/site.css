@@ -1590,12 +1590,16 @@ progress {
         flex: 0 0 auto;
         width: 33.3333333333%;
     }
-
+    .post-view {
+        margin-top: 16em;
+    }
     .row-cols-xl-4 > * {
         flex: 0 0 auto;
         width: 25%;
     }
-
+    .centr {
+        margin-left: 33em;
+    }
     .row-cols-xl-5 > * {
         flex: 0 0 auto;
         width: 20%;
@@ -1605,7 +1609,9 @@ progress {
         flex: 0 0 auto;
         width: 16.6666666667%;
     }
-
+    .dvscs {
+        margin-left: 36em;
+    }
     .col-xl-auto {
         flex: 0 0 auto;
         width: auto;

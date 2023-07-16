@@ -1,0 +1,12 @@
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\bin\Debug\net6.0\EncycloData.deps.json
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\bin\Debug\net6.0\EncycloData.dll
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\bin\Debug\net6.0\EncycloData.pdb
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\obj\Debug\net6.0\EncycloData.csproj.AssemblyReference.cache
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\obj\Debug\net6.0\EncycloData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\obj\Debug\net6.0\EncycloData.AssemblyInfoInputs.cache
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\obj\Debug\net6.0\EncycloData.AssemblyInfo.cs
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\obj\Debug\net6.0\EncycloData.csproj.CoreCompileInputs.cache
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\obj\Debug\net6.0\EncycloData.dll
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\obj\Debug\net6.0\refint\EncycloData.dll
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\obj\Debug\net6.0\EncycloData.pdb
+C:\Users\ACER\source\repos\EncycloBookProject\EncycloData\obj\Debug\net6.0\ref\EncycloData.dll

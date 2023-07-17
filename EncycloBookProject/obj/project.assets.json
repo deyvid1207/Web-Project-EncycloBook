@@ -3936,6 +3936,19 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "EncycloBookServices/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EncycloData": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EncycloBookServices.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EncycloBookServices.dll": {}
+        }
+      },
       "EncycloData/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -11191,6 +11204,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "EncycloBookServices/1.0.0": {
+      "type": "project",
+      "path": "../EncycloBookServices/EncycloBookServices.csproj",
+      "msbuildProject": "../EncycloBookServices/EncycloBookServices.csproj"
+    },
     "EncycloData/1.0.0": {
       "type": "project",
       "path": "../EncycloData/EncycloData.csproj",
@@ -11199,6 +11217,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "EncycloBookServices >= 1.0.0",
       "EncycloData >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.15",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.20",
@@ -11236,6 +11255,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj": {
+              "projectPath": "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj"
+            },
             "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj": {
               "projectPath": "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj"
             }

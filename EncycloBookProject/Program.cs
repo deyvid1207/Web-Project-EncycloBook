@@ -1,3 +1,5 @@
+using EncycloBookServices;
+using EncycloBookServices.Contacts;
 using EncycloData;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -7,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddScoped<IEncycloServices, EncycloServices>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
@@ -14,10 +18,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
     .AddDefaultTokenProviders();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
- 
 builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages(); // Add this line to configure Razor Pages services
- 
+builder.Services.AddRazorPages();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

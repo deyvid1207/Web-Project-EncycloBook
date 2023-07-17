@@ -14,13 +14,13 @@ namespace EncycloData
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     { 
     
-        DbSet<Animal> Animals { get; set; } = null!;
-        DbSet<Plant> Plants { get; set; } = null!;
-        DbSet<Fungus> Fungi { get; set; } = null!;
-        DbSet<Bacteria> Bacteria { get; set; } = null!;
-
-        DbSet<Virus> Viruses { get; set; } = null!;
-        DbSet<Comment> Comments { get; set; } = null!;
+      public DbSet<Animal> Animals { get; set; } = null!;
+      public DbSet<Plant> Plants { get; set; } = null!;
+      public DbSet<Fungus> Fungi { get; set; } = null!;
+      public DbSet<Bacteria> Bacteria { get; set; } = null!;
+  
+      public DbSet<Virus> Viruses { get; set; } = null!;
+      public DbSet<Comment> Comments { get; set; } = null!;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

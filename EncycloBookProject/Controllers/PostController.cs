@@ -1,12 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EncycloBookServices;
+using EncycloBookServices.Contacts;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EncycloBookProject.Controllers
 {
-    public class PostController : Controller
+    public class PostController : BaseController
     {
+        public PostController(IEncycloServices services) : base(services)
+        {
+        }
+
+        [HttpGet]
         public IActionResult ViewAll()
         {
-            return View();
+            var model = services.ViewAll();
+            return View(model);
         }
         public IActionResult Publish()
         {

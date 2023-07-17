@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "EncycloBookProject/1.0.0": {
         "dependencies": {
+          "EncycloBookServices": "1.0.0",
           "EncycloData": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
@@ -2572,6 +2573,14 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "EncycloBookServices/1.0.0": {
+        "dependencies": {
+          "EncycloData": "1.0.0"
+        },
+        "runtime": {
+          "EncycloBookServices.dll": {}
+        }
+      },
       "EncycloData/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
@@ -4157,6 +4166,11 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "EncycloBookServices/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "EncycloData/1.0.0": {
       "type": "project",

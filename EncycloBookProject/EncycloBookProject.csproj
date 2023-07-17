@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EncycloBookServices\EncycloBookServices.csproj" />
     <ProjectReference Include="..\EncycloData\EncycloData.csproj" />
   </ItemGroup>
 

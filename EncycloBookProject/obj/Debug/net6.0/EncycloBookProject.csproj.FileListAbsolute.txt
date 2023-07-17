@@ -518,3 +518,5 @@ C:\Users\ACER\source\repos\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\
 C:\Users\ACER\source\repos\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBookProject.pdb
 C:\Users\ACER\source\repos\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBookProject.genruntimeconfig.cache
 C:\Users\ACER\source\repos\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\ref\EncycloBookProject.dll
+C:\Users\ACER\source\repos\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\EncycloBookServices.dll
+C:\Users\ACER\source\repos\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\EncycloBookServices.pdb

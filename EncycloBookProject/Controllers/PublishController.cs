@@ -23,6 +23,10 @@ namespace EncycloBookProject.Controllers
                     return RedirectToAction("Animal");
                 case "Plant":
                     return RedirectToAction("Plant");
+                case "Fungus":
+                    return RedirectToAction("Fungus");
+                case "Bacteria":
+                    return RedirectToAction("Bacteria");
                 default:
                     return RedirectToPage("/");
      
@@ -44,7 +48,7 @@ namespace EncycloBookProject.Controllers
 
             await services.PostAnimalAsync(model);
           
-            return RedirectToPage("/Post/ViewAll");
+            return RedirectToRoute("/Post/ViewAll");
         }
 
         [HttpGet]
@@ -56,7 +60,11 @@ namespace EncycloBookProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Plant(Plant model)
         {
-            var color = Request.Form["color"];
+            string color = Request.Form["color"];
+            if (color.Contains("Different"))
+            {
+                color = color.Remove(0, 10);
+            }
             var leaveType = Request.Form["leavetype"];
             var user = services.GetUser(User.Identity.Name);
             model.PublisherId = user.Id;
@@ -65,7 +73,63 @@ namespace EncycloBookProject.Controllers
             model.LeaveType = leaveType;
             await services.PostPlantAsync(model);
 
-            return View("ViewAll");
+            return RedirectToRoute("/Post/ViewAll");
+        }
+        [HttpGet]
+        public IActionResult Fungus()
+        {
+            var Fungus = new Fungus();
+            return View(Fungus);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Fungus(Fungus model)
+        {
+            string color = Request.Form["color"];
+            if (color.Contains("Different"))
+            {
+                color = color.Remove(0, 10);
+            }
+            var gillsType = Request.Form["gillsType"];
+            var isSafe = Request.Form["Safety"];
+            if (isSafe == "Eddible")
+            {
+                model.IsPoisonous = false;
+            }
+            else
+            {
+                model.IsPoisonous = true;
+            }
+            var user = services.GetUser(User.Identity.Name);
+            model.PublisherId = user.Id;
+            model.Publisher = user;
+            model.Color = color;
+            model.GillsType = gillsType;
+            await services.PostFungusAsync(model);
+            return RedirectToRoute("/Post/ViewAll");
+        }
+        [HttpGet]
+        public IActionResult Bacteria()
+        {
+            var Bacteria = new Bacteria();
+            return View(Bacteria);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Bacteria(Bacteria model)
+        {
+            var isSafe = Request.Form["Safety"];
+            if (isSafe == "Deadly")
+            {
+                model.IsDeadly = true;
+            }
+            else
+            {
+                model.IsDeadly = true;
+            }
+            var user = services.GetUser(User.Identity.Name);
+            model.PublisherId = user.Id;
+            model.Publisher = user;
+            await services.PostBacteriaAsync(model);
+            return RedirectToPage("/");
         }
     }
 }

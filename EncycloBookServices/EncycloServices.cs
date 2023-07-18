@@ -46,6 +46,8 @@ namespace EncycloBookServices
                     Title = model.Title,
                     Location = model.Location,
                     ImgURL = model.ImgURL,
+                    DiscoveredBy = model.DiscoveredBy,
+                    YearDiscovered = model.YearDiscovered,
                     AnimalClass = model.AnimalClass,
                     Description = model.Description,
                     Comments = model.Comments,
@@ -84,6 +86,8 @@ namespace EncycloBookServices
                     Description = model.Description,
                     LeaveType = model.LeaveType,
                     Color = model.Color,
+                    DiscoveredBy = model.DiscoveredBy,
+                    YearDiscovered = model.YearDiscovered,
                     Comments = model.Comments,
                     PublishedOn = DateTime.Now,
                     PublisherId = model.PublisherId,
@@ -92,6 +96,82 @@ namespace EncycloBookServices
                 };
                 model.Publisher.Posts.Add(plant);
                 await dbContext.Plants.AddAsync(plant);
+
+
+
+            }
+            await dbContext.SaveChangesAsync();
+
+        }
+        public async Task PostFungusAsync(Fungus model)
+        {
+
+
+            if (model == null)
+            {
+                throw new Exception("Fungus is null, please enter it correct!");
+
+            }
+            else
+            {
+                var fungus = new Fungus()
+                {
+
+                    Title = model.Title,
+                    Location = model.Location,
+                    ImgURL = model.ImgURL,
+                    FungusClass = model.FungusClass,
+                    Description = model.Description,
+                    GillsType = model.GillsType,
+                    IsPoisonous = model.IsPoisonous,
+                    DiscoveredBy = model.DiscoveredBy,
+                    YearDiscovered = model.YearDiscovered,
+                    Color = model.Color,
+                    Comments = model.Comments,
+                    PublishedOn = DateTime.Now,
+                    PublisherId = model.PublisherId,
+                    Publisher = model.Publisher,
+                    Likes = model.Likes
+                };
+                model.Publisher.Posts.Add(fungus);
+                await dbContext.Fungi.AddAsync(fungus);
+
+
+
+            }
+            await dbContext.SaveChangesAsync();
+
+     
+        }
+        public async Task PostBacteriaAsync(Bacteria model)
+        {
+
+
+            if (model == null)
+            {
+                throw new Exception("Bacteria is null, please enter it correct!");
+
+            }
+            else
+            {
+                var bacteria = new Bacteria()
+                {
+
+                    Title = model.Title,
+                    ImgURL = model.ImgURL,
+                    BacteriaFamily = model.BacteriaFamily,
+                    Description = model.Description,
+                    IsDeadly = model.IsDeadly, 
+                    DiscoveredBy = model.DiscoveredBy,
+                    YearDiscovered = model.YearDiscovered,
+                    Comments = model.Comments,
+                    PublishedOn = DateTime.Now,
+                    PublisherId = model.PublisherId,
+                    Publisher = model.Publisher,
+                    Likes = model.Likes
+                };
+                model.Publisher.Posts.Add(bacteria);
+                await dbContext.Bacteria.AddAsync(bacteria);
 
 
 

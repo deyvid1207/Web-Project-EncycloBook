@@ -67,8 +67,14 @@
         <div class="">
             <label class="poer-cs" for="inputPassword4">Animal Family</label>
             <input class="form-control width-control" asp-for="@Model.AnimalClass" placeholder="Animal Family">
+            <label class="poer-cs" for="inputPassword4">Discovered by</label>
+            <input class="form-control width-control" asp-for="@Model.DiscoveredBy" placeholder="Name">
            
         
+        </div>
+        <div class="form-group">
+            <label for="year">Year discovered</label>
+            <input class="form-control" type="number" id="year" asp-for="@Model.YearDiscovered.Year" min="-1000" max="2023" placeholder="Year">
         </div>
         <div>
             <label class="poer-cs2" for="inputPassword4 ">Animal Description</label>

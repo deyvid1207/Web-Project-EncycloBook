@@ -15,6 +15,12 @@ namespace EncycloData.Models
         }
 
         public int Id { get; set; }
+        [Required]
+        [MinLength(3)]
+        [MaxLength(45)]
+        public string DiscoveredBy { get; set; }
+        [Required]
+        public DateTime YearDiscovered { get; set; }
 
         [Required]
         [MinLength(3)]

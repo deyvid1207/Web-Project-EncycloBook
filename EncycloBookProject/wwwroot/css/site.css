@@ -1580,6 +1580,12 @@ progress {
         flex: 0 0 auto;
         width: 100%;
     }
+    .row-post {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
 
     .row-cols-xl-2 > * {
         flex: 0 0 auto;
@@ -1599,6 +1605,9 @@ progress {
     }
     .centr {
         margin-left: 33em;
+    }
+    .centr-plt {
+        margin-left: 13em;
     }
     .row-cols-xl-5 > * {
         flex: 0 0 auto;

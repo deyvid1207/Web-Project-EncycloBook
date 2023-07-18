@@ -56,3 +56,18 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+const select = document.getElementById('color');
+const colorInput = document.getElementById('colorInput');
+
+// Add a change event listener to the select element
+select.addEventListener('change', function () {
+    // Check if the selected value is "Different"
+    if (select.value === 'Different') {
+        // Show the input field
+        colorInput.style.display = 'block';
+    } else {
+        // Hide the input field
+        colorInput.style.display = 'none';
+    }
+});

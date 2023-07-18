@@ -70,32 +70,6 @@ namespace EncycloData.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Animals",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Likes = table.Column<int>(type: "int", nullable: false),
-                    AnimalClass = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PublishedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    PublisherId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Animals", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Animals_AspNetUsers_PublisherId",
-                        column: x => x.PublisherId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetUserClaims",
                 columns: table => new
                 {
@@ -120,8 +94,8 @@ namespace EncycloData.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
@@ -165,8 +139,8 @@ namespace EncycloData.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -181,112 +155,71 @@ namespace EncycloData.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Bacteria",
+                name: "Post",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Likes = table.Column<int>(type: "int", maxLength: 20, nullable: false),
-                    IsDeadly = table.Column<bool>(type: "bit", nullable: false),
-                    BacteriaFamily = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     PublishedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    PublisherId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    PublisherId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Animal_Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AnimalClass = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Animal_ApplicationUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    IsDeadly = table.Column<bool>(type: "bit", nullable: true),
+                    BacteriaFamily = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Bacteria_ApplicationUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    Fungus_Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Fungus_Color = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GillsType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsPoisonous = table.Column<bool>(type: "bit", nullable: true),
+                    FungusClass = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Fungus_ApplicationUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Color = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PlantClass = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    LeaveType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ApplicationUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    VirusFamily = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    VirusHost = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    Virus_ApplicationUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Bacteria", x => x.Id);
+                    table.PrimaryKey("PK_Post", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Bacteria_AspNetUsers_PublisherId",
+                        name: "FK_Post_AspNetUsers_Animal_ApplicationUserId",
+                        column: x => x.Animal_ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Post_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Post_AspNetUsers_Bacteria_ApplicationUserId",
+                        column: x => x.Bacteria_ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Post_AspNetUsers_Fungus_ApplicationUserId",
+                        column: x => x.Fungus_ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Post_AspNetUsers_PublisherId",
                         column: x => x.PublisherId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Fungi",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Color = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    GillsType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsPoisonous = table.Column<bool>(type: "bit", nullable: false),
-                    Likes = table.Column<int>(type: "int", nullable: false),
-                    FungusClass = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PublishedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    PublisherId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Fungi", x => x.Id);
+                        principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Fungi_AspNetUsers_PublisherId",
-                        column: x => x.PublisherId,
+                        name: "FK_Post_AspNetUsers_Virus_ApplicationUserId",
+                        column: x => x.Virus_ApplicationUserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Plants",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Color = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Likes = table.Column<int>(type: "int", nullable: false),
-                    PlantClass = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    LeaveType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PublishedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    PublisherId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Plants", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Plants_AspNetUsers_PublisherId",
-                        column: x => x.PublisherId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Viruses",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Likes = table.Column<int>(type: "int", maxLength: 20, nullable: false),
-                    VirusFamily = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    VirusHost = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    ImgURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PublishedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
-                    PublisherId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Viruses", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Viruses_AspNetUsers_PublisherId",
-                        column: x => x.PublisherId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -298,20 +231,11 @@ namespace EncycloData.Migrations
                     PublisherId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     PublishedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AnimalId = table.Column<int>(type: "int", nullable: true),
-                    BacteriaId = table.Column<int>(type: "int", nullable: true),
-                    FungusId = table.Column<int>(type: "int", nullable: true),
-                    PlantId = table.Column<int>(type: "int", nullable: true),
-                    VirusId = table.Column<int>(type: "int", nullable: true)
+                    PostId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comments", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Comments_Animals_AnimalId",
-                        column: x => x.AnimalId,
-                        principalTable: "Animals",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Comments_AspNetUsers_PublisherId",
                         column: x => x.PublisherId,
@@ -319,31 +243,37 @@ namespace EncycloData.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Comments_Bacteria_BacteriaId",
-                        column: x => x.BacteriaId,
-                        principalTable: "Bacteria",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Comments_Fungi_FungusId",
-                        column: x => x.FungusId,
-                        principalTable: "Fungi",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Comments_Plants_PlantId",
-                        column: x => x.PlantId,
-                        principalTable: "Plants",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Comments_Viruses_VirusId",
-                        column: x => x.VirusId,
-                        principalTable: "Viruses",
+                        name: "FK_Comments_Post_PostId",
+                        column: x => x.PostId,
+                        principalTable: "Post",
                         principalColumn: "Id");
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Animals_PublisherId",
-                table: "Animals",
-                column: "PublisherId");
+            migrationBuilder.CreateTable(
+                name: "Like",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PostId = table.Column<int>(type: "int", maxLength: 50, nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    LikedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Like", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Like_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Like_Post_PostId",
+                        column: x => x.PostId,
+                        principalTable: "Post",
+                        principalColumn: "Id");
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -385,29 +315,9 @@ namespace EncycloData.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bacteria_PublisherId",
-                table: "Bacteria",
-                column: "PublisherId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comments_AnimalId",
+                name: "IX_Comments_PostId",
                 table: "Comments",
-                column: "AnimalId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comments_BacteriaId",
-                table: "Comments",
-                column: "BacteriaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comments_FungusId",
-                table: "Comments",
-                column: "FungusId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comments_PlantId",
-                table: "Comments",
-                column: "PlantId");
+                column: "PostId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_PublisherId",
@@ -415,24 +325,44 @@ namespace EncycloData.Migrations
                 column: "PublisherId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comments_VirusId",
-                table: "Comments",
-                column: "VirusId");
+                name: "IX_Like_PostId",
+                table: "Like",
+                column: "PostId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Fungi_PublisherId",
-                table: "Fungi",
+                name: "IX_Like_UserId",
+                table: "Like",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_Animal_ApplicationUserId",
+                table: "Post",
+                column: "Animal_ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_ApplicationUserId",
+                table: "Post",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_Bacteria_ApplicationUserId",
+                table: "Post",
+                column: "Bacteria_ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_Fungus_ApplicationUserId",
+                table: "Post",
+                column: "Fungus_ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_PublisherId",
+                table: "Post",
                 column: "PublisherId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Plants_PublisherId",
-                table: "Plants",
-                column: "PublisherId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Viruses_PublisherId",
-                table: "Viruses",
-                column: "PublisherId");
+                name: "IX_Post_Virus_ApplicationUserId",
+                table: "Post",
+                column: "Virus_ApplicationUserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -456,22 +386,13 @@ namespace EncycloData.Migrations
                 name: "Comments");
 
             migrationBuilder.DropTable(
+                name: "Like");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Animals");
-
-            migrationBuilder.DropTable(
-                name: "Bacteria");
-
-            migrationBuilder.DropTable(
-                name: "Fungi");
-
-            migrationBuilder.DropTable(
-                name: "Plants");
-
-            migrationBuilder.DropTable(
-                name: "Viruses");
+                name: "Post");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

@@ -20,5 +20,16 @@ namespace EncycloBookProject.Controllers
         {
             return View();
         }
+        public IActionResult Like(int itemId, string type)
+        {
+             
+            switch (type)
+            {
+             
+                default:
+                    break;
+            }
+            return RedirectToAction("ViewAll");
+        }
     }
 }

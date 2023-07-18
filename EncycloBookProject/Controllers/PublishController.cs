@@ -21,6 +21,8 @@ namespace EncycloBookProject.Controllers
             {
                 case "Animal":
                     return RedirectToAction("Animal");
+                case "Plant":
+                    return RedirectToAction("Plant");
                 default:
                     return RedirectToPage("/");
      
@@ -41,8 +43,29 @@ namespace EncycloBookProject.Controllers
             model.Publisher = user;
 
             await services.PostAnimalAsync(model);
-            user.AnimalPosts.Add(model);
-            return View("Animal");
+          
+            return RedirectToPage("/Post/ViewAll");
+        }
+
+        [HttpGet]
+        public IActionResult Plant()
+        {
+            var Plant = new Plant();
+            return View(Plant);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Plant(Plant model)
+        {
+            var color = Request.Form["color"];
+            var leaveType = Request.Form["leavetype"];
+            var user = services.GetUser(User.Identity.Name);
+            model.PublisherId = user.Id;
+            model.Publisher = user;
+            model.Color = color;
+            model.LeaveType = leaveType;
+            await services.PostPlantAsync(model);
+
+            return View("ViewAll");
         }
     }
 }

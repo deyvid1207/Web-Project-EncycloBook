@@ -13,20 +13,14 @@ namespace EncycloData
         public ApplicationUser()
         {
             Id = Guid.NewGuid();
-            AnimalPosts = new List<Animal>();
-            PlantPosts = new List<Plant>();
-            VirusPosts = new List<Virus>();
-            BacteriaPosts = new List<Bacteria>();
-            FungusPosts = new List<Fungus>();
+
+            Posts = new List<Post>();
             Comments = new List<Comment>();
 
         }
-        public ICollection<Animal> AnimalPosts { get; set; }     
-        public ICollection<Plant> PlantPosts { get; set; }
-        public ICollection<Virus> VirusPosts { get; set; }
-        public ICollection<Bacteria> BacteriaPosts { get; set; }
+  
         public ICollection<Comment> Comments { get; set; }
-        public ICollection<Fungus> FungusPosts { get; set; }
+        public ICollection<Post> Posts { get; set; }
 
         
         

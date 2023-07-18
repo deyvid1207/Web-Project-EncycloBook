@@ -12,14 +12,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EncycloData.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230715121215_init")]
+    [Migration("20230717132252_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.15")
+                .HasAnnotation("ProductVersion", "6.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -90,101 +90,6 @@ namespace EncycloData.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Animal", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("AnimalClass")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("ImgURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Likes")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<DateTime>("PublishedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("PublisherId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PublisherId");
-
-                    b.ToTable("Animals");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.Bacteria", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("BacteriaFamily")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("ImgURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeadly")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Likes")
-                        .HasMaxLength(20)
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<DateTime>("PublishedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("PublisherId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PublisherId");
-
-                    b.ToTable("Bacteria");
-                });
-
             modelBuilder.Entity("EncycloData.Models.Comment", b =>
                 {
                     b.Property<int>("Id")
@@ -193,21 +98,12 @@ namespace EncycloData.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("AnimalId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BacteriaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("FungusId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PlantId")
+                    b.Property<int?>("PostId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("PublishedOn")
@@ -216,27 +112,16 @@ namespace EncycloData.Migrations
                     b.Property<Guid>("PublisherId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("VirusId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("AnimalId");
-
-                    b.HasIndex("BacteriaId");
-
-                    b.HasIndex("FungusId");
-
-                    b.HasIndex("PlantId");
+                    b.HasIndex("PostId");
 
                     b.HasIndex("PublisherId");
-
-                    b.HasIndex("VirusId");
 
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Fungus", b =>
+            modelBuilder.Entity("EncycloData.Models.Like", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -244,114 +129,26 @@ namespace EncycloData.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("FungusClass")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("GillsType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImgURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsPoisonous")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Likes")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<DateTime>("PublishedOn")
+                    b.Property<DateTime>("LikedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("PublisherId")
+                    b.Property<int>("PostId")
+                        .HasMaxLength(50)
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PublisherId");
+                    b.HasIndex("PostId");
 
-                    b.ToTable("Fungi");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Like");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Plant", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Color")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("ImgURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LeaveType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Likes")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("PlantClass")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<DateTime>("PublishedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("PublisherId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PublisherId");
-
-                    b.ToTable("Plants");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.Virus", b =>
+            modelBuilder.Entity("EncycloData.Models.Post", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -364,18 +161,13 @@ namespace EncycloData.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
-                    b.Property<string>("ImgURL")
+                    b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Likes")
-                        .HasMaxLength(20)
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
+                    b.Property<string>("ImgURL")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("PublishedOn")
                         .HasColumnType("datetime2");
@@ -383,12 +175,7 @@ namespace EncycloData.Migrations
                     b.Property<Guid>("PublisherId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("VirusFamily")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("VirusHost")
+                    b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
@@ -397,7 +184,9 @@ namespace EncycloData.Migrations
 
                     b.HasIndex("PublisherId");
 
-                    b.ToTable("Viruses");
+                    b.ToTable("Post");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Post");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
@@ -479,12 +268,10 @@ namespace EncycloData.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -520,12 +307,10 @@ namespace EncycloData.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -537,72 +322,142 @@ namespace EncycloData.Migrations
 
             modelBuilder.Entity("EncycloData.Models.Animal", b =>
                 {
-                    b.HasOne("EncycloData.ApplicationUser", "Publisher")
-                        .WithMany("AnimalPosts")
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasBaseType("EncycloData.Models.Post");
 
-                    b.Navigation("Publisher");
+                    b.Property<string>("AnimalClass")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Animal_ApplicationUserId");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Animal_Location");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasDiscriminator().HasValue("Animal");
                 });
 
             modelBuilder.Entity("EncycloData.Models.Bacteria", b =>
                 {
-                    b.HasOne("EncycloData.ApplicationUser", "Publisher")
-                        .WithMany("BacteriaPosts")
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasBaseType("EncycloData.Models.Post");
 
-                    b.Navigation("Publisher");
-                });
+                    b.Property<Guid?>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Bacteria_ApplicationUserId");
 
-            modelBuilder.Entity("EncycloData.Models.Comment", b =>
-                {
-                    b.HasOne("EncycloData.Models.Animal", null)
-                        .WithMany("Comments")
-                        .HasForeignKey("AnimalId");
+                    b.Property<string>("BacteriaFamily")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    b.HasOne("EncycloData.Models.Bacteria", null)
-                        .WithMany("Comments")
-                        .HasForeignKey("BacteriaId");
+                    b.Property<bool>("IsDeadly")
+                        .HasColumnType("bit");
 
-                    b.HasOne("EncycloData.Models.Fungus", null)
-                        .WithMany("Comments")
-                        .HasForeignKey("FungusId");
+                    b.HasIndex("ApplicationUserId");
 
-                    b.HasOne("EncycloData.Models.Plant", null)
-                        .WithMany("Comments")
-                        .HasForeignKey("PlantId");
-
-                    b.HasOne("EncycloData.ApplicationUser", "Publisher")
-                        .WithMany("Comments")
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EncycloData.Models.Virus", null)
-                        .WithMany("Comments")
-                        .HasForeignKey("VirusId");
-
-                    b.Navigation("Publisher");
+                    b.HasDiscriminator().HasValue("Bacteria");
                 });
 
             modelBuilder.Entity("EncycloData.Models.Fungus", b =>
                 {
-                    b.HasOne("EncycloData.ApplicationUser", "Publisher")
-                        .WithMany("FungusPosts")
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasBaseType("EncycloData.Models.Post");
 
-                    b.Navigation("Publisher");
+                    b.Property<Guid?>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Fungus_ApplicationUserId");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Fungus_Color");
+
+                    b.Property<string>("FungusClass")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("GillsType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsPoisonous")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Fungus_Location");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasDiscriminator().HasValue("Fungus");
                 });
 
             modelBuilder.Entity("EncycloData.Models.Plant", b =>
                 {
+                    b.HasBaseType("EncycloData.Models.Post");
+
+                    b.Property<Guid?>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LeaveType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PlantClass")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasDiscriminator().HasValue("Plant");
+                });
+
+            modelBuilder.Entity("EncycloData.Models.Virus", b =>
+                {
+                    b.HasBaseType("EncycloData.Models.Post");
+
+                    b.Property<Guid?>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Virus_ApplicationUserId");
+
+                    b.Property<string>("VirusFamily")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("VirusHost")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasDiscriminator().HasValue("Virus");
+                });
+
+            modelBuilder.Entity("EncycloData.Models.Comment", b =>
+                {
+                    b.HasOne("EncycloData.Models.Post", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("PostId");
+
                     b.HasOne("EncycloData.ApplicationUser", "Publisher")
-                        .WithMany("PlantPosts")
+                        .WithMany("Comments")
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -610,12 +465,29 @@ namespace EncycloData.Migrations
                     b.Navigation("Publisher");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Virus", b =>
+            modelBuilder.Entity("EncycloData.Models.Like", b =>
+                {
+                    b.HasOne("EncycloData.Models.Post", "Post")
+                        .WithMany("Likes")
+                        .HasForeignKey("PostId")
+                        .IsRequired();
+
+                    b.HasOne("EncycloData.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EncycloData.Models.Post", b =>
                 {
                     b.HasOne("EncycloData.ApplicationUser", "Publisher")
-                        .WithMany("VirusPosts")
+                        .WithMany()
                         .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Publisher");
@@ -672,6 +544,41 @@ namespace EncycloData.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("EncycloData.Models.Animal", b =>
+                {
+                    b.HasOne("EncycloData.ApplicationUser", null)
+                        .WithMany("AnimalPosts")
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("EncycloData.Models.Bacteria", b =>
+                {
+                    b.HasOne("EncycloData.ApplicationUser", null)
+                        .WithMany("BacteriaPosts")
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("EncycloData.Models.Fungus", b =>
+                {
+                    b.HasOne("EncycloData.ApplicationUser", null)
+                        .WithMany("FungusPosts")
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("EncycloData.Models.Plant", b =>
+                {
+                    b.HasOne("EncycloData.ApplicationUser", null)
+                        .WithMany("PlantPosts")
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("EncycloData.Models.Virus", b =>
+                {
+                    b.HasOne("EncycloData.ApplicationUser", null)
+                        .WithMany("VirusPosts")
+                        .HasForeignKey("ApplicationUserId");
+                });
+
             modelBuilder.Entity("EncycloData.ApplicationUser", b =>
                 {
                     b.Navigation("AnimalPosts");
@@ -687,29 +594,11 @@ namespace EncycloData.Migrations
                     b.Navigation("VirusPosts");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Animal", b =>
+            modelBuilder.Entity("EncycloData.Models.Post", b =>
                 {
                     b.Navigation("Comments");
-                });
 
-            modelBuilder.Entity("EncycloData.Models.Bacteria", b =>
-                {
-                    b.Navigation("Comments");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.Fungus", b =>
-                {
-                    b.Navigation("Comments");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.Plant", b =>
-                {
-                    b.Navigation("Comments");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.Virus", b =>
-                {
-                    b.Navigation("Comments");
+                    b.Navigation("Likes");
                 });
 #pragma warning restore 612, 618
         }

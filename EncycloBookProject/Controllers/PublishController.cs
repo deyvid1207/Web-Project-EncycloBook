@@ -27,6 +27,8 @@ namespace EncycloBookProject.Controllers
                     return RedirectToAction("Fungus");
                 case "Bacteria":
                     return RedirectToAction("Bacteria");
+                case "Virus":
+                    return RedirectToAction("Virus");
                 default:
                     return RedirectToPage("/");
      
@@ -129,6 +131,42 @@ namespace EncycloBookProject.Controllers
             model.PublisherId = user.Id;
             model.Publisher = user;
             await services.PostBacteriaAsync(model);
+            return RedirectToPage("/");
+        }
+        public IActionResult Virus()
+        {
+            var Virus = new Virus();
+            return View(Virus);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Virus(Virus model)
+        {
+            string Host = Request.Form["Host"];
+            switch (Host)
+            {
+                case "Animals":
+                    model.VirusHost = "Animals";
+                    break;
+                case "Plants":
+                    model.VirusHost = "Plant";
+                    break;
+                case "Fungus":
+                    model.VirusHost = "Fungus";
+                    break;
+                case "Bacteria":
+                    model.VirusHost = "Bacteria";
+                    break;
+                case "Virus":
+                    model.VirusHost = "Virus";
+                    break;
+                default:
+                    throw new Exception("Select a valid virus host!");
+
+            }
+            var user = services.GetUser(User.Identity.Name);
+            model.PublisherId = user.Id;
+            model.Publisher = user;
+            await services.PostVirusAsync(model);
             return RedirectToPage("/");
         }
     }

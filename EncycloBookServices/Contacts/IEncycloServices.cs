@@ -17,7 +17,9 @@ namespace EncycloBookServices.Contacts
         public Task PostPlantAsync(Plant model);
         public Task PostFungusAsync(Fungus model);
         public Task PostBacteriaAsync(Bacteria model);
+        public Task PostVirusAsync(Virus model);
         public AllViewModel ViewAll();
+        public AllViewModel SearchAsync(string search);
         public Animal FindAnimalById(int id);
     }
 }

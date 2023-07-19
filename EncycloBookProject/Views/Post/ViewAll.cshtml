@@ -27,22 +27,22 @@
         <!-- Portfolio Grid Items-->
         <div class="container">
             <div class="input-group srcbrf">
-                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                <button type="button" class="btn btn-outline-primary">search</button>
-                <div class="row mrgl ">
-                    <select name="sort"class="select slcmr" data-mdb-filter="true">
-                        <option value="1">Alphabetically</option>
+                <form asp-controller="Post" asp-action="Search" method="get">
+                    <input type="search" class="form-control rounded" placeholder="Search" name="input" aria-label="Search" aria-describedby="search-addon" />
+                <button type="submit" class="btn btn-outline-primary" >Search</button>
+                </form>
+                <div class="row mrgl">
+                    <select id="sort" name="sort" class="select slcmr" data-mdb-filter="true">
+                        <option value="1">Most Recent</option>
                         <option value="2">Most Liked</option>
                         <option value="3">Most Commented</option>
-                        <option value="4">Most Recent</option>
+                        <option value="4">Alphabetically</option>
                         <option value="5">Oldest</option>
                         <option value="6">By Users</option>
                     </select>
                     @if (isAuth)
                     {
-
-                        <button class="btn btn-primary btnscr ">Publish!</button>
-
+                        <button class="btn btn-primary btnscr">Publish!</button>
                     }
                     else
                     {
@@ -50,9 +50,8 @@
                     }
                 </div>
             </div>
-
-
         </div>
+
     </div>
 </section>
 @if (Model.Posts.Any())
@@ -60,9 +59,9 @@
     <div class="row-post">
     @foreach (var item in Model.Posts)
     {
-      
- 
-            <div class="card" style="width: 18em;">
+
+
+            <div class="card" style="width: 18em;" data-published-date="@item.PublishedOn.ToString("yyyy-MM-ddTHH:mm:ss")" data-likes-count="@item.Likes.Count" data-comments-count="@item.Comments.Count" data-publisher-name="@item.Publisher.UserName">
                 <img src="@item.ImgURL" class="card-img-top" alt="Card Image">
                 <div class="card-body">
                     <h5 class="card-title">@item.Title</h5>
@@ -118,6 +117,7 @@
 
     }
     </div>
+    <script src="~/js/sort.js" asp-append-version="true"></script>
 }
- 
+
  

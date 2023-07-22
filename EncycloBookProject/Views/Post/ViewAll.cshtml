@@ -78,7 +78,7 @@
                         <p class="card-text">@item.Description</p>
                     }
                     <div class="rowscard hgstar">
-                        <button id="like" name="like" asp-action="Like" asp-controller="Post" asp-route-itemId="@item.Id" asp-route-type="@item.GetType().ToString()">
+                        <button id="like" name="like" asp-action="Like" asp-controller="Post" asp-route-itemId="@item.Id">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="32" height="32" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
 
                                 <metadata>
@@ -99,12 +99,15 @@
                     @if (isAuth)
                     {
                         <p class="card-text">Comments: @item.Comments.Count</p>
-                        <a href="#" class="btn btn-primary">Details</a>
+                    <form method="get">
+                            <input type="hidden" name="postId" value="@item.Id" />
+                            <input type="hidden" name="postType" value="@item.GetType().ToString().Remove(0, 19)" />
+                        <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">Details</button>
                         @if (user == item.Publisher)
                         {
                             <a href="#" class="btn btn-primary">Edit</a>
                         }
-
+                        </form>
                     }
                     else
                     {

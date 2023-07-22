@@ -17,14 +17,14 @@ namespace EncycloData.Models
         public int Id { get; set; }
         [Required]
         [MinLength(3)]
-        [MaxLength(45)]
+        [MaxLength(75)]
         public string DiscoveredBy { get; set; }
         [Required]
         public DateTime YearDiscovered { get; set; }
 
         [Required]
         [MinLength(3)]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string Title { get; set; }
 
         [Required]
@@ -34,7 +34,7 @@ namespace EncycloData.Models
         public string ImgURL { get; set; }
 
         [MinLength(15)]
-        [MaxLength(150)]
+        [MaxLength(750)]
         public string Description { get; set; }
 
         [Required]

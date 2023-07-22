@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -230,12 +231,6 @@ namespace EncycloBookServices
             return all;
         }
 
-        public Animal FindAnimalById(int id)
-        {
-            var Animal = dbContext.Animals.Find(id);
-
-            return Animal;
-        }
 
         public AllViewModel SearchAsync(string search)
         {
@@ -255,6 +250,40 @@ namespace EncycloBookServices
                 v.Posts = d;
              return v;
 
+        }
+
+        public Post FindPost(int id, string type)
+        {
+            Post post;
+            switch (type)
+            {
+                case "Animal":
+                    post = new Animal();
+                    post = dbContext.Animals.FirstOrDefault(a => a.Id == id);
+                    break;
+                case "Plant":
+                    post = new Plant();
+                    post = dbContext.Plants.FirstOrDefault(a => a.Id == id);
+                    break;
+                case "Fungus":
+                    post = new Fungus();
+                    post = dbContext.Fungi.FirstOrDefault(a => a.Id == id);
+                    break;
+                case "Virus":
+                    post = new Virus();
+                    post = dbContext.Viruses.FirstOrDefault(a => a.Id == id);
+                    break;
+                case "Bacteria":
+                    post = new Bacteria();
+                    post = dbContext.Plants.FirstOrDefault(a => a.Id == id);
+                    break;
+                default:
+                    throw new ArgumentException("Post must be assigned!");
+                    break;
+            }
+
+            return post;
+      
         }
     }
 }

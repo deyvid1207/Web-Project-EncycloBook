@@ -1,18 +1,19 @@
 ﻿    using EncycloBookProject.Models;
     using EncycloBookServices;
-    using Microsoft.AspNetCore.Mvc;
-    using System.Diagnostics;
+using EncycloBookServices.Contacts;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
     namespace EncycloBookProject.Controllers
     {
-        public class HomeController :Controller
+        public class HomeController : BaseController
         {
             private readonly ILogger<HomeController> _logger;
  
 
             
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IEncycloServices services, ILogger<HomeController> logger) : base(services)
         {
             _logger = logger;
         }

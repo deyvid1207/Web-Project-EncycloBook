@@ -5,12 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EncycloBookProject.Controllers
 {
-    public class PublishController : Controller
+    public class PublishController : BaseController
     {
-        public readonly IEncycloServices services;
-        public PublishController(IEncycloServices services)
+    
+
+        public PublishController(IEncycloServices services) : base(services)
         {
-            this.services = services;
         }
 
         [HttpPost]

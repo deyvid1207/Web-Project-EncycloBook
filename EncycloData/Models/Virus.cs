@@ -16,12 +16,12 @@ namespace EncycloData.Models
 
         [Required]
         [MinLength(3)]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string VirusFamily { get; set; } = null!;
 
         [Required]
         [MinLength(3)]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string VirusHost { get; set; } = null!;
  
 

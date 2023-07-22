@@ -22,7 +22,7 @@ namespace EncycloData.Models
 
         [Required]
         [MinLength(3)]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string FungusClass { get; set; } = null!;
 
     }

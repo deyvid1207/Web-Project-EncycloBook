@@ -10847,19 +10847,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ACER\\.nuget\\packages\\": {}
+    "C:\\Users\\drn12\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj",
+      "projectUniqueName": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj",
       "projectName": "EncycloData",
-      "projectPath": "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj",
-      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloData\\obj\\",
+      "projectPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj",
+      "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10914,7 +10914,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

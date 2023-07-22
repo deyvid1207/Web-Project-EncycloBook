@@ -15,10 +15,10 @@ namespace EncycloData.Models
 
         [Required]
         public string Color { get; set; } = null!;
-        public int Likes { get; set; } = 0;
+    
         [Required]
         [MinLength(3)]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string PlantClass { get; set; } = null!;
 
         [Required]

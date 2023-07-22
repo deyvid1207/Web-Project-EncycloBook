@@ -19,7 +19,7 @@
             public bool IsDeadly { get; set; }
             [Required]
             [MinLength(3)]
-            [MaxLength(20)]
+            [MaxLength(50)]
             public string BacteriaFamily { get; set; } = null!;
 
  

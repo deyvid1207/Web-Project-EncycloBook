@@ -20,6 +20,6 @@ namespace EncycloBookServices.Contacts
         public Task PostVirusAsync(Virus model);
         public AllViewModel ViewAll();
         public AllViewModel SearchAsync(string search);
-        public Animal FindAnimalById(int id);
+        public Post FindPost(int id, string type);
     }
 }

@@ -1,191 +1,324 @@
 ﻿@using EncycloData.Models;
 @model Post;
 @{
-    var type = Model.GetType();
+    var type = Model.GetType().ToString();
+    type = type.Remove(0, 19);
+    Animal a = new Animal();
+    Plant p = new Plant();
+    Fungus f = new Fungus();
+    Bacteria b = new Bacteria();
+    Virus v = new Virus();
+    switch (type)
+    {
+        case "Animal":
+             a = (Animal)Model;
+            break;
+        case "Plant":
+              p = (Plant)Model;
+            break;
+        case "Fungus":
+             f = (Fungus)Model;
+            break;
+        case "Bacteria":
+             b = (Bacteria)Model;
+            break;
+        case "Virus":
+             v = (Virus)Model;
+            break;
+        default:
+            throw new ArgumentException("Type cannot be null!");
+      
+    }
+}
+ <style>.custom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-<style?>
+    .custom-card {
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        max-width: 140%;
+        width: 130%;
+        margin-top: 40%;
+    }
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
-<div class="container">
-    <!-- product -->
-    <div class="product-content product-wrap clearfix product-deatil">
-        <div class="row">
-            <div class="col-md-5 col-sm-12 col-xs-12">
-                <div class="product-image">
-                    <div id="myCarousel-2" class="carousel slide">
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel-2" data-slide-to="0" class=""></li>
-                            <li data-target="#myCarousel-2" data-slide-to="1" class="active"></li>
-                            <li data-target="#myCarousel-2" data-slide-to="2" class=""></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <!-- Slide 1 -->
-                            <div class="item active">
-                                <img src="https://www.bootdey.com/image/700x400/FFB6C1/000000" class="img-responsive" alt="" />
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="item">
-                                <img src="https://www.bootdey.com/image/700x400/87CEFA/000000" class="img-responsive" alt="" />
-                            </div>
-                            <!-- Slide 3 -->
-                            <div class="item">
-                                <img src="https://www.bootdey.com/image/700x400/B0C4DE/000000" class="img-responsive" alt="" />
-                            </div>
-                        </div>
-                        <a class="left carousel-control" href="#myCarousel-2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
-                        <a class="right carousel-control" href="#myCarousel-2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
+.custom-form {
+  display: flex;
+  gap: 20px;
+}
+
+    .custom-left-side {
+        flex: 0.7;
+    }
+
+.custom-left-top {
+  background-color: #3d5af1;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+}
+
+.custom-left-top h4 {
+  margin: 0;
+}
+
+.custom-left-top p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.custom-carousel {
+  margin-top: 20px;
+}
+
+.custom-carousel img {
+  border-radius: 4px;
+}
+
+    .custom-right-side {
+        flex: 2;
+    }
+
+.custom-right-side h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.custom-right-side h5 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.custom-input_text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.custom-input_text input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-input_text span {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #888;
+}
+
+.custom-pay button {
+  background-color: #3d5af1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.custom-pay button:hover {
+  background-color: #2a42c8;
+}
+
+.custom-payemnts {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.custom-payemnts i {
+  margin-right: 5px;
+}
+
+.custom-powered {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888;
+}
+
+.custom-powered img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.custom-powered a {
+  color: #3d5af1;
+  text-decoration: none;
+}
+
+/* Additional styles for the carousel indicators */
+.custom-carousel-indicators {
+  position: relative;
+  bottom: 15px;
+}
+
+.custom-carousel-indicators button {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-carousel-indicators button.active {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Media query for responsive design */
+@@media screen and (max-width: 600px) {
+  .custom-form {
+    flex-direction: column;
+  }
+
+  .custom-left-side,
+  .custom-right-side {
+    width: 100%;
+  }
+}</style>
+
+
+
+<div class="custom-container">
+    <div class="custom-card">
+        <div class="custom-form">
+            <div class="custom-left-side">
+                <div class="custom-left-top">
+
+                    <h4>@Model.Title</h4>
+                    <p>Posted by @Model.Publisher.UserName</p>
+                </div>
+                <div id="carouselExampleIndicators" class="custom-carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
                     </div>
+                    <div class="carousel-inner">
+                        <img src="@Model.ImgURL" class="d-block w-100" alt="...">
+                    </div>
+                   
+                </div>
+                <div class="oriton_img">
+                    <h5>Likes: @Model.Likes.Count</h5>
+                    <h5>Comments: @Model.Comments.Count</h5>
+                </div>
+                <div class="left_text">
+                    <input type="radio" id="collection1" name="collection">
+                    <label for="collection1">
+                        <div class="left_box">
+                            <div class="left_box_collection">
+                                <div class="radio_button">
+                                     <label></label>
+                                    <h4>Collection 01</h4>
+                                </div>
+                                <p>$29</p>
+                            </div>
+                            <p>10 * Presets.Released in 2020.</p>
+                        </div>
+                    </label>
+                    <input type="radio" id="collection2" name="collection">
+                    <label for="collection2">
+                        <div class="left_box">
+                            <div class="left_box_collection">
+                                <div class="radio_button">
+                                    <span></span>
+                                    <h4>Collection 02</h4>
+                                </div>
+                                <p>$29</p>
+                            </div>
+                            <p>10 * Presets.Released in 2021.</p>
+                        </div>
                 </div>
             </div>
-
-            <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
-                <h2 class="name">
-                    Product Name Title Here
-                    <small>Product by <a href="javascript:void(0);">Adeline</a></small>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-primary"></i>
-                    <i class="fa fa-star fa-2x text-muted"></i>
-                    <span class="fa fa-2x"><h5>(109) Votes</h5></span>
-                    <a href="javascript:void(0);">109 customer reviews</a>
-                </h2>
-                <hr />
-                <h3 class="price-container">
-                    $129.54
-                    <small>*includes tax</small>
-                </h3>
-                <div class="certified">
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0);">Delivery time<span>7 Working Days</span></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">Certified<span>Quality Assured</span></a>
-                        </li>
-                    </ul>
-                </div>
-                <hr />
-                <div class="description description-tabs">
-                    <ul id="myTab" class="nav nav-pills">
-                        <li class="active"><a href="#more-information" data-toggle="tab" class="no-margin">Product Description </a></li>
-                        <li class=""><a href="#specifications" data-toggle="tab">Specifications</a></li>
-                        <li class=""><a href="#reviews" data-toggle="tab">Reviews</a></li>
-                    </ul>
-                    <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade active in" id="more-information">
-                            <br />
-                            <strong>Description Title</strong>
-                            <p>
-                                Integer egestas, orci id condimentum eleifend, nibh nisi pulvinar eros, vitae ornare massa neque ut orci. Nam aliquet lectus sed odio eleifend, at iaculis dolor egestas. Nunc elementum pellentesque augue
-                                sodales porta. Etiam aliquet rutrum turpis, feugiat sodales ipsum consectetur nec.
-                            </p>
+            <div class="custom-right-side">
+                <h3>@type.ToString() Details</h3>
+               
+                <div class="input_div">
+                    <div class="input_text _input">
+                        <dt>Title</dt>
+                        <dd>@Model.Title</dd>
+                        <i class="fa fa-credit-card"></i>
+                    </div>
+                    <div class="cvv_month">
+                        <div class="input_text ">
+                            <h5>Description</h5>
+                            <label>@Model.Description</label>
+                         
                         </div>
-                        <div class="tab-pane fade" id="specifications">
-                            <br />
-                            <dl class="">
-                                <dt>Gravina</dt>
-                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                <dd>Eget lacinia odio sem nec elit.</dd>
-                                <br />
+                        <div class="input_text ">
+                            <h6>Family</h6>
+                            @if (type == "Animal")
+                            {
+                                 
+                                <label>@a.AnimalClass</label>
+                            }
+                            else if (type == "Plant")
+                            {
+                                <label>@p.PlantClass</label>
+                            }
+                            else if (type == "Fungus")
+                            {
+                                <label>@f.FungusClass</label>
+                            }
+                            else if (type == "Bacteria")
+                            {
+                                <label>@b.BacteriaFamily</label>
+                            }
+                            else if (type == "Virus")
+                            {
+                                <label>@v.VirusFamily</label>
+                            }
 
-                                <dt>Test lists</dt>
-                                <dd>A description list is perfect for defining terms.</dd>
-                                <br />
-
-                                <dt>Altra porta</dt>
-                                <dd>Vestibulum id ligula porta felis euismod semper</dd>
-                            </dl>
-                        </div>
-                        <div class="tab-pane fade" id="reviews">
-                            <br />
-                            <form method="post" class="well padding-bottom-10" onsubmit="return false;">
-                                <textarea rows="2" class="form-control" placeholder="Write a review"></textarea>
-                                <div class="margin-top-10">
-                                    <button type="submit" class="btn btn-sm btn-primary pull-right">
-                                        Submit Review
-                                    </button>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Location"><i class="fa fa-location-arrow"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Voice"><i class="fa fa-microphone"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Photo"><i class="fa fa-camera"></i></a>
-                                    <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add File"><i class="fa fa-file"></i></a>
-                                </div>
-                            </form>
-
-                            <div class="chat-body no-padding profile-message">
-                                <ul>
-                                    <li class="message">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="online" />
-                                        <span class="message-text">
-                                            <a href="javascript:void(0);" class="username">
-                                                Alisha Molly
-                                                <span class="badge">Purchase Verified</span>
-                                                <span class="pull-right">
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-muted"></i>
-                                                </span>
-                                            </a>
-                                            Can't divide were divide fish forth fish to. Was can't form the, living life grass darkness very image let unto fowl isn't in blessed fill life yielding above all moved
-                                        </span>
-                                        <ul class="list-inline font-xs">
-                                            <li>
-                                                <a href="javascript:void(0);" class="text-info"><i class="fa fa-thumbs-up"></i> This was helpful (22)</a>
-                                            </li>
-                                            <li class="pull-right">
-                                                <small class="text-muted pull-right ultra-light"> Posted 1 year ago </small>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="message">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="online" />
-                                        <span class="message-text">
-                                            <a href="javascript:void(0);" class="username">
-                                                Aragon Zarko
-                                                <span class="badge">Purchase Verified</span>
-                                                <span class="pull-right">
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                    <i class="fa fa-star fa-2x text-primary"></i>
-                                                </span>
-                                            </a>
-                                            Excellent product, love it!
-                                        </span>
-                                        <ul class="list-inline font-xs">
-                                            <li>
-                                                <a href="javascript:void(0);" class="text-info"><i class="fa fa-thumbs-up"></i> This was helpful (22)</a>
-                                            </li>
-                                            <li class="pull-right">
-                                                <small class="text-muted pull-right ultra-light"> Posted 1 year ago </small>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
-                <hr />
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                        <a href="javascript:void(0);" class="btn btn-success btn-lg">Add to cart ($129.54)</a>
+                <div class="input_text">   </div>
+                <div class="billing">
+                    <div class="input_text">
+ 
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                        <div class="btn-group pull-right">
-                            <button class="btn btn-white btn-default"><i class="fa fa-star"></i> Add to wishlist</button>
-                            <button class="btn btn-white btn-default"><i class="fa fa-envelope"></i> Contact Seller</button>
-                        </div>
+                    <div class="zip_state">   </div>
+                </div>
+                <div class="input_text">   </div>
+                <div class="bill_content">
+                    <div class="bill_content_text">
+                  
+                    </div>
+                    <div class="bill_content_text">
+                     
+                    </div>
+                    <div class="bill_content_text total">
+                    
+                    </div>
+                </div>
+                <div class="pay">
+            
+                    <div class="payemnts">
+                    
+                    </div>
+                    <div class="powered">
+                       
+                     </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end product -->
 </div>
 

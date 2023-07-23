@@ -91,7 +91,7 @@ namespace EncycloData
                 PublishedOn = DateTime.UtcNow,
                 IsDeadly = false,
                 YearDiscovered = DateTime.UtcNow,
-                ImgURL = "https://microbewiki.kenyon.edu/index.php/File:Scanning-electron-microscope-SEM-photomicrograph-of-a-four-day-old-biofilm-of-R-ruber.png",
+                ImgURL = "https://microbewiki.kenyon.edu/images/6/64/Scanning-electron-microscope-SEM-photomicrograph-of-a-four-day-old-biofilm-of-R-ruber.png",
                 Likes = new List<Like>(),
                 PublisherId = adminUserId,
             };

@@ -2291,7 +2291,19 @@ progress {
     border-radius: 0.5rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.card-img-top {
+    width: 300px; /* Set the desired width */
+    height: 300px; /* Set the desired height */
+    object-fit: cover; /* This ensures the image retains its aspect ratio while filling the specified dimensions */
+}
 
+.srcbt {
+    min-width: 80%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    height: 100%;
+}
 @media (prefers-reduced-motion: reduce) {
     .form-control {
         transition: none;

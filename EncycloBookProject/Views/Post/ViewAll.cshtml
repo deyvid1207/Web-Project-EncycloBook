@@ -27,8 +27,8 @@
         <!-- Portfolio Grid Items-->
         <div class="container">
             <div class="input-group srcbrf">
-                <form asp-controller="Post" asp-action="Search" method="get">
-                    <input type="search" class="form-control rounded" placeholder="Search" name="input" aria-label="Search" aria-describedby="search-addon" />
+                <form asp-controller="Post" asp-action="Search" class="form-control" method="get">
+                    <input type="search" class="rounded srcbt" placeholder="Search" name="input" aria-label="Search" aria-describedby="search-addon" />
                 <button type="submit" class="btn btn-outline-primary" >Search</button>
                 </form>
                 <div class="row mrgl">
@@ -62,7 +62,7 @@
 
 
             <div class="card" style="width: 18em;" data-published-date="@item.PublishedOn.ToString("yyyy-MM-ddTHH:mm:ss")" data-likes-count="@item.Likes.Count" data-comments-count="@item.Comments.Count" data-publisher-name="@item.Publisher.UserName">
-                <img src="@item.ImgURL" class="card-img-top" alt="Card Image">
+                <img src="@item.ImgURL"  class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">@item.Title</h5>
                     @if (item.Description.Length > 20)
@@ -121,6 +121,7 @@
     }
     </div>
     <script src="~/js/sort.js" asp-append-version="true"></script>
+    
 }
 
  

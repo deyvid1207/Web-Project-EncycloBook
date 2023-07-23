@@ -259,27 +259,27 @@ namespace EncycloBookServices
             {
                 case "Animal":
                     post = new Animal();
-                    post = dbContext.Animals.FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Animals.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
                     break;
                 case "Plant":
                     post = new Plant();
-                    post = dbContext.Plants.FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Plants.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
                     break;
                 case "Fungus":
                     post = new Fungus();
-                    post = dbContext.Fungi.FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Fungi.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
                     break;
                 case "Virus":
                     post = new Virus();
-                    post = dbContext.Viruses.FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Viruses.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
                     break;
                 case "Bacteria":
                     post = new Bacteria();
-                    post = dbContext.Plants.FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Bacteria.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
                     break;
                 default:
                     throw new ArgumentException("Post must be assigned!");
-                    break;
+                   
             }
 
             return post;

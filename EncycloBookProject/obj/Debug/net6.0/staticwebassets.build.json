@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+GJU2SadjJdth1IsjRZ7mnlqEqdkPnUMaxQ/kj5S2/0=",
+  "Hash": "96pDcID7+Sc3Pypzg6k0BIUZQrOlXpDZTDlQhZmKZ1k=",
   "Source": "EncycloBookProject",
   "BasePath": "_content/EncycloBookProject",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\imgs\\—Pngtree—no image vector illustration isolated_4979075.png",
+      "SourceId": "EncycloBookProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\",
+      "BasePath": "_content/EncycloBookProject",
+      "RelativePath": "imgs/—Pngtree—no image vector illustration isolated_4979075.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\—Pngtree—no image vector illustration isolated_4979075.png"
     },
     {
       "Identity": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\js\\site.js",

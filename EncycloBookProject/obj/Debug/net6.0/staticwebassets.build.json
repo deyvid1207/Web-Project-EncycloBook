@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dfZyzDEOBEApYUSHDzWC9B07vsp2m0BX81Cf5Doh4So=",
+  "Hash": "jyvc19ubZFRWzPq4CEvjln1gMUkIh6N4WW3xp3t8peQ=",
   "Source": "EncycloBookProject",
   "BasePath": "_content/EncycloBookProject",
   "Mode": "Default",
@@ -1120,23 +1120,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
-    },
-    {
-      "Identity": "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\js\\sort.js",
-      "SourceId": "EncycloBookProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\",
-      "BasePath": "_content/EncycloBookProject",
-      "RelativePath": "js/sort.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\sort.js"
     },
     {
       "Identity": "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

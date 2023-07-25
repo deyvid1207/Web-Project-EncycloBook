@@ -13,7 +13,6 @@ using System.Xml.Linq;
 
 namespace EncycloBookServices
 {
-
     public class EncycloServices : IEncycloServices
     {
         private readonly ApplicationDbContext dbContext;
@@ -180,42 +179,6 @@ namespace EncycloBookServices
             await dbContext.SaveChangesAsync();
 
         }
-        public async Task PostVirusAsync(Virus model)
-        {
-
-
-            if (model == null)
-            {
-                throw new Exception("Virus is null, please enter it correct!");
-
-            }
-            else
-            {
-                var Virus = new Virus()
-                {
-
-                    Title = model.Title,
-                    ImgURL = model.ImgURL,
-                    VirusFamily = model.VirusFamily,
-                    Description = model.Description,
-                    VirusHost = model.VirusHost,
-                    DiscoveredBy = model.DiscoveredBy,
-                    YearDiscovered = model.YearDiscovered,
-                    Comments = model.Comments,
-                    PublishedOn = DateTime.Now,
-                    PublisherId = model.PublisherId,
-                    Publisher = model.Publisher,
-                    Likes = model.Likes
-                };
-                model.Publisher.Posts.Add(Virus);
-                await dbContext.Viruses.AddAsync(Virus);
-
-
-
-            }
-            await dbContext.SaveChangesAsync();
-
-        }
 
         public AllViewModel ViewAll()
         {
@@ -235,26 +198,6 @@ namespace EncycloBookServices
             var Animal = dbContext.Animals.Find(id);
 
             return Animal;
-        }
-
-        public AllViewModel SearchAsync(string search)
-        {
-            var d = new List<Post>();
-            
-            if (search == null)
-            {
-                 d = ViewAll().Posts.ToList();
-            }
-            else
-            {
-                d = ViewAll().Posts.Where(x => x.Title.ToLower().Contains(search.ToLower())).ToList();
-
-            }
-           
-            AllViewModel v = new AllViewModel();
-                v.Posts = d;
-             return v;
-
         }
     }
 }

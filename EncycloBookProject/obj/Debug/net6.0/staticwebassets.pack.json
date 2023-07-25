@@ -17,10 +17,6 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\js\\sort.js",
-      "PackagePath": "staticwebassets\\js\\sort.js"
-    },
-    {
       "Id": "C:\\Users\\ACER\\source\\repos\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

@@ -16,12 +16,6 @@ namespace EncycloBookProject.Controllers
             var model = services.ViewAll();
             return View(model);
         }
-        [HttpGet]
-        public IActionResult Search(string input) {
-          
-          var selected = services.SearchAsync(input);
-            return View("ViewAll", selected);
-        }
         public IActionResult Publish()
         {
             return View();

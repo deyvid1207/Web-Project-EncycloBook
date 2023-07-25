@@ -10865,19 +10865,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\drn12\\.nuget\\packages\\": {}
+    "C:\\Users\\ACER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj",
       "projectName": "EncycloBookServices",
-      "projectPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj",
-      "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\obj\\",
+      "projectPath": "C:\\Users\\ACER\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj",
+      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ACER\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10891,8 +10891,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj": {
-              "projectPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj"
+            "C:\\Users\\ACER\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj": {
+              "projectPath": "C:\\Users\\ACER\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj"
             }
           }
         }
@@ -10922,7 +10922,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

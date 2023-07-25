@@ -9,109 +9,113 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = EncycloBookProject
 build_property.RootNamespace = EncycloBookProject
-build_property.ProjectDir = C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\
+build_property.ProjectDir = C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject
+build_property.MSBuildProjectDirectory = C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/ViewDetails.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/ViewDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xWaWV3RGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Home/About.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Home/Contact.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Home/Index.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Home/Privacy.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Post/Publish.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Post/Publish.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxQdWJsaXNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Post/ViewAll.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Post/ViewAll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxWaWV3QWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Publish/Animal.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Publish/Animal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaFxBbmltYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Publish/Bacteria.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Publish/Bacteria.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaFxCYWN0ZXJpYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Publish/Fungus.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Publish/Fungus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaFxGdW5ndXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Publish/Plant.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Publish/Plant.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaFxQbGFudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Publish/Virus.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Publish/Virus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGlzaFxWaXJ1cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Shared/Error.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Shared/_AnimalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BbmltYWxQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/_ViewImports.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/_ViewStart.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Shared/_Layout.cshtml]
+[C:/Users/ACER/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-a6hokowkfm

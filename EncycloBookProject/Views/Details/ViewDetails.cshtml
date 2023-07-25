@@ -218,31 +218,33 @@
                     <h5>Comments: @Model.Comments.Count</h5>
                 </div>
                 <div class="left_text">
-                    <input type="radio" id="collection1" name="collection">
-                    <label for="collection1">
-                        <div class="left_box">
-                            <div class="left_box_collection">
-                                <div class="radio_button">
-                                     <label></label>
-                                    <h4>Collection 01</h4>
-                                </div>
-                                <p>$29</p>
-                            </div>
-                            <p>10 * Presets.Released in 2020.</p>
+
+                    <div class="col-md-8">
+                        <div class="page-header">
                         </div>
-                    </label>
-                    <input type="radio" id="collection2" name="collection">
-                    <label for="collection2">
-                        <div class="left_box">
-                            <div class="left_box_collection">
-                                <div class="radio_button">
-                                    <span></span>
-                                    <h4>Collection 02</h4>
+                        <div class="comments-list">
+                            <div class="media">
+         
+                                <div class="media-body">
+
+                                    <h4 class="media-heading user_name">Baltej Singh</h4>
+                                    Wow! this is really great.
+
                                 </div>
-                                <p>$29</p>
                             </div>
-                            <p>10 * Presets.Released in 2021.</p>
+                            <div class="media">
+                                <p class="pull-right"><small>5 days ago</small></p>
+
+                            </div>
+                            <input placeholder="Your comment here" />
+                            <button>Add comment</button>
                         </div>
+
+
+
+                    </div>
+                                    
+                      
                 </div>
             </div>
             <div class="custom-right-side">
@@ -260,63 +262,11 @@
                             <label>@Model.Description</label>
                          
                         </div>
-                        <div class="input_text ">
-                            <h6>Family</h6>
-                            @if (type == "Animal")
-                            {
-                                 
-                                <label>@a.AnimalClass</label>
-                            }
-                            else if (type == "Plant")
-                            {
-                                <label>@p.PlantClass</label>
-                            }
-                            else if (type == "Fungus")
-                            {
-                                <label>@f.FungusClass</label>
-                            }
-                            else if (type == "Bacteria")
-                            {
-                                <label>@b.BacteriaFamily</label>
-                            }
-                            else if (type == "Virus")
-                            {
-                                <label>@v.VirusFamily</label>
-                            }
-
-                           
-                        </div>
+                      
                     </div>
+                    <partial name="_AnimalPartial" />
                 </div>
-                <div class="input_text">   </div>
-                <div class="billing">
-                    <div class="input_text">
- 
-                    </div>
-                    <div class="zip_state">   </div>
-                </div>
-                <div class="input_text">   </div>
-                <div class="bill_content">
-                    <div class="bill_content_text">
-                  
-                    </div>
-                    <div class="bill_content_text">
-                     
-                    </div>
-                    <div class="bill_content_text total">
-                    
-                    </div>
-                </div>
-                <div class="pay">
-            
-                    <div class="payemnts">
-                    
-                    </div>
-                    <div class="powered">
-                       
-                     </p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

@@ -1,2 +1,1 @@
-# EncycloBook
-Project for Softuni Web using ASP-NET.
+Web Project for Softuni with ASP-NET MVC

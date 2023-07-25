@@ -23,6 +23,8 @@ namespace EncycloData.Models
         [MinLength(3)]
         [MaxLength(50)]
         public string VirusHost { get; set; } = null!;
+
+        public Symptom Symptom { get; set; } = null!;   
  
 
     }

@@ -1,0 +1,55 @@
+﻿@using EncycloData.Models;
+@model Fungus;
+
+<div class="input_text">
+    <div class="input_text ">
+        <h6>Family</h6>
+
+        <label>@Model.FungusClass</label>
+
+    </div>
+    <div class="bill_content_text">
+        <h6>Fungus color</h6>
+
+        <label>@Model.Color</label>
+    </div>
+    <div class="bill_content_text">
+        <h6>Gills type</h6>
+        <label>@Model.GillsType</label>
+    </div>
+</div>
+<div class="billing">
+    <div class="input_text">
+        <h6>Discovered by</h6>
+        <label>@Model.DiscoveredBy</label>
+    </div>
+    <div class="zip_state">
+        <h6>Discovered in</h6>
+        @if (Model.YearDiscovered.Year < 0)
+        {
+            <label>@Math.Abs(Model.YearDiscovered.Year) BC</label>
+        }
+        <label>@Model.YearDiscovered.Year</label>
+    </div>
+
+</div>
+<div class="input_text">
+    @switch (Model.IsPoisonous)
+    {case true:
+            <h6 class="danger">WARNING!</h6>
+            <label class="danger">This fungus is poisonous and can cause damage to your body!</label>
+            break;
+        default:
+            <h6 class="safe">Safe</h6>
+            <label class="safe">This fungus is safe and it won't cause damage to you.</label>
+            break;
+    }
+</div>
+<div class="bill_content">
+    <div class="bill_content_text">
+        <h6>Location of fungus</h6>
+
+        <label>@Model.Location</label>
+    </div>
+
+</div>

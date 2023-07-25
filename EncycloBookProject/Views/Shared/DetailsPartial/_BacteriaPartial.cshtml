@@ -1,0 +1,45 @@
+﻿@using EncycloData.Models;
+@model Bacteria;
+
+<div class="input_text">
+    <div class="input_text ">
+        <h6>Family</h6>
+
+        <label>@Model.BacteriaFamily</label>
+
+    </div>
+ 
+</div>
+<div class="billing">
+    <div class="input_text">
+        <h6>Discovered by</h6>
+        <label>@Model.DiscoveredBy</label>
+    </div>
+    <div class="zip_state">
+        <h6>Discovered in</h6>
+        @if (Model.YearDiscovered.Year < 0)
+        {
+            <label>@Math.Abs(Model.YearDiscovered.Year) BC</label>
+        }
+        <label>@Model.YearDiscovered.Year</label>
+    </div>
+
+</div>
+<div class="input_text">
+    @switch (Model.IsDeadly)
+    {
+        case true:
+        <h6 class="danger">WARNING!</h6>
+        <label class="danger">This bacteia is parasitic and will cause damage to your body!</label>
+            break;
+        case false:
+        <h6 class="safe">Safe</h6>
+        <label class="safe">This bacteia is not parasitic and it won't cause damage to you.</label>
+            break;
+        default:
+             
+            break;
+    }
+   
+</div>
+ 

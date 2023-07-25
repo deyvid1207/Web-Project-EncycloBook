@@ -1,0 +1,34 @@
+﻿@using EncycloData.Models;
+@model Animal;
+
+    <div class="input_text">    
+        <div class="input_text ">
+                <h6>Family</h6>
+              
+                    <label>@Model.AnimalClass</label>
+
+            </div> </div>
+    <div class="billing">
+        <div class="input_text">
+            <h6>Discovered by</h6>
+            <label>@Model.DiscoveredBy</label>
+        </div>
+        <div class="zip_state">
+            <h6>Discovered in</h6>
+            @if (Model.YearDiscovered.Year < 0)
+            {
+                <label>@Math.Abs(Model.YearDiscovered.Year) BC</label>
+            }
+            <label>@Model.YearDiscovered.Year</label>
+        </div>
+
+    </div>
+    <div class="input_text">   </div>
+    <div class="bill_content">
+        <div class="bill_content_text">
+           <h6>Location of animal</h6>
+
+                <label>@Model.Location</label>
+        </div>
+    
+        </div>

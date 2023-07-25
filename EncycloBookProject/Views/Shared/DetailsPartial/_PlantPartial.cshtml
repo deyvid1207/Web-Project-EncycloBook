@@ -1,0 +1,43 @@
+﻿@using EncycloData.Models;
+@model Plant;
+
+<div class="input_text">
+    <div class="input_text ">
+        <h6>Family</h6>
+
+        <label>@Model.PlantClass</label>
+
+    </div>
+    <div class="bill_content_text">
+        <h6>Plant color</h6>
+
+        <label>@Model.Color</label>
+    </div>
+    <div class="bill_content_text">
+        <h6>Leave type</h6>
+        <label>@Model.LeaveType</label>
+    </div>
+</div>
+<div class="billing">
+    <div class="input_text">
+        <h6>Discovered by</h6>
+        <label>@Model.DiscoveredBy</label>
+    </div>
+    <div class="zip_state">
+        <h6>Discovered in</h6>
+        @if (Model.YearDiscovered.Year < 0)
+        {
+            <label>@Math.Abs(Model.YearDiscovered.Year) BC</label>
+        }
+        <label>@Model.YearDiscovered.Year</label>
+    </div>
+
+</div>
+<div class="bill_content">
+    <div class="bill_content_text">
+        <h6>Location of plant</h6>
+
+        <label>@Model.Location</label>
+    </div>
+ 
+</div>

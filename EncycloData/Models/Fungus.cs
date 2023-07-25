@@ -25,5 +25,7 @@ namespace EncycloData.Models
         [MaxLength(50)]
         public string FungusClass { get; set; } = null!;
 
+        public bool IsParasitic { get; set; } 
+
     }
 }

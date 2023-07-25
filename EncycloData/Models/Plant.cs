@@ -24,8 +24,11 @@ namespace EncycloData.Models
         [Required]
         public string LeaveType { get; set; } = null!;
 
-   
 
+        [Required]
+        public string RootType { get; set; } = null!;
+        [Required]
+        public string StemType { get; set; } = null!;
 
     }
 }

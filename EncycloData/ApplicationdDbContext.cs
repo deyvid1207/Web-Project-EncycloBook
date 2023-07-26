@@ -11,6 +11,9 @@ namespace EncycloData
         public DbSet<Animal> Animals { get; set; } = null!;
         public DbSet<Plant> Plants { get; set; } = null!;
         public DbSet<Fungus> Fungi { get; set; } = null!;
+        public DbSet<Food> Food { get; set; } = null!;
+        public DbSet<Symptom> Symptoms { get; set; } = null!;
+
         public DbSet<Bacteria> Bacteria { get; set; } = null!;
       public DbSet<Virus> Viruses { get; set; } = null!;
       public DbSet<Comment> Comments { get; set; } = null!;
@@ -24,8 +27,26 @@ namespace EncycloData
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-             
-         
+
+            modelBuilder.Entity<Symptom>().HasData(
+       new Symptom { Id = 1, Name = "Fever", IsLifeThreatening = false },
+       new Symptom { Id = 2, Name = "Stomachache", IsLifeThreatening = false },
+       new Symptom { Id = 3, Name = "Headache", IsLifeThreatening = false },
+       new Symptom { Id = 4, Name = "Major Organ Failure", IsLifeThreatening = true },
+       new Symptom { Id = 5, Name = "Dehydration", IsLifeThreatening = false },
+       new Symptom { Id = 6, Name = "Extreme Dehydration", IsLifeThreatening = true },
+       new Symptom { Id = 7, Name = "Fatigue", IsLifeThreatening = false }
+   );
+            modelBuilder.Entity<Food>().HasData(
+    new Food { Id = 1, Name = "Leaves" },
+    new Food { Id = 2, Name = "Flowers" },
+    new Food { Id = 3, Name = "Grass" },
+    new Food { Id = 4, Name = "Mammals" },
+    new Food { Id = 5, Name = "Fish" },
+    new Food { Id = 6, Name = "Mushrooms" },
+    new Food { Id = 7, Name = "Birds" },
+    new Food { Id = 8, Name = "Everything" }
+);
 
             base.OnModelCreating(modelBuilder);
 
@@ -39,7 +60,28 @@ namespace EncycloData
                 .HasOne(l => l.Post)
                 .WithMany(p => p.Likes)
                 .HasForeignKey(l => l.PostId)
-                .OnDelete(DeleteBehavior.ClientSetNull); 
+                .OnDelete(DeleteBehavior.ClientSetNull);
+            modelBuilder.Entity<Animal>()
+    .HasOne(a => a.Food)
+    .WithMany()
+    .HasForeignKey(a => a.FoodId)
+    .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<Virus>()
+.HasOne(a => a.Symptom)
+.WithMany()
+.HasForeignKey(a => a.SymptomId)
+.OnDelete(DeleteBehavior.ClientSetNull);
+            modelBuilder.Entity<ParasiticFungus>()
+.HasOne(a => a.Symptom)
+.WithMany()
+.HasForeignKey(a => a.SymptomId)
+.OnDelete(DeleteBehavior.ClientSetNull);
+            modelBuilder.Entity<DeadlyBacteria>()
+.HasOne(a => a.Symptom)
+.WithMany()
+.HasForeignKey(a => a.SymptomId)
+.OnDelete(DeleteBehavior.ClientSetNull);
         }
         public void SeedData()
         {
@@ -53,14 +95,17 @@ namespace EncycloData
                 Email = "admin@gmail.com",
             };
 
-            var Girrafe = new Animal()
-            {
-              
-                Title = "Giraffe",
-                AnimalClass = "Mammalia Giraffidae",
-                Description = "The giraffe is a large African hoofed mammal belonging to the genus Giraffa. It is the tallest living terrestrial animal and the largest ruminant on Earth. Traditionally, giraffes were thought to be one species, Giraffa camelopardalis, with nine subspecies. Most recently, researchers proposed dividing them into up to eight extant species due to new research into their mitochondrial and nuclear DNA, as well as morphological measurements. Seven other extinct species of Giraffa are known from the fossil record.",
-                DiscoveredBy = "Linnaeus",
-                YearDiscovered = DateTime.UtcNow,
+                var Girrafe = new Animal()
+                {
+
+                    Title = "Giraffe",
+                    AnimalClass = "Mammalia Giraffidae",
+                    AnimalSubClass = "Mammal",
+                    IsWild = true,
+                    Description = "The giraffe is a large African hoofed mammal belonging to the genus Giraffa. It is the tallest living terrestrial animal and the largest ruminant on Earth. Traditionally, giraffes were thought to be one species, Giraffa camelopardalis, with nine subspecies. Most recently, researchers proposed dividing them into up to eight extant species due to new research into their mitochondrial and nuclear DNA, as well as morphological measurements. Seven other extinct species of Giraffa are known from the fossil record.",
+                    DiscoveredBy = "Linnaeus",
+                    YearDiscovered = DateTime.UtcNow,
+                    FoodId = 1,
                 ImgURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Giraffe_Mikumi_National_Park.jpg/220px-Giraffe_Mikumi_National_Park.jpg",
                 Likes = new List<Like>(),
                 Location = "Africa",
@@ -79,6 +124,10 @@ namespace EncycloData
                 ImgURL = "https://upload.wikimedia.org/wikipedia/commons/3/38/Alpen_Edelwei%C3%9F%2C_Leontopodium_alpinum_2.JPG",
                 Likes = new List<Like>(),
                 Location = "Switzerland",
+                StemType = "Aerogelius",
+                RootType = "Taproot",
+                Color = "White",
+                LeaveType = "Simple",   
                 PublishedOn = DateTime.UtcNow,
                 PublisherId = adminUserId, // Set the foreign key value
             };
@@ -95,12 +144,30 @@ namespace EncycloData
                 Likes = new List<Like>(),
                 PublisherId = adminUserId,
             };
+                var Parasitic = new ParasiticFungus()
+                {
+                    Title = "Cordyceps",
+                    FungusClass = "Ophiocordyceps sinensis",
+                    Description = "Cordyceps is a fungus that has long been used in in traditional Chinese medicine (TCM). Some people use it to try to boost energy and strength, improve immunity, enhance kidney function, and improve sexual dysfunction. It has also been used to treat cough and fatigue. Cordyceps is known as an adaptogen, which means it may help your body adapt to stress.",
+                    Color = "Orange",
+                    IsParasitic = true,
+                    IsPoisonous = true,
+                    YearDiscovered = DateTime.UtcNow,
+                    GillsType = "None",
+                    DiscoveredBy = "Wang Ang",
+                    ImgURL = "https://upload.wikimedia.org/wikipedia/commons/5/53/2010-08-06_Cordyceps_militaris_1.jpg",
+                    Host = "Ants",
+                    SymptomId = 7,
+                    PublisherId = adminUserId,
+                    Likes = new List<Like>(),
 
-            adminUser.Posts.Add(Girrafe);
+                };
+                adminUser.Posts.Add(Girrafe);
             adminUser.Posts.Add(Edelweiss);
             adminUser.Posts.Add(Bac);
+            adminUser.Posts.Add(Parasitic);
 
-            this.Users.Add(adminUser);
+                this.Users.Add(adminUser);
             this.SaveChanges();
             }
         }

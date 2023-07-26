@@ -214,6 +214,7 @@
                    
                 </div>
                 <div class="oriton_img">
+                    <label>Posted at @Model.PublishedOn</label>
                     <h5>Likes: @Model.Likes.Count</h5>
                     <button id="like" name="like" asp-action="Like" asp-controller="Post" asp-route-itemId="@Model.Id">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="32" height="32" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
@@ -279,7 +280,7 @@
                     }
                     <div class="billing">
                         <div class="input_text">
-                            <label>Posted at @Model.PublishedOn</label>
+                     
                             </div>
                             </div>
                 </div>

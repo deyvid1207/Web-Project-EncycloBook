@@ -1,5 +1,6 @@
 ﻿using EncycloBookServices;
 using EncycloBookServices.Contacts;
+using EncycloBookServices.Models;
 using EncycloData.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,17 +39,40 @@ namespace EncycloBookProject.Controllers
         [HttpGet]
         public IActionResult Animal()
         {
-            var Animal = new Animal();
-            return View(Animal);
+            var AnimalVM = new AnimalWithFoodViewModel();
+            AnimalVM.Foods = services.GetFood();
+            return View(AnimalVM);
         }
         [HttpPost]
-        public async Task<IActionResult> Animal(Animal model)
+        public async Task<IActionResult> Animal(AnimalWithFoodViewModel model)
         {
             var user = services.GetUser(User.Identity.Name);
-            model.PublisherId = user.Id;
-            model.Publisher = user;
+            string Aclass = Request.Form["class"];
+            string food = Request.Form["food"];
+            string IsWild = Request.Form["wild"];
+            model.Animal.AnimalSubClass = Aclass;
+            if (food == null)
+            {
+                model.Animal.Food = model.Foods.FirstOrDefault(x => x.Id == 1);
 
-            await services.PostAnimalAsync(model);
+            }
+            else
+            {
+                model.Animal.Food = model.Foods.FirstOrDefault(x => x.Name == food);
+            }
+            if (IsWild == "true")
+            {
+                model.Animal.IsWild = false;
+
+            }
+            else
+            {
+                model.Animal.IsWild = true;
+            } 
+            model.Animal.PublisherId = user.Id;
+            model.Animal.Publisher = user;
+
+            await services.PostAnimalAsync(model.Animal);
           
             return RedirectToRoute("/Post/ViewAll");
         }
@@ -63,11 +87,21 @@ namespace EncycloBookProject.Controllers
         public async Task<IActionResult> Plant(Plant model)
         {
             string color = Request.Form["color"];
+            if (color == null)
+            {
+                color = "Blue";
+
+            }
             if (color.Contains("Different"))
             {
                 color = color.Remove(0, 10);
             }
-            var leaveType = Request.Form["leavetype"];
+            string leaveType = Request.Form["leavetype"];
+            if (leaveType == null)
+            {
+                leaveType = "Simple";
+
+            }
             var user = services.GetUser(User.Identity.Name);
             model.PublisherId = user.Id;
             model.Publisher = user;
@@ -87,11 +121,21 @@ namespace EncycloBookProject.Controllers
         public async Task<IActionResult> Fungus(Fungus model)
         {
             string color = Request.Form["color"];
+            if (color == null)
+            {
+                color = "Blue";
+
+            }
             if (color.Contains("Different"))
             {
                 color = color.Remove(0, 10);
             }
-            var gillsType = Request.Form["gillsType"];
+            string gillsType = Request.Form["gillsType"];
+            if (gillsType == null)
+            {
+                gillsType = "Adnate";
+
+            }
             var isSafe = Request.Form["Safety"];
             if (isSafe == "Eddible")
             {
@@ -116,7 +160,7 @@ namespace EncycloBookProject.Controllers
             return View(Bacteria);
         }
         [HttpPost]
-        public async Task<IActionResult> Bacteria(Bacteria model)
+        public async Task<IActionResult> Bacteria(DeadlyBacteria model)
         {
             var isSafe = Request.Form["Safety"];
             if (isSafe == "Deadly")
@@ -160,7 +204,8 @@ namespace EncycloBookProject.Controllers
                     model.VirusHost = "Virus";
                     break;
                 default:
-                    throw new Exception("Select a valid virus host!");
+                    model.VirusHost = "Animals";
+                    break;
 
             }
             var user = services.GetUser(User.Identity.Name);

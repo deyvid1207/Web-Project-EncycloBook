@@ -23,6 +23,13 @@ namespace EncycloBookServices
         {
             this.dbContext = dbContext;
         }
+
+        public List<Food> GetFood()
+        {
+            var list = dbContext.Food.ToList();
+            return list;
+            
+        }
         public ApplicationUser GetUser(string name)
         {
             var user = dbContext.Users.FirstOrDefault(x => x.Email == name);
@@ -47,6 +54,10 @@ namespace EncycloBookServices
                    
                     Title = model.Title,
                     Location = model.Location,
+                    AnimalSubClass = model.AnimalSubClass,
+                    FoodId = model.FoodId,
+                    Food = model.Food,
+                    IsWild = model.IsWild,
                     ImgURL = model.ImgURL,
                     DiscoveredBy = model.DiscoveredBy,
                     YearDiscovered = model.YearDiscovered,
@@ -145,7 +156,7 @@ namespace EncycloBookServices
 
      
         }
-        public async Task PostBacteriaAsync(Bacteria model)
+        public async Task PostBacteriaAsync(DeadlyBacteria model)
         {
 
 
@@ -156,6 +167,33 @@ namespace EncycloBookServices
             }
             else
             {
+                if (model.IsDeadly)
+                {
+                    var Dbacteria = new DeadlyBacteria()
+                    {
+
+                        Title = model.Title,
+                        ImgURL = model.ImgURL,
+                        BacteriaFamily = model.BacteriaFamily,
+                        Description = model.Description,
+                        IsDeadly = model.IsDeadly,
+                        DiscoveredBy = model.DiscoveredBy,
+                        YearDiscovered = model.YearDiscovered,
+                        Comments = model.Comments,
+                        PublishedOn = DateTime.Now,
+                        PublisherId = model.PublisherId,
+                        Publisher = model.Publisher,
+                        Likes = model.Likes,
+                        Host = model.Host,
+                        Symptom = model.Symptom,
+                    };
+                    model.Publisher.Posts.Add(Dbacteria);
+                    await dbContext.Bacteria.AddAsync(Dbacteria);
+                }
+                else
+                {
+
+               
                 var bacteria = new Bacteria()
                 {
 
@@ -172,8 +210,11 @@ namespace EncycloBookServices
                     Publisher = model.Publisher,
                     Likes = model.Likes
                 };
-                model.Publisher.Posts.Add(bacteria);
-                await dbContext.Bacteria.AddAsync(bacteria);
+                    model.Publisher.Posts.Add(bacteria);
+                    await dbContext.Bacteria.AddAsync(bacteria);
+                }
+                
+               
 
 
 
@@ -259,7 +300,7 @@ namespace EncycloBookServices
             {
                 case "Animal":
                     post = new Animal();
-                    post = dbContext.Animals.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Animals.Include(a => a.Publisher).Include(x => x.Food).FirstOrDefault(a => a.Id == id);
                     break;
                 case "Plant":
                     post = new Plant();

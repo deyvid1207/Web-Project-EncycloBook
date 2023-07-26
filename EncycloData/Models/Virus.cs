@@ -23,7 +23,8 @@ namespace EncycloData.Models
         [MinLength(3)]
         [MaxLength(50)]
         public string VirusHost { get; set; } = null!;
-
+        public int SymptomId { get; set; }
+        [ForeignKey("SymptomId")]
         public Symptom Symptom { get; set; } = null!;   
  
 

@@ -4,6 +4,7 @@ using EncycloData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EncycloData.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230725164204_FixedInfo")]
+    partial class FixedInfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,42 +140,42 @@ namespace EncycloData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = -1,
                             Name = "Leaves"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = -2,
                             Name = "Flowers"
                         },
                         new
                         {
-                            Id = 3,
+                            Id = -3,
                             Name = "Grass"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = -4,
                             Name = "Mammals"
                         },
                         new
                         {
-                            Id = 5,
+                            Id = -5,
                             Name = "Fish"
                         },
                         new
                         {
-                            Id = 6,
+                            Id = -6,
                             Name = "Mushrooms"
                         },
                         new
                         {
-                            Id = 7,
+                            Id = -7,
                             Name = "Birds"
                         },
                         new
                         {
-                            Id = 8,
+                            Id = -8,
                             Name = "Everything"
                         });
                 });
@@ -281,43 +283,43 @@ namespace EncycloData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = -1,
                             IsLifeThreatening = false,
                             Name = "Fever"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = -2,
                             IsLifeThreatening = false,
                             Name = "Stomachache"
                         },
                         new
                         {
-                            Id = 3,
+                            Id = -3,
                             IsLifeThreatening = false,
                             Name = "Headache"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = -4,
                             IsLifeThreatening = true,
                             Name = "Major Organ Failure"
                         },
                         new
                         {
-                            Id = 5,
+                            Id = -5,
                             IsLifeThreatening = false,
                             Name = "Dehydration"
                         },
                         new
                         {
-                            Id = 6,
+                            Id = -6,
                             IsLifeThreatening = true,
                             Name = "Extreme Dehydration"
                         },
                         new
                         {
-                            Id = 7,
+                            Id = -7,
                             IsLifeThreatening = false,
                             Name = "Fatigue"
                         });
@@ -566,8 +568,7 @@ namespace EncycloData.Migrations
                     b.HasBaseType("EncycloData.Models.Post");
 
                     b.Property<int>("SymptomId")
-                        .HasColumnType("int")
-                        .HasColumnName("Virus_SymptomId");
+                        .HasColumnType("int");
 
                     b.Property<string>("VirusFamily")
                         .IsRequired()
@@ -582,35 +583,6 @@ namespace EncycloData.Migrations
                     b.HasIndex("SymptomId");
 
                     b.HasDiscriminator().HasValue("Virus");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.DeadlyBacteria", b =>
-                {
-                    b.HasBaseType("EncycloData.Models.Bacteria");
-
-                    b.Property<int>("SymptomId")
-                        .HasColumnType("int");
-
-                    b.HasIndex("SymptomId");
-
-                    b.HasDiscriminator().HasValue("DeadlyBacteria");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.ParasiticFungus", b =>
-                {
-                    b.HasBaseType("EncycloData.Models.Fungus");
-
-                    b.Property<string>("Host")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SymptomId")
-                        .HasColumnType("int")
-                        .HasColumnName("ParasiticFungus_SymptomId");
-
-                    b.HasIndex("SymptomId");
-
-                    b.HasDiscriminator().HasValue("ParasiticFungus");
                 });
 
             modelBuilder.Entity("EncycloData.Models.Comment", b =>
@@ -716,6 +688,7 @@ namespace EncycloData.Migrations
                     b.HasOne("EncycloData.Models.Food", "Food")
                         .WithMany()
                         .HasForeignKey("FoodId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Food");
@@ -726,26 +699,7 @@ namespace EncycloData.Migrations
                     b.HasOne("EncycloData.Models.Symptom", "Symptom")
                         .WithMany()
                         .HasForeignKey("SymptomId")
-                        .IsRequired();
-
-                    b.Navigation("Symptom");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.DeadlyBacteria", b =>
-                {
-                    b.HasOne("EncycloData.Models.Symptom", "Symptom")
-                        .WithMany()
-                        .HasForeignKey("SymptomId")
-                        .IsRequired();
-
-                    b.Navigation("Symptom");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.ParasiticFungus", b =>
-                {
-                    b.HasOne("EncycloData.Models.Symptom", "Symptom")
-                        .WithMany()
-                        .HasForeignKey("SymptomId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Symptom");

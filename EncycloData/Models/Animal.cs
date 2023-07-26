@@ -16,7 +16,9 @@ namespace EncycloData.Models
         public string AnimalClass { get; set; } = null!;
 
         public string AnimalSubClass { get; set; } = null!;
-
+ 
+        public int FoodId { get; set; }
+        [ForeignKey("FoodId")]
         public Food Food { get; set; } = null!;
 
         public bool IsWild { get; set; }

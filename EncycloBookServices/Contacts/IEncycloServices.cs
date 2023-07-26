@@ -13,10 +13,11 @@ namespace EncycloBookServices.Contacts
     public interface IEncycloServices
     {
         public ApplicationUser GetUser(string name);
+        public List<Food> GetFood();
         public Task PostAnimalAsync(Animal model);
         public Task PostPlantAsync(Plant model);
         public Task PostFungusAsync(Fungus model);
-        public Task PostBacteriaAsync(Bacteria model);
+        public Task PostBacteriaAsync(DeadlyBacteria model);
         public Task PostVirusAsync(Virus model);
         public AllViewModel ViewAll();
         public AllViewModel SearchAsync(string search);

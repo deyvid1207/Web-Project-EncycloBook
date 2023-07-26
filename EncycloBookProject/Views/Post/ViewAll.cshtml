@@ -78,7 +78,12 @@
                         <p class="card-text">@item.Description</p>
                     }
                     <div class="rowscard hgstar">
-                        <button id="like" name="like" asp-action="Like" asp-controller="Post" asp-route-itemId="@item.Id">
+
+                 <form asp-controller="Post" asp-action="Like" method="post">
+    <input type="hidden" name="itemId" value="@item.Id" />
+    <input type="hidden" name="type" value="@item.GetType().ToString().Remove(0, 19)" />
+    <button type="submit" class="btn btn-primary" id="like">
+
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="32" height="32" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
 
                                 <metadata>
@@ -92,6 +97,7 @@
                             </svg>
 
                         </button>
+                        </form>
                         <p>@item.Likes.Count</p>
 
 

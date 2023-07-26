@@ -2,6 +2,7 @@ using EncycloBookServices;
 using EncycloBookServices.Contacts;
 using EncycloData;
 using Microsoft.AspNetCore.Identity;
+ 
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +18,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
+ 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 

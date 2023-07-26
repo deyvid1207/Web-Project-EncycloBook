@@ -1,16 +1,20 @@
 ﻿using EncycloBookProject.Models;
 using EncycloBookServices.Contacts;
 using EncycloData;
+using EncycloData.Migrations;
 using EncycloData.Models;
 using Microsoft.CodeAnalysis.CSharp;
+  
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+ 
 
 namespace EncycloBookServices
 {
@@ -18,7 +22,8 @@ namespace EncycloBookServices
     public class EncycloServices : IEncycloServices
     {
         private readonly ApplicationDbContext dbContext;
-        
+ 
+
         public EncycloServices(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
@@ -371,6 +376,27 @@ namespace EncycloBookServices
 
             return post;
       
+        }
+        public async Task LikePost(int id, string type, string username)
+        {
+            var post = FindPost(id, type);
+            var user = dbContext.Users.FirstOrDefault(x => x.UserName == username);
+            if (post.Likes.FirstOrDefault(x => x.UserId == user.Id) == null)
+            {
+
+                Like Like = new Like()
+                {
+                    PostId = id,
+                    LikedOn = DateTime.Now,
+                    UserId = user.Id
+                };
+                 post.Likes.Add(Like);
+            }
+            else
+            {
+              var Like =  post.Likes.FirstOrDefault(x => x.UserId == user.Id);
+                post.Likes.Remove(Like);
+            }
         }
     }
 }

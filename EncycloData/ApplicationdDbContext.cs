@@ -158,6 +158,8 @@ namespace EncycloData
                     ImgURL = "https://upload.wikimedia.org/wikipedia/commons/5/53/2010-08-06_Cordyceps_militaris_1.jpg",
                     Host = "Ants",
                     SymptomId = 7,
+                    Location = "Indonesia",
+                    
                     PublisherId = adminUserId,
                     Likes = new List<Like>(),
 

@@ -6,7 +6,7 @@
     type = type.Remove(0, 19);
     Animal a = new Animal();
     Plant p = new Plant();
-    Fungus f = new Fungus();
+    ParFungusSafeFungus FunViewModel = new ParFungusSafeFungus();
     DeadlyBacteriaSafeBacteriaViewModel BacViewModel = new DeadlyBacteriaSafeBacteriaViewModel();
     Virus v = new Virus();
     switch (type)
@@ -18,7 +18,10 @@
               p = (Plant)Model;
             break;
         case "Fungus":
-             f = (Fungus)Model;
+             FunViewModel.Fungus = (Fungus)Model;
+            break;
+        case "ParasiticFungus":
+            FunViewModel.ParasiticFungus = (ParasiticFungus)Model;
             break;
         case "DeadlyBacteria":
             BacViewModel.DeadlyBacteria = (DeadlyBacteria)Model;
@@ -220,7 +223,7 @@
                 <div class="oriton_img">
                     <label>Posted at @Model.PublishedOn</label>
                     <h5>Likes: @Model.Likes.Count</h5>
-                    <button id="like" name="like" asp-action="Like" asp-controller="Post" asp-route-itemId="@Model.Id">
+                    <button id="like" name="like" asp-action="Like" asp-controller="Post" asp-route-itemId="@Model.Id" asp-route-type="@type">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="32" height="32" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
 
                             <metadata>
@@ -270,8 +273,11 @@
                             @Html.Partial("_PlantPartial", p)
                     break;
                     case "Fungus":
-                            @Html.Partial("_FungusPartial", f)
+                            @Html.Partial("_FungusPartial", FunViewModel)
                     break;
+                        case "ParasiticFungus":
+                            @Html.Partial("_FungusPartial", FunViewModel)
+                            break;
                     case "DeadlyBacteria":
                             @Html.Partial("_BacteriaPartial", BacViewModel)
                     break;

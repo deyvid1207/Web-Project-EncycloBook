@@ -26,15 +26,12 @@ namespace EncycloBookProject.Controllers
         {
             return View();
         }
-        public IActionResult Like(int itemId, string type)
+        [HttpPost]
+        public async Task<IActionResult> Like(int itemId, string type)
         {
-             
-            switch (type)
-            {
-             
-                default:
-                    break;
-            }
+            
+            await services.LikePost(itemId, type, User.Identity.Name);
+          
             return RedirectToAction("ViewAll");
         }
     }

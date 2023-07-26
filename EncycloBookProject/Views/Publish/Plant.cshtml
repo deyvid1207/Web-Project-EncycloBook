@@ -150,8 +150,29 @@
                     <input style="display:none" asp-for="@Model.LeaveType" placeholder="Different leave type" id="leaveTypeInput">
                 </div>
                 <div class="form-group">
+                    <label class="poer-cs" for="leaveType">Plant Stem Type</label>
+                    <select name="stemType" id="stemType" class="custom-select selcenter  my-1 mr-sm-2 form-control-lg">
+                        <option selected>Select...</option>
+                        <option value="Underground">Underground</option>
+                        <option value="Aerial">Aerial</option>
+                        <option value="Subaerial">Subaerial</option>
+                        <option value="Herbaceous">Herbaceous</option>        
+                    </select>
+                  
+                </div>
+                <div class="form-group">
                     <label class="poer-cs2-p" for="description">Plant Description</label>
                     <textarea class="form-control width-control-plt" asp-for="@Model.Description" placeholder="Plant Description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="poer-cs" for="leaveType">Plant Root Type</label>
+                    <select name="rootType" id="stemType" class="custom-select selcenter  my-1 mr-sm-2 form-control-lg">
+                        <option selected>Select...</option>
+                        <option value="Taproot">Taproot</option>
+                        <option value="Fibrous">Fibrous</option>
+                        <option value="Adventitious">Adventitious</option>
+                    </select>
+
                 </div>
             </div>
         </div>

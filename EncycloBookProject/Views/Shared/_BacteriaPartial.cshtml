@@ -1,11 +1,16 @@
-﻿@using EncycloData.Models;
-@model Bacteria;
+﻿@using EncycloBookServices.Models;
+@using EncycloData.Models;
+@model DeadlyBacteriaSafeBacteriaViewModel;
 
-<div class="input_text">
+
+
+@if (Model.DeadlyBacteria == null)
+{
+    <div class="input_text">
     <div class="input_text ">
         <h6>Family</h6>
 
-        <label>@Model.BacteriaFamily</label>
+        <label>@Model.Bacteria.BacteriaFamily</label>
 
     </div>
  
@@ -13,33 +18,58 @@
 <div class="billing">
     <div class="input_text">
         <h6>Discovered by</h6>
-        <label>@Model.DiscoveredBy</label>
+        <label>@Model.Bacteria.DiscoveredBy</label>
     </div>
     <div class="zip_state">
         <h6>Discovered in</h6>
-        @if (Model.YearDiscovered.Year < 0)
+        @if (Model.Bacteria.YearDiscovered.Year < 0)
         {
-            <label>@Math.Abs(Model.YearDiscovered.Year) BC</label>
+            <label>@Math.Abs(Model.Bacteria.YearDiscovered.Year) BC</label>
         }
-        <label>@Model.YearDiscovered.Year</label>
+        <label>@Model.Bacteria.YearDiscovered.Year</label>
     </div>
 
+        <div class="input_text">
+           
+                    <h6 class="safe">Safe</h6>
+                    <label class="safe">This bacteria is not parasitic and it won't cause damage to you.</label>
+
+        </div>
 </div>
-<div class="input_text">
-    @switch (Model.IsDeadly)
-    {
-        case true:
-        <h6 class="danger">WARNING!</h6>
-        <label class="danger">This bacteia is parasitic and will cause damage to your body!</label>
-            break;
-        case false:
-        <h6 class="safe">Safe</h6>
-        <label class="safe">This bacteia is not parasitic and it won't cause damage to you.</label>
-            break;
-        default:
-             
-            break;
-    }
-   
-</div>
+}
+ else
+{
+    <div class="input_text">
+        <div class="input_text ">
+            <h6>Family</h6>
+
+            <label>@Model.DeadlyBacteria.BacteriaFamily</label>
+
+        </div>
+
+    </div>
+    <div class="billing">
+        <div class="input_text">
+            <h6>Discovered by</h6>
+            <label>@Model.DeadlyBacteria.DiscoveredBy</label>
+        </div>
+        <div class="zip_state">
+            <h6>Discovered in</h6>
+            @if (Model.DeadlyBacteria.YearDiscovered.Year < 0)
+            {
+                <label>@Math.Abs(Model.DeadlyBacteria.YearDiscovered.Year) BC</label>
+            }
+            <label>@Model.DeadlyBacteria.YearDiscovered.Year</label>
+        </div>
+
+        <div class="input_text">
+
+            <h6 class="danger">WARNING!</h6>
+            <label class="danger">This bacteria is parasitic and will cause damage to your body!</label>
+            @Html.Partial("_DeadlyBacteriaPartial.cshtml", Model.DeadlyBacteria)
+
+        </div>
+    </div>
+}
+ 
  

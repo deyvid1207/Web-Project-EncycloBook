@@ -9,6 +9,10 @@ namespace EncycloBookServices.Models
 {
     public class AnimalWithFoodViewModel
     {
+        public AnimalWithFoodViewModel()
+        {
+                Foods = new List<Food>();
+        }
         public Animal Animal { get; set; }
         public List<Food> Foods { get; set; }
     }

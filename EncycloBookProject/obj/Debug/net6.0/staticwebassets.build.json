@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BCXRz8xgcEOLyyzB418I1stq5wjZLqpZBJKTk/b6YwQ=",
+  "Hash": "t6NGJ/yPAo+3aGwwfUAK5CGhSsqpP31E9JE57ok0SjI=",
   "Source": "EncycloBookProject",
   "BasePath": "_content/EncycloBookProject",
   "Mode": "Default",
@@ -1120,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imgs\\—Pngtree—no image vector illustration isolated_4979075.png"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\js\\dbacteria.js",
+      "SourceId": "EncycloBookProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\",
+      "BasePath": "_content/EncycloBookProject",
+      "RelativePath": "js/dbacteria.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\dbacteria.js"
     },
     {
       "Identity": "C:\\Users\\ACER\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\js\\site.js",

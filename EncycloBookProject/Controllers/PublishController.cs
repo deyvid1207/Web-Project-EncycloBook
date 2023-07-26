@@ -86,6 +86,16 @@ namespace EncycloBookProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Plant(Plant model)
         {
+            string stem = Request.Form["stemType"];
+            if (stem == "null")
+            {
+                stem = "Aerial";
+            }
+            string root = Request.Form["rootType"];
+            if (root == "null")
+            {
+                root = "Taproot";
+            }
             string color = Request.Form["color"];
             if (color == null)
             {
@@ -104,6 +114,8 @@ namespace EncycloBookProject.Controllers
             }
             var user = services.GetUser(User.Identity.Name);
             model.PublisherId = user.Id;
+            model.RootType = root;
+            model.StemType = stem;
             model.Publisher = user;
             model.Color = color;
             model.LeaveType = leaveType;
@@ -156,62 +168,83 @@ namespace EncycloBookProject.Controllers
         [HttpGet]
         public IActionResult Bacteria()
         {
-            var Bacteria = new Bacteria();
-            return View(Bacteria);
+            var BacteriaVM = new BacteriaWithSymptomsViewModel();
+            BacteriaVM.SymptomList = services.GetSymptoms();
+            return View(BacteriaVM);
         }
         [HttpPost]
-        public async Task<IActionResult> Bacteria(DeadlyBacteria model)
+        public async Task<IActionResult> Bacteria(BacteriaWithSymptomsViewModel model)
         {
             var isSafe = Request.Form["Safety"];
             if (isSafe == "Deadly")
             {
-                model.IsDeadly = true;
+                model.DeadlyBacteria.IsDeadly = true;
+                string Host = Request.Form["Host"];
+                string Symptom = Request.Form["symptoms"];
+                if (Symptom == null)
+                {
+                    model.DeadlyBacteria.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Id == 1);
+                }
+                else
+                {
+                    model.DeadlyBacteria.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
+
+                }
+                switch (Host)
+                {
+                    case null:
+                        model.DeadlyBacteria.Host = "Animals";
+                        break;
+                    default:
+                        model.DeadlyBacteria.Host = Host;
+                        break;
+
+                }
             }
             else
-            {
-                model.IsDeadly = true;
+            {   
+                model.DeadlyBacteria.IsDeadly = false;
             }
             var user = services.GetUser(User.Identity.Name);
-            model.PublisherId = user.Id;
-            model.Publisher = user;
-            await services.PostBacteriaAsync(model);
+            model.DeadlyBacteria.PublisherId = user.Id;
+            model.DeadlyBacteria.Publisher = user;
+            await services.PostBacteriaAsync(model.DeadlyBacteria);
             return RedirectToPage("/");
         }
         public IActionResult Virus()
         {
-            var Virus = new Virus();
-            return View(Virus);
+            var ViruswSymptoms = new VirusWithSymptomsViewModel();
+            ViruswSymptoms.SymptomList = services.GetSymptoms();
+            return View(ViruswSymptoms);
         }
         [HttpPost]
-        public async Task<IActionResult> Virus(Virus model)
+        public async Task<IActionResult> Virus(VirusWithSymptomsViewModel model)
         {
             string Host = Request.Form["Host"];
+            string Symptom = Request.Form["symptoms"];
+            if (Symptom == null)
+            {
+                model.Virus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Id == 1);
+            }
+            else
+            {
+                model.Virus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
+
+            }
             switch (Host)
             {
-                case "Animals":
-                    model.VirusHost = "Animals";
+                case null:
+                    model.Virus.VirusHost = "Animals";
                     break;
-                case "Plants":
-                    model.VirusHost = "Plant";
-                    break;
-                case "Fungus":
-                    model.VirusHost = "Fungus";
-                    break;
-                case "Bacteria":
-                    model.VirusHost = "Bacteria";
-                    break;
-                case "Virus":
-                    model.VirusHost = "Virus";
-                    break;
-                default:
-                    model.VirusHost = "Animals";
+                 default:
+                    model.Virus.VirusHost = Host;
                     break;
 
             }
             var user = services.GetUser(User.Identity.Name);
-            model.PublisherId = user.Id;
-            model.Publisher = user;
-            await services.PostVirusAsync(model);
+            model.Virus.PublisherId = user.Id;
+            model.Virus.Publisher = user;
+            await services.PostVirusAsync(model.Virus);
             return RedirectToPage("/");
         }
     }

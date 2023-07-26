@@ -1,6 +1,7 @@
-﻿@using EncycloData.Models;
+﻿@using EncycloBookServices.Models;
+@using EncycloData.Models;
 
-@model  DeadlyBacteria
+@model BacteriaWithSymptomsViewModel;
 <style>
 
     .post-view {
@@ -96,15 +97,15 @@
             <div class="col-md-6 width-plt-r">
                 <div class="form-group">
                     <label class="poer-cs" for="inputEmail4">Bacteria Name</label>
-                    <input class="form-control" id="inputEmail4" asp-for="@Model.Title" placeholder="Bacteria Name">
+                    <input class="form-control" id="inputEmail4" asp-for="@Model.DeadlyBacteria.Title" placeholder="Bacteria Name">
                 </div>
                 <div class="form-group">
                     <label class="poer-cs1" for="inputPassword4">Bacteria Image link</label>
-                    <input asp-for="@Model.ImgURL" placeholder="Image URL">
+                    <input asp-for="@Model.DeadlyBacteria.ImgURL" placeholder="Image URL">
                 </div>
                 <div class="form-group">
                     <label class="poer-cs" for="inputPassword4">Bacteria Family</label>
-                    <input class="form-control width-control-plt" asp-for="@Model.ImgURL" placeholder="Bacteria Family">
+                    <input class="form-control width-control-plt" asp-for="@Model.DeadlyBacteria.BacteriaFamily" placeholder="Bacteria Family">
                 </div>
  
             </div>
@@ -115,19 +116,42 @@
                     <option value="Deadly">Deadly</option>
                     <option value="Safe">Safe</option>
                 </select>
+                <div id="only-deadly"  style="display:none"class="form-group">
+                    <label  class="poer-cs1"  for="inputPassword4">Bacteria Host</label>
+                    <select name="Host" id="Host" class=" width-control custom-select selcenter   my-1 mr-sm-2 form-control-lg">
+                        <option selected>Select...</option>
+                        <option value="Animals">Animals</option>
+                        <option value="Plants">Plants</option>
+                        <option value="Fungus">Fungus</option>
+                        <option value="Bacteria">Bacteria</option>
+                        <option value="Virus">Virus</option>
+                    </select>
+                </div>
+                <div id="only-deadly1" style="display:none" class="form-group">
+                    <label class="poer-cs" for="inputPassword4">Bacteria Symptom</label>
+                    <select name="symptoms" id="symptoms" class=" width-control custom-select selcenter   my-1 mr-sm-2 form-control-lg">
+                        <option selected>Select...</option>
+                        @foreach (var item in Model.SymptomList)
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+
+
+                    </select>
+                </div>
                 </div>
                 <div class="form-group">
                 <label class="poer-cs2-p" for="description">Bacteria Description</label>
-                <textarea class="form-control width-control-plt" asp-for="@Model.Description" placeholder="Bacteria Description"></textarea>
+                <textarea class="form-control width-control-plt" asp-for="@Model.DeadlyBacteria.Description" placeholder="Bacteria Description"></textarea>
                 <label class="poer-cs2-p" for="Discovered">Founder</label>
 
-                <input class="form-control" asp-for="@Model.DiscoveredBy" placeholder="Name">
-
+                <input class="form-control" asp-for="@Model.DeadlyBacteria.DiscoveredBy" placeholder="Name">
+                 
 
             </div>
             <div class="form-group">
                 <label for="year">Year discovered</label>
-                <input class="form-control" type="number" id="year" asp-for="@Model.YearDiscovered.Year" min="-1000" max="2023" placeholder="Year">
+                <input class="form-control" type="number" id="year" asp-for="@Model.DeadlyBacteria.YearDiscovered.Year" min="-1000" max="2023" placeholder="Year">
             </div>
             </div>
        
@@ -137,3 +161,4 @@
         </div>
     </form>
 </div>
+<script src="~/js/dbacteria.js" asp-append-version="true"></script>

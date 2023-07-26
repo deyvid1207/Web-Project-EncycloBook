@@ -14,6 +14,7 @@ namespace EncycloBookServices.Contacts
     {
         public ApplicationUser GetUser(string name);
         public List<Food> GetFood();
+        public List<Symptom> GetSymptoms();
         public Task PostAnimalAsync(Animal model);
         public Task PostPlantAsync(Plant model);
         public Task PostFungusAsync(Fungus model);

@@ -30,6 +30,12 @@ namespace EncycloBookServices
             return list;
             
         }
+        public List<Symptom> GetSymptoms()
+        {
+            var list = dbContext.Symptoms.ToList();
+            return list;
+
+        }
         public ApplicationUser GetUser(string name)
         {
             var user = dbContext.Users.FirstOrDefault(x => x.Email == name);
@@ -98,6 +104,8 @@ namespace EncycloBookServices
                     PlantClass = model.PlantClass,
                     Description = model.Description,
                     LeaveType = model.LeaveType,
+                    StemType = model.StemType,
+                    RootType = model.RootType,
                     Color = model.Color,
                     DiscoveredBy = model.DiscoveredBy,
                     YearDiscovered = model.YearDiscovered,
@@ -185,6 +193,7 @@ namespace EncycloBookServices
                         Publisher = model.Publisher,
                         Likes = model.Likes,
                         Host = model.Host,
+                        SymptomId = model.SymptomId,
                         Symptom = model.Symptom,
                     };
                     model.Publisher.Posts.Add(Dbacteria);
@@ -317,6 +326,10 @@ namespace EncycloBookServices
                 case "Bacteria":
                     post = new Bacteria();
                     post = dbContext.Bacteria.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
+                    break;
+                case "DeadlyBacteria":
+                    post = new DeadlyBacteria();
+                    post = dbContext.Bacteria.OfType<DeadlyBacteria>().Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
                     break;
                 default:
                     throw new ArgumentException("Post must be assigned!");

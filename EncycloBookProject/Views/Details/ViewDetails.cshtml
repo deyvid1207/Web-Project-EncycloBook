@@ -1,4 +1,5 @@
-﻿@using EncycloData.Models;
+﻿@using EncycloBookServices.Models;
+@using EncycloData.Models;
 @model Post;
 @{
     var type = Model.GetType().ToString();
@@ -6,7 +7,7 @@
     Animal a = new Animal();
     Plant p = new Plant();
     Fungus f = new Fungus();
-    Bacteria b = new Bacteria();
+    DeadlyBacteriaSafeBacteriaViewModel BacViewModel = new DeadlyBacteriaSafeBacteriaViewModel();
     Virus v = new Virus();
     switch (type)
     {
@@ -19,8 +20,11 @@
         case "Fungus":
              f = (Fungus)Model;
             break;
+        case "DeadlyBacteria":
+            BacViewModel.DeadlyBacteria = (DeadlyBacteria)Model;
+            break;
         case "Bacteria":
-             b = (Bacteria)Model;
+            BacViewModel.Bacteria = (Bacteria)Model;
             break;
         case "Virus":
              v = (Virus)Model;
@@ -268,9 +272,12 @@
                     case "Fungus":
                             @Html.Partial("_FungusPartial", f)
                     break;
-                    case "Bacteria":
-                            @Html.Partial("_BacteriaPartial", b)
+                    case "DeadlyBacteria":
+                            @Html.Partial("_BacteriaPartial", BacViewModel)
                     break;
+                        case "Bacteria":
+                            @Html.Partial("_BacteriaPartial", BacViewModel)
+                            break;
                     case "Virus":
                             @Html.Partial("_VirusPartial", v)
                     break;

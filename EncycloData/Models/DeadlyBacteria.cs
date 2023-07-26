@@ -11,7 +11,7 @@ namespace EncycloData.Models
     public class DeadlyBacteria : Bacteria
     {
         [Required]
-        public string Host = null!;
+        public string Host { get; set; }
         [Required]
         public int SymptomId { get; set; }
         [ForeignKey("SymptomId")]

@@ -126,11 +126,12 @@ namespace EncycloBookProject.Controllers
         [HttpGet]
         public IActionResult Fungus()
         {
-            var Fungus = new Fungus();
-            return View(Fungus);
+            var FungusVM = new FungusWithSymptomsViewModel();
+            FungusVM.SymptomList = services.GetSymptoms();
+            return View(FungusVM);
         }
         [HttpPost]
-        public async Task<IActionResult> Fungus(Fungus model)
+        public async Task<IActionResult> Fungus(FungusWithSymptomsViewModel model)
         {
             string color = Request.Form["color"];
             if (color == null)
@@ -151,18 +152,18 @@ namespace EncycloBookProject.Controllers
             var isSafe = Request.Form["Safety"];
             if (isSafe == "Eddible")
             {
-                model.IsPoisonous = false;
+                model.ParasiticFungus.IsPoisonous = false;
             }
             else
             {
-                model.IsPoisonous = true;
+                model.ParasiticFungus.IsPoisonous = true;
             }
             var user = services.GetUser(User.Identity.Name);
-            model.PublisherId = user.Id;
-            model.Publisher = user;
-            model.Color = color;
-            model.GillsType = gillsType;
-            await services.PostFungusAsync(model);
+            model.ParasiticFungus.PublisherId = user.Id;
+            model.ParasiticFungus.Publisher = user;
+            model.ParasiticFungus.Color = color;
+            model.ParasiticFungus.GillsType = gillsType;
+            await services.PostFungusAsync(model.ParasiticFungus);
             return RedirectToRoute("/Post/ViewAll");
         }
         [HttpGet]

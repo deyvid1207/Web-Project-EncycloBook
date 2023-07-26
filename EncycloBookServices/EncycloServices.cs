@@ -124,7 +124,7 @@ namespace EncycloBookServices
             await dbContext.SaveChangesAsync();
 
         }
-        public async Task PostFungusAsync(Fungus model)
+        public async Task PostFungusAsync(ParasiticFungus model)
         {
 
 
@@ -135,6 +135,34 @@ namespace EncycloBookServices
             }
             else
             {
+                if (model.IsParasitic)
+                {
+                    var pFungus = new ParasiticFungus()
+                    {
+                        Title = model.Title,
+                        Location = model.Location,
+                        ImgURL = model.ImgURL,
+                        FungusClass = model.FungusClass,
+                        Description = model.Description,
+                        GillsType = model.GillsType,
+                        IsParasitic = model.IsParasitic,
+                        IsPoisonous = model.IsPoisonous,
+                        DiscoveredBy = model.DiscoveredBy,
+                        YearDiscovered = model.YearDiscovered,
+                        Color = model.Color,
+                        Comments = model.Comments,
+                        PublishedOn = DateTime.Now,
+                        PublisherId = model.PublisherId,
+                        Publisher = model.Publisher,
+                        Likes = model.Likes,
+                        Symptom = model.Symptom,
+                        Host = model.Host,
+                    
+                };
+
+                         model.Publisher.Posts.Add(pFungus);
+                    await dbContext.Fungi.AddAsync(pFungus);
+                }
                 var fungus = new Fungus()
                 {
 
@@ -144,6 +172,7 @@ namespace EncycloBookServices
                     FungusClass = model.FungusClass,
                     Description = model.Description,
                     GillsType = model.GillsType,
+                    IsParasitic = model.IsParasitic,
                     IsPoisonous = model.IsPoisonous,
                     DiscoveredBy = model.DiscoveredBy,
                     YearDiscovered = model.YearDiscovered,
@@ -330,6 +359,10 @@ namespace EncycloBookServices
                 case "DeadlyBacteria":
                     post = new DeadlyBacteria();
                     post = dbContext.Bacteria.OfType<DeadlyBacteria>().Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
+                    break;
+                case "ParasiticFungus":
+                    post = new ParasiticFungus();
+                    post = dbContext.Fungi.OfType<ParasiticFungus>().Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
                     break;
                 default:
                     throw new ArgumentException("Post must be assigned!");

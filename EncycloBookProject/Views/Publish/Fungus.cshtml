@@ -1,6 +1,7 @@
-﻿@using EncycloData.Models;
+﻿@using EncycloBookServices.Models;
+@using EncycloData.Models;
 
-@model Fungus
+@model FungusWithSymptomsViewModel
 <style>
 
     .post-view {
@@ -88,27 +89,27 @@
             <div class="col-md-6 width-plt-r">
                 <div class="form-group">
                     <label class="poer-cs" for="inputEmail4">Fungus Name</label>
-                    <input class="form-control" id="inputEmail4" asp-for="@Model.Title" placeholder="Fungus Name">
+                    <input class="form-control" id="inputEmail4" asp-for="@Model.ParasiticFungus.Title" placeholder="Fungus Name">
                 </div>
                 <div class="form-group">
                     <label class="poer-cs1" for="inputPassword4">Fungus Country of Origin</label>
-                    <input class="form-control" id="inputPassword4" asp-for="@Model.Location" placeholder="Fungus Country">
+                    <input class="form-control" id="inputPassword4" asp-for="@Model.ParasiticFungus.Location" placeholder="Fungus Country">
                 </div>
                 <div class="form-group">
                     <label class="poer-cs1" for="inputPassword4">Fungus Image link</label>
-                    <input asp-for="@Model.ImgURL" placeholder="Image URL">
+                    <input asp-for="@Model.ParasiticFungus.ImgURL" placeholder="Image URL">
                 </div>
                 <div class="form-group">
                     <label class="poer-cs" for="inputPassword4">Fungus Family</label>
-                    <input class="form-control width-control-plt" asp-for="@Model.FungusClass" placeholder="Fungus Family">
+                    <input class="form-control width-control-plt" asp-for="@Model.ParasiticFungus.FungusClass" placeholder="Fungus Family">
                     <label class="poer-cs" for="inputPassword4">Discovered by</label>
-                    <input class="form-control" asp-for="@Model.DiscoveredBy" placeholder="Name">
+                    <input class="form-control" asp-for="@Model.ParasiticFungus.DiscoveredBy" placeholder="Name">
 
 
                 </div>
                 <div class="form-group">
                     <label for="year">Year discovered</label>
-                    <input class="form-control" type="number" id="year" asp-for="@Model.YearDiscovered.Year" min="-1000" max="2023" placeholder="Year">
+                    <input class="form-control" type="number" id="year" asp-for="@Model.ParasiticFungus.YearDiscovered.Year" min="-1000" max="2023" placeholder="Year">
                 </div>
 
             </div>
@@ -132,7 +133,7 @@
                         <option value="Light green">Light green</option>
                         <option itemid="Different" value="Different">Different</option>
                     </select>
-                    <input style="display:none" asp-for="@Model.Color" placeholder="Different color" id="colorInput">
+                    <input style="display:none" asp-for="@Model.ParasiticFungus.Color" placeholder="Different color" id="colorInput">
                 </div>
                 <div class="form-group">
                     <label class="poer-cs" for="leaveType">Fungus Gills Type</label>
@@ -150,7 +151,7 @@
                         <option value="None">None</option>
              
                     </select>
-                    <input style="display:none" asp-for="@Model.GillsType" placeholder="Different gill type" id="leaveTypeInput">
+                    <input style="display:none" asp-for="@Model.ParasiticFungus.GillsType" placeholder="Different gill type" id="leaveTypeInput">
                 </div>
                 <div class="form-group">
                     <label class="poer-cs" for="Safety">Safety</label>
@@ -159,11 +160,37 @@
                         <option value="Poisonous">Poisonous</option>
                         <option value="Eddible">Eddible</option>
                     </select>
-                    <input style="display:none" asp-for="@Model.GillsType" placeholder="Different leave type" id="leaveTypeInput">
+                    <label class="poer-cs" for="Safety">Parasiticy</label>
+                    <select name="Parasitic" id="Parasitic" class="custom-select selcenter  my-1 mr-sm-2 form-control-lg">
+                        <option selected>Select...</option>
+                        <option value="Not parasitic">Non parasitic</option>
+                        <option value="Parasitic">Parasitic</option>
+                    </select>
+                    <div id="only-deadly-f" style="display:none" class="form-group">
+                        <label class="poer-cs1" for="inputPassword4">Fungus Host</label>
+                        <select name="Host" id="Host" class=" width-control custom-select selcenter   my-1 mr-sm-2 form-control-lg">
+                            <option selected>Select...</option>
+                            <option value="Animals">Animals</option>
+                            <option value="Plants">Plants</option>
+                            <option value="Fungus">Fungus</option>
+                            <option value="Bacteria">Bacteria</option>
+                            <option value="Virus">Virus</option>
+                        </select>
+                    </div>
+                    <div id="only-deadly1-f" style="display:none" class="form-group">
+                        <label class="poer-cs" for="inputPassword4">Fungus Symptom</label>
+                        <select name="symptoms" id="symptoms" class=" width-control custom-select selcenter   my-1 mr-sm-2 form-control-lg">
+                            <option selected>Select...</option>
+                            @foreach (var item in Model.SymptomList)
+                            {
+                                <option value="@item.Name">@item.Name</option>
+                            }
+                            </select>
+                            <input style="display:none" asp-for="@Model.ParasiticFungus.GillsType" placeholder="Different leave type" id="leaveTypeInput">
                 </div>
                 <div class="form-group">
                     <label class="poer-cs2-p" for="description">Fungus Description</label>
-                    <textarea class="form-control width-control-plt" asp-for="@Model.Description" placeholder="Fungus Description"></textarea>
+                        <textarea class="form-control width-control-plt" asp-for="@Model.ParasiticFungus.Description" placeholder="Fungus Description"></textarea>
                 </div>
             </div>
         </div>
@@ -173,4 +200,4 @@
         </div>
     </form>
 </div>
-<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/parfungus.js" asp-append-version="true"></script>

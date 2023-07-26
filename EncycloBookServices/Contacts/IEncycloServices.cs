@@ -17,7 +17,7 @@ namespace EncycloBookServices.Contacts
         public List<Symptom> GetSymptoms();
         public Task PostAnimalAsync(Animal model);
         public Task PostPlantAsync(Plant model);
-        public Task PostFungusAsync(Fungus model);
+        public Task PostFungusAsync(ParasiticFungus model);
         public Task PostBacteriaAsync(DeadlyBacteria model);
         public Task PostVirusAsync(Virus model);
         public AllViewModel ViewAll();

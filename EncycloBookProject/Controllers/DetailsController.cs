@@ -9,12 +9,11 @@ namespace EncycloBookProject.Controllers
         {
         }
 
-        public IActionResult ViewDetails(int postId, string postType, string anchor)
+        public IActionResult ViewDetails(int postId, string postType)
         {
 
             var post = services.FindPost(postId, postType);
 
-            ViewBag.Anchor = anchor;
             return View(post);
         }
     }

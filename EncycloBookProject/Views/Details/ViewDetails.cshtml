@@ -223,7 +223,12 @@
                 <div class="oriton_img">
                     <label>Posted at @Model.PublishedOn</label>
                     <h5>Likes: @Model.Likes.Count</h5>
-                    <button id="like" name="like" asp-action="Like" asp-controller="Post" asp-route-itemId="@Model.Id" asp-route-type="@type">
+                 
+                 <form asp-controller="Post" asp-action="Like" method="post">
+    <input type="hidden" name="itemId" value="@Model.Id" />
+                        <input type="hidden" name="type" value="@Model.GetType().ToString().Remove(0, 19)" />
+                        <input type="hidden" name="ViewD" value="ViewDetails" />
+    <button type="submit" class="btn btn-primary" id="like">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="32" height="32" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
 
                             <metadata>
@@ -237,6 +242,7 @@
                         </svg>
 
                     </button>
+                    </form>
                     <h5>Comments: @Model.Comments.Count</h5>
                 </div>
                 <div class="left_text">
@@ -325,5 +331,13 @@
             </div>
         </div>
     </div>
-</div>
+</div> 
+<script>
+    var anchor = '@ViewBag.Anchor';
+    if (anchor) {
+        // Scroll to the element with the specified ID
+        document.getElementById(anchor).scrollIntoView();
+    }
+</script>
+
 

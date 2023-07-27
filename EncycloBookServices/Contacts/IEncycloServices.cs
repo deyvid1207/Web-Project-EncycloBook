@@ -23,7 +23,7 @@ namespace EncycloBookServices.Contacts
         public AllViewModel ViewAll();
         public AllViewModel SearchAsync(string search);
         public Post FindPost(int id, string type);
-        public Task LikePost(int id, string type, string username);
+        public Task LikePost(Post post, string username);
 
     }
 }

@@ -306,11 +306,11 @@ namespace EncycloBookServices
         {
 
             var all = new AllViewModel();
-            all.Posts.AddRange(dbContext.Animals.Include(a => a.Publisher));
-            all.Posts.AddRange(dbContext.Plants.Include(p => p.Publisher));
-            all.Posts.AddRange(dbContext.Viruses.Include(v => v.Publisher));
-            all.Posts.AddRange(dbContext.Bacteria.Include(b => b.Publisher));
-            all.Posts.AddRange(dbContext.Fungi.Include(f => f.Publisher));
+            all.Posts.AddRange(dbContext.Animals.Include(a => a.Publisher).Include(a => a.Likes));
+            all.Posts.AddRange(dbContext.Plants.Include(p => p.Publisher).Include(a => a.Likes));
+            all.Posts.AddRange(dbContext.Viruses.Include(v => v.Publisher).Include(a => a.Likes));
+            all.Posts.AddRange(dbContext.Bacteria.Include(b => b.Publisher).Include(a => a.Likes));
+            all.Posts.AddRange(dbContext.Fungi.Include(f => f.Publisher).Include(a => a.Likes));
 
             return all;
         }
@@ -343,31 +343,31 @@ namespace EncycloBookServices
             {
                 case "Animal":
                     post = new Animal();
-                    post = dbContext.Animals.Include(a => a.Publisher).Include(x => x.Food).FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Animals.Include(a => a.Publisher).Include(x => x.Food).Include(x => x.Likes).FirstOrDefault(a => a.Id == id);
                     break;
                 case "Plant":
                     post = new Plant();
-                    post = dbContext.Plants.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Plants.Include(a => a.Publisher).Include(x => x.Likes).FirstOrDefault(a => a.Id == id);
                     break;
                 case "Fungus":
                     post = new Fungus();
-                    post = dbContext.Fungi.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Fungi.Include(a => a.Publisher).Include(x => x.Likes).FirstOrDefault(a => a.Id == id);
                     break;
                 case "Virus":
                     post = new Virus();
-                    post = dbContext.Viruses.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Viruses.Include(a => a.Publisher).Include(x => x.Likes).FirstOrDefault(a => a.Id == id);
                     break;
                 case "Bacteria":
                     post = new Bacteria();
-                    post = dbContext.Bacteria.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Bacteria.Include(a => a.Publisher).Include(x => x.Likes).FirstOrDefault(a => a.Id == id);
                     break;
                 case "DeadlyBacteria":
                     post = new DeadlyBacteria();
-                    post = dbContext.Bacteria.OfType<DeadlyBacteria>().Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Bacteria.OfType<DeadlyBacteria>().Include(x => x.Likes).Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
                     break;
                 case "ParasiticFungus":
                     post = new ParasiticFungus();
-                    post = dbContext.Fungi.OfType<ParasiticFungus>().Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Fungi.OfType<ParasiticFungus>().Include(x => x.Likes).Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
                     break;
                 default:
                     throw new ArgumentException("Post must be assigned!");
@@ -377,16 +377,19 @@ namespace EncycloBookServices
             return post;
       
         }
-        public async Task LikePost(int id, string type, string username)
+        public async Task LikePost(Post post, string username)
         {
-            var post = FindPost(id, type);
+     
             var user = dbContext.Users.FirstOrDefault(x => x.UserName == username);
+
             if (post.Likes.FirstOrDefault(x => x.UserId == user.Id) == null)
             {
 
                 Like Like = new Like()
                 {
-                    PostId = id,
+                    PostId = post.Id,
+                    Post = post,
+                    User = user,
                     LikedOn = DateTime.Now,
                     UserId = user.Id
                 };
@@ -397,6 +400,7 @@ namespace EncycloBookServices
               var Like =  post.Likes.FirstOrDefault(x => x.UserId == user.Id);
                 post.Likes.Remove(Like);
             }
+            await dbContext.SaveChangesAsync();
         }
     }
 }

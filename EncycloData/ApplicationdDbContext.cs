@@ -61,6 +61,12 @@ namespace EncycloData
                 .WithMany(p => p.Likes)
                 .HasForeignKey(l => l.PostId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
+            modelBuilder.Entity<Post>()
+    .HasMany(p => p.Likes)
+    .WithOne(l => l.Post)
+    .HasForeignKey(l => l.PostId)
+    .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<Animal>()
     .HasOne(a => a.Food)
     .WithMany()

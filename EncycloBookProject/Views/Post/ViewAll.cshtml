@@ -82,6 +82,7 @@
                  <form asp-controller="Post" asp-action="Like" method="post">
     <input type="hidden" name="itemId" value="@item.Id" />
     <input type="hidden" name="type" value="@item.GetType().ToString().Remove(0, 19)" />
+                            <input type="hidden" name="ViewD" value="ViewAll" />
     <button type="submit" class="btn btn-primary" id="like">
 
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="32" height="32" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
@@ -127,7 +128,7 @@
     }
     </div>
     <script src="~/js/sort.js" asp-append-version="true"></script>
-    
+ 
 }
 
  

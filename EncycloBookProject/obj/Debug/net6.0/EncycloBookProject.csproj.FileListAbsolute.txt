@@ -1050,3 +1050,4 @@ C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\obj\De
 C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBookProject.pdb
 C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBookProject.genruntimeconfig.cache
 C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\ref\EncycloBookProject.dll
+C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\libman.json

@@ -24,6 +24,6 @@ namespace EncycloBookServices.Contacts
         public AllViewModel SearchAsync(string search);
         public Post FindPost(int id, string type);
         public Task LikePost(Post post, string username);
-
+        public  Task CommentPost(Post post, ApplicationUser username, Comment comment);
     }
 }

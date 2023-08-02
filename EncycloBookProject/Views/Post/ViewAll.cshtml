@@ -100,12 +100,12 @@
                         </button>
                         </form>
                         <p>@item.Likes.Count</p>
-
+                        <p class="card-text">Comments: @item.Comments.Count</p>
 
                     </div>
                     @if (isAuth)
                     {
-                        <p class="card-text">Comments: @item.Comments.Count</p>
+                      
                     <form method="get">
                             <input type="hidden" name="postId" value="@item.Id" />
                             <input type="hidden" name="postType" value="@item.GetType().ToString().Remove(0, 19)" />

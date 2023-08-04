@@ -10,8 +10,8 @@
     postsArray.sort(function (a, b) {
         if (selectedValue === '1') {
 
-            var dateA = new Date(a.getAttribute('data-published-date'));
-            var dateB = new Date(b.getAttribute('data-published-date'));
+            var dateA = Date.parse(a.getAttribute('data-published-date'));
+            var dateB = Date.parse(b.getAttribute('data-published-date'));
             return dateB - dateA;
         } else if (selectedValue === '2') {
 
@@ -30,8 +30,8 @@
             return titleA.localeCompare(titleB);
         } else if (selectedValue === '5') {
 
-            var dateA = new Date(a.getAttribute('data-published-date'));
-            var dateB = new Date(b.getAttribute('data-published-date'));
+            var dateA = Date.parse(a.getAttribute('data-published-date'));
+            var dateB = Date.parse(b.getAttribute('data-published-date'));
             return dateA - dateB;
         } else if (selectedValue === '6') {
 

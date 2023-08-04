@@ -1,11 +1,12 @@
-﻿@using EncycloData.Models;
-@model Virus;
+﻿@using EncycloBookServices.Models;
+@using EncycloData.Models;
+@model VirusWithSymptomsViewModel;
 
 <div class="input_text">
     <div class="input_text ">
         <h6>Family</h6>
 
-        <label>@Model.VirusFamily</label>
+        <label>@Model.Virus.VirusFamily</label>
 
     </div>
 
@@ -13,20 +14,34 @@
 <div class="billing">
     <div class="input_text">
         <h6>Discovered by</h6>
-        <label>@Model.DiscoveredBy</label>
+        <label>@Model.Virus.DiscoveredBy</label>
     </div>
     <div class="zip_state">
         <h6>Discovered in</h6>
-        @if (Model.YearDiscovered.Year < 0)
+        @if (Model.Virus.YearDiscovered.Year < 0)
         {
-            <label>@Math.Abs(Model.YearDiscovered.Year) BC</label>
+            <label>@Math.Abs(Model.Virus.YearDiscovered.Year) BC</label>
         }
-        <label>@Model.YearDiscovered.Year</label>
+        else
+        {
+            <label>@Model.Virus.YearDiscovered.Year</label>
+        }
     </div>
 
 </div>
 <div class="input_text">
+    <div class="input_text ">
+        <h6>Symptoms</h6>
+
+        <label>@Model.Virus.Symptom.Name</label>
+
+    </div>
+    <div class="input_text ">
+        <h6>Host</h6>
+
+        <label>@Model.Virus.VirusHost</label>
  
+    </div>
 
 </div>
 

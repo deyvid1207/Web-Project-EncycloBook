@@ -19,14 +19,17 @@
     <div class="input_text">
         <h6>Discovered by</h6>
         <label>@Model.Bacteria.DiscoveredBy</label>
-    </div>
+    </div>er
     <div class="zip_state">
         <h6>Discovered in</h6>
-        @if (Model.Bacteria.YearDiscovered.Year < 0)
+            @if (Model.Bacteria.YearDiscovered.Year < 0)
         {
-            <label>@Math.Abs(Model.Bacteria.YearDiscovered.Year) BC</label>
+                <label>@Math.Abs(Model.Bacteria.YearDiscovered.Year) BC</label>
         }
-        <label>@Model.Bacteria.YearDiscovered.Year</label>
+            else
+            {
+                <label>@Model.Bacteria.YearDiscovered.Year</label>
+            }
     </div>
 
         <div class="input_text">
@@ -59,7 +62,12 @@
             {
                 <label>@Math.Abs(Model.DeadlyBacteria.YearDiscovered.Year) BC</label>
             }
-            <label>@Model.DeadlyBacteria.YearDiscovered.Year</label>
+            else
+            {
+                <label>@Model.DeadlyBacteria.YearDiscovered.Year</label>
+
+            }
+          
         </div>
 
         <div class="input_text">

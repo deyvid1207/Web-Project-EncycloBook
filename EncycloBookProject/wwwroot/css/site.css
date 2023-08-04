@@ -2296,7 +2296,9 @@ progress {
     height: 300px; /* Set the desired height */
     object-fit: cover; /* This ensures the image retains its aspect ratio while filling the specified dimensions */
 }
-
+.main-edit {
+    margin-top: 7em;
+}
 .srcbt {
     min-width: 80%;
     font-size: 1rem;

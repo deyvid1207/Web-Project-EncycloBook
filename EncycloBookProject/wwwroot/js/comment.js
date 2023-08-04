@@ -31,13 +31,9 @@ connection.start()
 document.getElementById("addcomment").addEventListener("click", () => {
     const commentInput = document.getElementById("messageInput");
     const userInput = document.getElementById("userName");
-    const timeInput = document.getElementById("time");
     const time = new Date().toISOString();
     const user = userInput.innerText;
     const comment = commentInput.value;
-    console.log("User:", user);
-    console.log("Comment:", comment);
-    console.log("Time:", time);
     document.getElementById("addcomment").setAttribute("asp-route-content", message);
     if (comment.trim() !== "") {
         // Call the server-side hub method to add the comment
@@ -46,6 +42,4 @@ document.getElementById("addcomment").addEventListener("click", () => {
 
     // Clear the comment input field after adding the comment
     commentInput.value = "";
-    userInput.value = "";
-    timeInput.value = "";
 });

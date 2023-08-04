@@ -42,7 +42,9 @@
                     </select>
                     @if (isAuth)
                     {
-                        <button class="btn btn-primary btnscr">Publish!</button>
+                        <form asp-controller="Post" asp-action="Publish"> 
+                            <button type="submit"class="btn btn-primary btnscr">Publish!</button>
+                        </form>
                     }
                     else
                     {

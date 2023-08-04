@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NdxwFFoeyqdtcJnz0dz6tk4c4EP+rSPw1y1iLVq4XoE=",
+  "Hash": "BXfOTtWv5LmwfDfYW0eHn76yetg3bsaq2/h3qfwZxqc=",
   "Source": "EncycloBookProject",
   "BasePath": "_content/EncycloBookProject",
   "Mode": "Default",
@@ -1154,6 +1154,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\dbacteria.js"
+    },
+    {
+      "Identity": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\js\\editanimal.js",
+      "SourceId": "EncycloBookProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\",
+      "BasePath": "_content/EncycloBookProject",
+      "RelativePath": "js/editanimal.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\editanimal.js"
     },
     {
       "Identity": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookProject\\wwwroot\\js\\parfungus.js",

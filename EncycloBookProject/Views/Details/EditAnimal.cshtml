@@ -1,5 +1,5 @@
 ﻿@using EncycloBookServices.Models;
- 
+
 @model AnimalWithFoodViewModel;
 <style>
 
@@ -24,7 +24,7 @@
     }
 
     .width-control {
-      max-width: 50%
+        max-width: 50%
     }
 
 
@@ -50,15 +50,17 @@
 </style>
 
 <div class="post-view">
-    <h1 class="top-heading">Post an Animal</h1>
+    <h1 class="top-heading">Edit an Animal</h1>
     <form method="post" class="centr">
 
         <div class="row">
             <div class="">
                 <label class="poer-cs" for="inputEmail4">Animal Name</label>
                 <input class="form-control" id="inputEmail4" asp-for="@Model.Animal.Title" placeholder="Animal Name">
-   
-                <label  for="inputPassword4">Animal Country of origin</label>
+                <input class="form-control" id="inputEmail4" style="display:none" asp-for="@Model.Animal.Id" placeholder="Animal Name">
+               
+
+                <label for="inputPassword4">Animal Country of origin</label>
                 <input class="form-control" id="inputPassword4" asp-for="@Model.Animal.Location" placeholder="Animal Country">
                 <label class="poer-cs1" for="inputPassword4">Animal Image link</label>
                 <input asp-for="@Model.Animal.ImgURL" placeholder="Image URL">
@@ -74,14 +76,14 @@
                 <option value="Fish">Fish</option>
                 <option value="Bird">Bird</option>
                 <option value="Invertabrate">Invertabrate</option>
-                </select>
+            </select>
             <label class="poer-cs" for="inputPassword4">Animal Family</label>
             <input class="form-control width-control" asp-for="@Model.Animal.AnimalClass" placeholder="Animal Family">
-         
+
             <label class="poer-cs" for="inputPassword4">Discovered by</label>
             <input class="form-control" asp-for="@Model.Animal.DiscoveredBy" placeholder="Name">
-           
-        
+
+
         </div>
         <div class="form-group">
             <label for="year">Year discovered</label>
@@ -91,10 +93,10 @@
             <label class="poer-cs2" for="inputPassword4 ">Animal Description</label>
             <textarea class="form-control width-control" asp-for="@Model.Animal.Description" placeholder="Animal Description"></textarea>
         </div>
-        <label class="poer-cs" for="inputPassword4">Animal Food</label>
+        <label class="poer-cs" for="inputPassword4">Animal Class</label>
         <select name="food" id="food" class="custom-select selcenter  my-1 mr-sm-2 form-control-lg">
             <option selected>Select...</option>
-          @foreach (var item in Model.Foods)
+            @foreach (var item in Model.Foods)
             {
                 <option selected value="@item.Name">@item.Name</option>
             }
@@ -104,10 +106,10 @@
             <option selected>Select...</option>
             <option selected value="True">Yes</option>
             <option selected value="False">No</option>
-          
+
         </select>
-      
-        <button type="submit" class="btn btn-primary">Post!</button>
+
+        <button type="submit" class="btn btn-primary">Edit!</button>
         <p style="font:italic">if you select "Select..." on any of the drop down menus, it will automatically set to the first value</p>
     </form>
 </div>

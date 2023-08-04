@@ -3,6 +3,7 @@ using EncycloBookServices.Contacts;
 using EncycloBookServices.Models;
 using EncycloData.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.DotNet.Scaffolding.Shared.Project;
 
 namespace EncycloBookProject.Controllers
 {
@@ -46,6 +47,7 @@ namespace EncycloBookProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Animal(AnimalWithFoodViewModel model)
         {
+            model.Foods = services.GetFood();
             var user = services.GetUser(User.Identity.Name);
             string Aclass = Request.Form["class"];
             string food = Request.Form["food"];
@@ -102,10 +104,7 @@ namespace EncycloBookProject.Controllers
                 color = "Blue";
 
             }
-            if (color.Contains("Different"))
-            {
-                color = color.Remove(0, 10);
-            }
+         
             string leaveType = Request.Form["leavetype"];
             if (leaveType == null)
             {
@@ -133,16 +132,49 @@ namespace EncycloBookProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Fungus(FungusWithSymptomsViewModel model)
         {
+            string IsParasitic = Request.Form["Parasitic"];
+            if (IsParasitic == "Parasitic")
+            {
+                model.ParasiticFungus.IsParasitic = true;
+            }
+            else
+            {
+                model.ParasiticFungus.IsParasitic = false;
+            }
+           
+            if (model.ParasiticFungus.IsParasitic)
+            {
+
+          
+            string Host = Request.Form["Host"];
+            string Symptom = Request.Form["symptoms"];
+            if (Symptom == null)
+            {
+                model.ParasiticFungus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Id == 1);
+            }
+            else
+            {
+                model.ParasiticFungus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
+
+            }
+            switch (Host)
+            {
+                case null:
+                    model.ParasiticFungus.Host = "Animals";
+                    break;
+                default:
+                    model.ParasiticFungus.Host = Host;
+                    break;
+
+            }
+            }
             string color = Request.Form["color"];
             if (color == null)
             {
                 color = "Blue";
 
             }
-            if (color.Contains("Different"))
-            {
-                color = color.Remove(0, 10);
-            }
+        
             string gillsType = Request.Form["gillsType"];
             if (gillsType == null)
             {

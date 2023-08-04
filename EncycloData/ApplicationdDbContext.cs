@@ -158,6 +158,7 @@ namespace EncycloData
                     Color = "Orange",
                     IsParasitic = true,
                     IsPoisonous = true,
+                    PublishedOn = DateTime.UtcNow,
                     YearDiscovered = DateTime.UtcNow,
                     GillsType = "None",
                     DiscoveredBy = "Wang Ang",

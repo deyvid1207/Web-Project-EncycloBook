@@ -25,5 +25,8 @@ namespace EncycloBookServices.Contacts
         public Post FindPost(int id, string type);
         public Task LikePost(Post post, string username);
         public  Task CommentPost(Post post, ApplicationUser username, Comment comment);
+        public  Task EditAnimal(Animal post);
+        public  Task EditPlant(Plant post);
+        public  Task EditFungus(Fungus post);
     }
 }

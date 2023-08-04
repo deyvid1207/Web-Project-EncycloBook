@@ -3,6 +3,7 @@
 @using EncycloData;
 @using Microsoft.AspNetCore.Identity;
 @inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 @model Post;
 @{
     var type = Model.GetType().ToString();
@@ -11,7 +12,7 @@
     Plant p = new Plant();
     ParFungusSafeFungus FunViewModel = new ParFungusSafeFungus();
     DeadlyBacteriaSafeBacteriaViewModel BacViewModel = new DeadlyBacteriaSafeBacteriaViewModel();
-    Virus v = new Virus();
+    VirusWithSymptomsViewModel v = new VirusWithSymptomsViewModel();
     switch (type)
     {
         case "Animal":
@@ -33,7 +34,7 @@
             BacViewModel.Bacteria = (Bacteria)Model;
             break;
         case "Virus":
-            v = (Virus)Model;
+            v.Virus = (Virus)Model;
             break;
         default:
             throw new ArgumentException("Type cannot be null!");
@@ -42,6 +43,7 @@
 
     var curdate = DateTime.Now;
     string message = "";
+    var user = UserManager.Users.First(x => x.Email == User.Identity.Name);
 }
  <style>.custom-container {
   display: flex;
@@ -50,6 +52,18 @@
   height: 100vh;
 }
 
+    .del-but {
+        background-color: #ff0000; /* Red background color */
+        color: #ffffff; /* White text color */
+        padding: 8px 16px; /* Add some padding to make it visually more appealing */
+        border: none; /* Remove default border */
+        border-radius: 4px; /* Add rounded corners */
+        cursor: pointer; /* Change the cursor to a pointer when hovering */
+    }
+
+        .del-but:hover {
+            background-color: #cc0000; /* Darker red background color on hover */
+        }
     .custom-card {
         background-color: #fff;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -227,7 +241,7 @@
                    
                 </div>
                 <div class="oriton_img">
-                    <label>Posted at @Model.PublishedOn</label>
+                    <label>Posted on @Model.PublishedOn</label>
                     <h5>Likes: @Model.Likes.Count</h5>
                  
                  <form asp-controller="Post" asp-action="Like" method="post">
@@ -313,34 +327,79 @@
                     <div class="page-header">
                     </div>
 
-                    <form method="post"> 
-                    <div class="comments-list">
-                            <h4 class="media-heading user_name">Comments</h4>
-                        @foreach (var item in Model.Comments)
+                  
+                  
+                    @if (user == Model.Publisher)
+                    {
+                        <div>
+                           <form   method="get">
+                            <input type="hidden" name="id" value="@Model.Id" />
+                            <input type="hidden" name="type" value="@type" />
+                            @{
+                                string action = "";
+                                @switch (type)
                             {
-                                <div class="media">
-                                    <div class="media-body">
-                                        <h3 class="media-heading user_name">@item.Publisher.UserName</h3>
-                                        <p>@item.Content</p>
-                                        <p class="pull-right"><small>@item.PublishedOn</small></p>
-                                    </div>
-                                </div>
+                                    case "Animal":
+                                        action = "EditAnimal";
+                                        break;
+                                    case "Plant":
+                                        action = "EditPlant";
+                                        break;
+                                    case "Fungus":
+                                        action = "EditFungus";
+                                        break;
+                                    case "ParasiticFungus":
+                                        action = "EditParasiticFungus";
+                                        break;
+                                    case "Bacteria":
+                                        action = "EditBacteria";
+                                        break;
+                                    case "DeadlyBacteria":
+                                        action = "DeadlyBacteria";
+                                        break;
+                                    case "Virus":
+                                        action = "Virus";
+                                        break;
+                                    default:
+                                        break;
+                                }
                             }
-                            <h1 id="userName" style="display:none">@User.Identity.Name</h1>
-                            <h1 id="time" style="display:none">@curdate.ToString()</h1>
-
-                            <input id="messageInput" name="content" placeholder="Your comment here" />
-                            <button id="addcomment" asp-controller="Details" asp-action="AddComment" asp-route-postId="@Model.Id" asp-route-postType="@type" asp-route-username="@User.Identity.Name" asp-route-content="COMMENT_VALUE_HERE">Add comment</button>
+                            <button type="submit"  asp-controller="Details" asp-action="@action" class="btn btn-primary">Edit</button>
+                        </form>
+                        <form method="post">
+                            <input type="hidden" name="id" value="@Model.Id" />
+                            <input type="hidden" name="type" value="@type" />
+                            <button type="submit" asp-controller="Details" asp-action="DeletePost" class=" del-but">Delete</button>
+                        </form>
                         </div>
-                    </form>
-
-
+                    }
 
                 </div>
             </div>
         </div>
+     
     </div>
-</div> 
+</div>
+<form method="post">
+    <div class="comments-list">
+        <h4 class="media-heading user_name">Comments</h4>
+        @foreach (var item in Model.Comments)
+        {
+            <div class="media">
+                <div class="media-body">
+                    <h3 class="media-heading user_name">@item.Publisher.UserName</h3>
+                    <p>@item.Content</p>
+                    <p class="pull-right"><small>@item.PublishedOn</small></p>
+                </div>
+            </div>
+        }
+        <h1 id="userName" style="display:none">@User.Identity.Name</h1>
+        <h1 id="time" style="display:none">@curdate.ToString()</h1>
+
+        <input id="messageInput" name="content" placeholder="Your comment here" />
+        <button id="addcomment" asp-controller="Details" asp-action="AddComment" asp-route-postId="@Model.Id" asp-route-postType="@type" asp-route-username="@User.Identity.Name" asp-route-content="COMMENT_VALUE_HERE">Add comment</button>
+    </div>
+</form>
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/comment.js"></script>
 

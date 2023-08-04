@@ -33,7 +33,10 @@
         {
                 <label>@Math.Abs(Model.Fungus.YearDiscovered.Year) BC</label>
         }
-            <label>@Model.Fungus.YearDiscovered.Year</label>
+            else
+            {
+                <label>@Model.Fungus.YearDiscovered.Year</label>
+            }
     </div>
 
 </div>
@@ -88,7 +91,10 @@ else
             {
                 <label>@Math.Abs(Model.ParasiticFungus.YearDiscovered.Year) BC</label>
             }
-            <label>@Model.ParasiticFungus.YearDiscovered.Year</label>
+            else
+            {
+                <label>@Model.ParasiticFungus.YearDiscovered.Year</label>
+            }
         </div>
 
     </div>

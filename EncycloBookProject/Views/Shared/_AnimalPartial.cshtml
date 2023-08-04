@@ -7,7 +7,10 @@
               
                     <label>@Model.AnimalClass</label>
 
-            </div> </div>
+            </div> 
+            <h6>Class</h6>
+          <label>@Model.AnimalSubClass</label>        
+        </div>
     <div class="billing">
         <div class="input_text">
             <h6>Discovered by</h6>
@@ -15,11 +18,15 @@
         </div>
         <div class="zip_state">
             <h6>Discovered in</h6>
-            @if (Model.YearDiscovered.Year < 0)
+        @if (Model.YearDiscovered.Year < 0)
             {
-                <label>@Math.Abs(Model.YearDiscovered.Year) BC</label>
+            <label>@Math.Abs(Model.YearDiscovered.Year) BC</label>
             }
+        else
+        {
             <label>@Model.YearDiscovered.Year</label>
+        }
+             
         </div>
 
     </div>
@@ -31,6 +38,15 @@
                 <label>@Model.Location</label>
                 <h6>Animal food</h6>
                 <label>@Model.Food.Name</label>
+        <h6>Is animal wild</h6>
+                @if (Model.IsWild)
+        {
+            <label>Animal is found in the wild</label>
+        }
+        else
+        {
+            <label>Animal is not found in the wild</label>
+        }
         </div>
     
         </div>

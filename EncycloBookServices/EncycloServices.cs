@@ -71,7 +71,7 @@ namespace EncycloBookServices
                     IsWild = model.IsWild,
                     ImgURL = model.ImgURL,
                     DiscoveredBy = model.DiscoveredBy,
-                    YearDiscovered = model.YearDiscovered,
+                        YearDiscovered= model.YearDiscovered,
                     AnimalClass = model.AnimalClass,
                     Description = model.Description,
                     Comments = model.Comments,
@@ -168,6 +168,10 @@ namespace EncycloBookServices
                          model.Publisher.Posts.Add(pFungus);
                     await dbContext.Fungi.AddAsync(pFungus);
                 }
+                else
+                {
+                        
+ 
                 var fungus = new Fungus()
                 {
 
@@ -191,7 +195,7 @@ namespace EncycloBookServices
                 model.Publisher.Posts.Add(fungus);
                 await dbContext.Fungi.AddAsync(fungus);
 
-
+                }
 
             }
             await dbContext.SaveChangesAsync();
@@ -284,6 +288,7 @@ namespace EncycloBookServices
                     VirusFamily = model.VirusFamily,
                     Description = model.Description,
                     VirusHost = model.VirusHost,
+                    Symptom = model.Symptom,
                     DiscoveredBy = model.DiscoveredBy,
                     YearDiscovered = model.YearDiscovered,
                     Comments = model.Comments,
@@ -355,7 +360,7 @@ namespace EncycloBookServices
                     break;
                 case "Virus":
                     post = new Virus();
-                    post = dbContext.Viruses.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).FirstOrDefault(a => a.Id == id);
+                    post = dbContext.Viruses.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
                     break;
                 case "Bacteria":
                     post = new Bacteria();
@@ -423,5 +428,81 @@ namespace EncycloBookServices
          
             await dbContext.SaveChangesAsync();
         }
+
+        public async Task EditAnimal(Animal post )
+        {
+
+            Animal curPost = (Animal)FindPost(post.Id, "Animal");
+            curPost.Title = post.Title;
+            curPost.ImgURL = post.ImgURL;
+            curPost.Food = post.Food;
+            curPost.AnimalClass = post.AnimalClass;
+            curPost.AnimalSubClass = post.AnimalSubClass;
+            curPost.DiscoveredBy = post.DiscoveredBy;
+            curPost.YearDiscovered = post.YearDiscovered;
+            curPost.PublishedOn = DateTime.Now;
+            curPost.Location = post.Location;
+            curPost.IsWild = post.IsWild;
+            curPost.Publisher = post.Publisher;
+            curPost.Description = post.Description;
+            await dbContext.SaveChangesAsync();
+        }
+        public async Task EditPlant(Plant post)
+        {
+
+            Plant curPost = (Plant)FindPost(post.Id, "Plant");
+            curPost.Title = post.Title;
+            curPost.ImgURL = post.ImgURL;
+            curPost.StemType = post.StemType;
+            curPost.Color = post.Color;
+            curPost.PlantClass = post.PlantClass;
+            curPost.DiscoveredBy = post.DiscoveredBy;
+            curPost.YearDiscovered = post.YearDiscovered;
+            curPost.PublishedOn = DateTime.Now;
+            curPost.Location = post.Location;
+            curPost.RootType = post.RootType;
+            curPost.LeaveType = post.LeaveType;
+            curPost.Description = post.Description;
+            await dbContext.SaveChangesAsync();
+        }
+        public async Task EditFungus(Fungus post)
+        {
+
+            Fungus curPost = (Fungus)FindPost(post.Id, "Fungus");
+            curPost.Title = post.Title;
+            curPost.ImgURL = post.ImgURL;
+            curPost.IsPoisonous = post.IsPoisonous;
+            curPost.Color = post.Color;
+            curPost.FungusClass = post.FungusClass;
+            curPost.DiscoveredBy = post.DiscoveredBy;
+            curPost.YearDiscovered = post.YearDiscovered;
+            curPost.PublishedOn = DateTime.Now;
+            curPost.Location = post.Location;
+            curPost.GillsType = post.GillsType;
+            curPost.IsParasitic = false;
+            curPost.Description = post.Description;
+            await dbContext.SaveChangesAsync();
+        }
+        public async Task EditParasiticFungus(ParasiticFungus post)
+        {
+
+            ParasiticFungus curPost = (ParasiticFungus)FindPost(post.Id, "ParasiticFungus");
+            curPost.Title = post.Title;
+            curPost.ImgURL = post.ImgURL;
+            curPost.IsPoisonous = post.IsPoisonous;
+            curPost.Color = post.Color;
+            curPost.FungusClass = post.FungusClass;
+            curPost.DiscoveredBy = post.DiscoveredBy;
+            curPost.YearDiscovered = post.YearDiscovered;
+            curPost.PublishedOn = DateTime.Now;
+            curPost.Location = post.Location;
+            curPost.GillsType = post.GillsType;
+            curPost.IsParasitic = true;
+            curPost.Symptom = post.Symptom;
+            curPost.Host = post.Host;
+            curPost.Description = post.Description;
+            await dbContext.SaveChangesAsync();
+        }
     }
 }
+ 

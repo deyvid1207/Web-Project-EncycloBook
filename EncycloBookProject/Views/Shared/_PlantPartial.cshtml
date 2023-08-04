@@ -40,7 +40,10 @@
         {
             <label>@Math.Abs(Model.YearDiscovered.Year) BC</label>
         }
-        <label>@Model.YearDiscovered.Year</label>
+        else
+        {
+            <label>@Model.YearDiscovered.Year</label>
+        }
     </div>
 
 </div>

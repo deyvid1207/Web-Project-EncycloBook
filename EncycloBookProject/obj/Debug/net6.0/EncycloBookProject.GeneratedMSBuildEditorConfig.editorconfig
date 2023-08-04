@@ -44,6 +44,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/EditAnimal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0QW5pbWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/EditFungus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0RnVuZ3VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/EditParasiticFungus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0UGFyYXNpdGljRnVuZ3VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/EditPlant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0UGxhbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/ViewDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xWaWV3RGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

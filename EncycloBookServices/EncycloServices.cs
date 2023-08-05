@@ -503,6 +503,91 @@ namespace EncycloBookServices
             curPost.Description = post.Description;
             await dbContext.SaveChangesAsync();
         }
+        public async Task EditBacteria(Bacteria post)
+        {
+
+            Bacteria curPost = (Bacteria)FindPost(post.Id, "Bacteria");
+            curPost.Title = post.Title;
+            curPost.ImgURL = post.ImgURL;
+            curPost.BacteriaFamily = post.BacteriaFamily;
+            curPost.IsDeadly = false;
+            curPost.DiscoveredBy = post.DiscoveredBy;
+            curPost.YearDiscovered = post.YearDiscovered;
+            curPost.PublishedOn = DateTime.Now;
+            curPost.Description = post.Description;
+            await dbContext.SaveChangesAsync();
+        }
+        public async Task EditDeadlyBacteria(DeadlyBacteria post)
+        {
+
+            DeadlyBacteria curPost = (DeadlyBacteria)FindPost(post.Id, "DeadlyBacteria");
+            curPost.Title = post.Title;
+            curPost.Host = post.Host;
+            curPost.Symptom = post.Symptom;
+            curPost.ImgURL = post.ImgURL;
+            curPost.BacteriaFamily = post.BacteriaFamily;
+            curPost.IsDeadly = true;
+            curPost.DiscoveredBy = post.DiscoveredBy;
+            curPost.YearDiscovered = post.YearDiscovered;
+            curPost.PublishedOn = DateTime.Now;
+            curPost.Description = post.Description;
+            await dbContext.SaveChangesAsync();
+        }
+        public async Task EditVirus(Virus post)
+        {
+
+            Virus curPost = (Virus)FindPost(post.Id, "Virus");
+            curPost.Title = post.Title;
+            curPost.VirusHost = post.VirusHost;
+            curPost.Symptom = post.Symptom;
+            curPost.ImgURL = post.ImgURL;
+            curPost.VirusFamily = post.VirusFamily;
+            curPost.Symptom = post.Symptom;
+            curPost.DiscoveredBy = post.DiscoveredBy;
+            curPost.YearDiscovered = post.YearDiscovered;
+            curPost.PublishedOn = DateTime.Now;
+            curPost.Description = post.Description;
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeletePost(int id, string type)
+        {
+            var post = FindPost(id, type);
+            if (post != null)
+            {
+                switch (type)
+                {
+                    case "Animal":
+                        dbContext.Animals.Remove((Animal)post);
+                        break;
+                    case "Plant":
+                        dbContext.Plants.Remove((Plant)post);
+                        break;
+                    case "Fungus":
+                        dbContext.Fungi.Remove((Fungus)post);
+                        break;
+                    case "Virus":
+                        dbContext.Viruses.Remove((Virus)post);
+                        break;
+                    case "Bacteria":
+                        dbContext.Bacteria.Remove((Bacteria)post);
+                        break;
+                    case "DeadlyBacteria":
+                        dbContext.Bacteria.Remove((DeadlyBacteria)post);
+                        break;
+                    case "ParasiticFungus":
+                        dbContext.Fungi.Remove((ParasiticFungus)post);
+                        break;
+                    default:
+                        throw new ArgumentException("Post must be assigned!");
+
+                }
+            }
+            await dbContext.SaveChangesAsync();
+        }
     }
+     
 }
+ 
+
  

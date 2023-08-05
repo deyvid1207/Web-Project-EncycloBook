@@ -147,23 +147,172 @@ namespace EncycloBookProject.Controllers
 
             var FungusVM = new FungusWithSymptomsViewModel();
             FungusVM.ParasiticFungus = (ParasiticFungus)services.FindPost(id, "ParasiticFungus");
+            FungusVM.id = id;
             FungusVM.SymptomList = services.GetSymptoms();
             return View(FungusVM);
 
        
         }
         [HttpPost]
-        public async Task<IActionResult> EditParasiticFungus(ParasiticFungus model)
+        public async Task<IActionResult> EditParasiticFungus(FungusWithSymptomsViewModel model)
+        {
+
+            model.ParasiticFungus.Id = model.id;
+            string Host = Request.Form["Host"];
+            switch (Host)
+            {
+                case null:
+                    model.ParasiticFungus.Host = "Animals";
+                    break;
+                default:
+                    model.ParasiticFungus.Host = Host;
+                    break;
+
+            }
+            string Symptom = Request.Form["symptoms"];
+            if (Symptom == null)
+            {
+                model.ParasiticFungus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Id == 1);
+            }
+            else
+            {
+                model.ParasiticFungus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
+
+            }
+            var user = services.GetUser(User.Identity.Name);
+            model.ParasiticFungus.PublisherId = user.Id;
+            model.ParasiticFungus.Publisher = user;
+            await services.EditParasiticFungus(model.ParasiticFungus);
+
+            return RedirectToRoute("/Post/ViewAll");
+        }
+
+
+        [HttpGet]
+        public IActionResult EditBacteria(int id)
         {
 
 
+            var Bacteria = new Bacteria();
+            Bacteria = (Bacteria)services.FindPost(id, "Bacteria");
+            return View(Bacteria);
+
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditBacteria(Bacteria model)
+        {
 
             var user = services.GetUser(User.Identity.Name);
             model.PublisherId = user.Id;
             model.Publisher = user;
-            await services.EditFungus(model);
+            await services.EditBacteria(model);
 
             return RedirectToRoute("/Post/ViewAll");
         }
+        [HttpGet]
+        public IActionResult EditDeadlyBacteria(int id)
+        {
+
+
+            var BacteriaVm = new BacteriaWithSymptomsViewModel();
+            BacteriaVm.DeadlyBacteria = (DeadlyBacteria)services.FindPost(id, "DeadlyBacteria");
+            BacteriaVm.SymptomList = services.GetSymptoms();
+            BacteriaVm.Id = id;
+            return View(BacteriaVm);
+
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditDeadlyBacteria(BacteriaWithSymptomsViewModel model)
+        {
+
+            var user = services.GetUser(User.Identity.Name);
+            model.DeadlyBacteria.PublisherId = user.Id;
+            model.DeadlyBacteria.Id = model.Id;
+            model.DeadlyBacteria.Publisher = user;
+            string Host = Request.Form["Host"];
+            switch (Host)
+            {
+                case null:
+                    model.DeadlyBacteria.Host = "Animals";
+                    break;
+                default:
+                    model.DeadlyBacteria.Host = Host;
+                    break;
+
+            }
+            string Symptom = Request.Form["symptoms"];
+            if (Symptom == null)
+            {
+                model.DeadlyBacteria.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Id == 1);
+            }
+            else
+            {
+                model.DeadlyBacteria.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
+
+            }
+            await services.EditDeadlyBacteria(model.DeadlyBacteria);
+  
+
+            return RedirectToRoute("/Post/ViewAll");
+        }
+        public IActionResult EditVirus(int id)
+        {
+
+
+            var VirusVm = new VirusWithSymptomsViewModel();
+            VirusVm.Virus = (Virus)services.FindPost(id, "Virus");
+            VirusVm.SymptomList = services.GetSymptoms();
+            VirusVm.Id = id;
+            return View(VirusVm);
+
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditVirus(VirusWithSymptomsViewModel model)
+        {
+
+            var user = services.GetUser(User.Identity.Name);
+            model.Virus.PublisherId = user.Id;
+            model.Virus.Id = model.Id;
+            model.Virus.Publisher = user;
+            string Host = Request.Form["Host"];
+            switch (Host)
+            {
+                case null:
+                    model.Virus.VirusHost = "Animals";
+                    break;
+                default:
+                    model.Virus.VirusHost = Host;
+                    break;
+
+            }
+            string Symptom = Request.Form["symptoms"];
+            if (Symptom == null)
+            {
+                model.Virus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Id == 1);
+            }
+            else
+            {
+                model.Virus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
+
+            }
+            await services.EditVirus(model.Virus);
+ 
+
+            return RedirectToRoute("/Post/ViewAll");
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeletePost(int postId, string postType)
+        {
+
+            await services.DeletePost(postId, postType);
+
+
+            return RedirectToPage("/Post/ViewAll");
+        }
     }
+
 }
+ 

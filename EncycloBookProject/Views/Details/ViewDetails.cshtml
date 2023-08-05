@@ -355,10 +355,10 @@
                                         action = "EditBacteria";
                                         break;
                                     case "DeadlyBacteria":
-                                        action = "DeadlyBacteria";
+                                        action = "EditDeadlyBacteria";
                                         break;
                                     case "Virus":
-                                        action = "Virus";
+                                            action = "EditVirus";
                                         break;
                                     default:
                                         break;
@@ -367,8 +367,8 @@
                             <button type="submit"  asp-controller="Details" asp-action="@action" class="btn btn-primary">Edit</button>
                         </form>
                         <form method="post">
-                            <input type="hidden" name="id" value="@Model.Id" />
-                            <input type="hidden" name="type" value="@type" />
+                            <input type="hidden" name="postId" value="@Model.Id" />
+                            <input type="hidden" name="postType" value="@type" />
                             <button type="submit" asp-controller="Details" asp-action="DeletePost" class=" del-but">Delete</button>
                         </form>
                         </div>

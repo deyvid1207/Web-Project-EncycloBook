@@ -32,6 +32,7 @@ namespace EncycloData.Models
         public DateTime PublishedOn { get; set; }
 
         public string ImgURL { get; set; }
+
  
 
         [MinLength(15)]

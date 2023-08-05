@@ -26,7 +26,12 @@ namespace EncycloBookServices.Contacts
         public Task LikePost(Post post, string username);
         public  Task CommentPost(Post post, ApplicationUser username, Comment comment);
         public  Task EditAnimal(Animal post);
-        public  Task EditPlant(Plant post);
+        public  Task EditPlant(Plant post); 
         public  Task EditFungus(Fungus post);
+        public  Task EditParasiticFungus(ParasiticFungus post);
+        public  Task EditBacteria(Bacteria post);
+        public Task EditDeadlyBacteria(DeadlyBacteria post);
+        public  Task EditVirus(Virus post);
+        public  Task DeletePost(int id, string type);
     }
 }

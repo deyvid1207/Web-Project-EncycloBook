@@ -16,5 +16,6 @@ namespace EncycloBookServices.Models
         {
                 SymptomList = new List<Symptom>();  
         }
+        public int Id { get; set; }
     }
 }

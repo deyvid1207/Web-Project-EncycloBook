@@ -34,6 +34,14 @@
         <h6>Symptoms</h6>
 
         <label>@Model.Virus.Symptom.Name</label>
+        @if (Model.Virus.Symptom.IsLifeThreatening)
+        {
+            <label>This symptom is life threatening!</label>
+        }
+        else
+        {
+            <label>This symptom is not life threatening!</label>
+        }
 
     </div>
     <div class="input_text ">

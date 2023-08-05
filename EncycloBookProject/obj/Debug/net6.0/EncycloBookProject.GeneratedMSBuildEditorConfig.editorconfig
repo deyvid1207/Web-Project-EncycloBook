@@ -48,6 +48,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0QW5pbWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/EditBacteria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0QmFjdGVyaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/EditDeadlyBacteria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0RGVhZGx5QmFjdGVyaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/EditFungus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0RnVuZ3VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/EditPlant.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0UGxhbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/EditVirus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0VmlydXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/drn12/Documents/GitHub/Web-Project-EncycloBook/EncycloBookProject/Views/Details/ViewDetails.cshtml]

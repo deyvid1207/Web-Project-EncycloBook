@@ -11,5 +11,6 @@ namespace EncycloBookServices.Models
     {
         public ParasiticFungus ParasiticFungus { get; set; }
         public List<Symptom> SymptomList { get; set; }
+        public int id { get; set; }
     }
 }

@@ -1,0 +1,153 @@
+﻿@using EncycloBookServices.Models;
+
+@model VirusWithSymptomsViewModel
+<style>
+
+    .post-view {
+        background-color: #f7f7f7;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 1000em;
+        margin: 0 auto;
+        margin-top: 10em;
+    }
+
+    .top-heading {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .form-control {
+        margin-bottom: 10px;
+    }
+
+    .width-control {
+        max-width: 50%
+    }
+
+
+    label {
+        font-weight: bold;
+    }
+
+    textarea {
+        height: 120px;
+    }
+
+    .poer-cs {
+        margin-left: 4em;
+    }
+
+    .poer-cs1 {
+        margin-left: 1.9em;
+    }
+
+    .poer-cs2 {
+        margin-left: 6em;
+    }
+
+    .post-view .row {
+        margin-bottom: 15px;
+    }
+
+    .maxdc {
+        min-width: 80%;
+    }
+
+    .post-view .row .form-group {
+        margin-bottom: 0;
+    }
+
+    .width-plt {
+        min-width: 120%;
+    }
+
+    .width-plt-r {
+        min-width: 90%;
+    }
+
+    .poer-cs2-p {
+        margin-left: 4em;
+    }
+
+    .plt-bt-m {
+        min-width: 8em;
+    }
+
+    .plt-div-m {
+        margin-left: 22em;
+    }
+
+    .mrg-sd {
+        margin-top: 5em;
+        margin-right: 2em;
+    }
+
+    .max-wd-w {
+        max-width = 40%;
+    }
+</style>
+
+<div class="post-view">
+    <h1 class="top-heading">Post a Virus</h1>
+    <form method="post" class="centr-plt">
+        <div class="row maxdc">
+            <div class="col-md-6 width-plt-r">
+                <div class="form-group">
+                    <label class="poer-cs" for="inputEmail4">Virus Name</label>
+                    <input class="form-control" id="inputEmail4" asp-for="@Model.Virus.Title" placeholder="Virus Name">
+                </div>
+                <div class="form-group">
+                    <label class="poer-cs1" for="inputPassword4">Virus Image link</label>
+                    <input asp-for="@Model.Virus.ImgURL" placeholder="Image URL">
+                </div>
+                <div class="form-group">
+                    <label class="poer-cs" for="inputPassword4">Virus Family</label>
+                    <input class="form-control width-control-plt" asp-for="@Model.Virus.ImgURL" placeholder="Virus Family">
+                </div>
+
+            </div>
+            <div class="col-md-6 width-plt mrg-sd">
+                <label class="poer-cs max-wd-w" for="Safety">Virus host</label>
+                <select name="Host" id="Host" class=" width-control custom-select selcenter   my-1 mr-sm-2 form-control-lg">
+                    <option selected>Select...</option>
+                    <option value="Animals">Animals</option>
+                    <option value="Plants">Plants</option>
+                    <option value="Fungus">Fungus</option>
+                    <option value="Bacteria">Bacteria</option>
+                    <option value="Virus">Virus</option>
+                </select>
+                <label class="poer-cs max-wd-w" for="Safety">Virus symptoms</label>
+                <select name="symptoms" id="symptoms" class=" width-control custom-select selcenter   my-1 mr-sm-2 form-control-lg">
+                    <option selected>Select...</option>
+                    @foreach (var item in Model.SymptomList)
+                    {
+                        <option value="@item.Name">@item.Name</option>
+                    }
+
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="poer-cs2-p" for="description">Virus Description</label>
+                <textarea class="form-control width-control-plt" asp-for="@Model.Virus.Description" placeholder="Virus Description"></textarea>
+                <label class="poer-cs2-p" for="Discovered">Founder</label>
+
+                <input class="form-control width-control" asp-for="@Model.Virus.DiscoveredBy" placeholder="Name">
+
+
+            </div>
+            <div class="form-group">
+                <label for="year">Year discovered</label>
+                <input class="form-control" type="date" id="year" asp-for="@Model.Virus.YearDiscovered" min="-1000" max="2023" placeholder="Year">
+            </div>
+        </div>
+
+        <div class="plt-div-m">
+            <button type="submit" class="btn btn-primary plt-bt-m">Post!</button>
+            <p style="font:italic">if you select "Select..." on any of the drop down menus, it will automatically set to the first value</p>
+        </div>
+    </form>
+</div>

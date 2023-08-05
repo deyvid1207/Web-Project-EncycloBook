@@ -16,5 +16,6 @@ namespace EncycloBookServices.Models
 
         public DeadlyBacteria DeadlyBacteria { get; set; }
         public List<Symptom> SymptomList { get; set;}
+        public int Id { get; set; }
     }
 }

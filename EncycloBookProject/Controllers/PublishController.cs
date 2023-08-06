@@ -32,8 +32,8 @@ namespace EncycloBookProject.Controllers
                 case "Virus":
                     return RedirectToAction("Virus");
                 default:
-                    return RedirectToPage("/");
-     
+                    return RedirectToAction("ViewAll", "Post");
+
             }
         }
 
@@ -75,8 +75,8 @@ namespace EncycloBookProject.Controllers
             model.Animal.Publisher = user;
 
             await services.PostAnimalAsync(model.Animal);
-          
-            return RedirectToRoute("/Post/ViewAll");
+
+            return RedirectToAction("ViewAll", "Post");
         }
 
         [HttpGet]
@@ -120,7 +120,7 @@ namespace EncycloBookProject.Controllers
             model.LeaveType = leaveType;
             await services.PostPlantAsync(model);
 
-            return RedirectToRoute("/Post/ViewAll");
+            return RedirectToAction("ViewAll", "Post");
         }
         [HttpGet]
         public IActionResult Fungus()
@@ -196,7 +196,7 @@ namespace EncycloBookProject.Controllers
             model.ParasiticFungus.Color = color;
             model.ParasiticFungus.GillsType = gillsType;
             await services.PostFungusAsync(model.ParasiticFungus);
-            return RedirectToRoute("/Post/ViewAll");
+            return RedirectToAction("ViewAll", "Post");
         }
         [HttpGet]
         public IActionResult Bacteria()
@@ -242,7 +242,7 @@ namespace EncycloBookProject.Controllers
             model.DeadlyBacteria.PublisherId = user.Id;
             model.DeadlyBacteria.Publisher = user;
             await services.PostBacteriaAsync(model.DeadlyBacteria);
-            return RedirectToPage("/");
+            return RedirectToAction("ViewAll", "Post");
         }
         public IActionResult Virus()
         {
@@ -278,7 +278,7 @@ namespace EncycloBookProject.Controllers
             model.Virus.PublisherId = user.Id;
             model.Virus.Publisher = user;
             await services.PostVirusAsync(model.Virus);
-            return RedirectToPage("/");
+            return RedirectToAction("ViewAll", "Post");
         }
     }
 }

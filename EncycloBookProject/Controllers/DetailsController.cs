@@ -116,7 +116,7 @@ namespace EncycloBookProject.Controllers
             model.Publisher = user;
             await services.EditPlant(model);
 
-            return RedirectToRoute("/Post/ViewAll");
+            return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "Plant" });
         }
         [HttpGet]
         public IActionResult EditFungus(int id)
@@ -138,7 +138,7 @@ namespace EncycloBookProject.Controllers
             model.Publisher = user;
             await services.EditFungus(model);
 
-            return RedirectToRoute("/Post/ViewAll");
+            return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "Fungus" });
         }
         [HttpGet]
         public IActionResult EditParasiticFungus(int id)
@@ -184,7 +184,7 @@ namespace EncycloBookProject.Controllers
             model.ParasiticFungus.Publisher = user;
             await services.EditParasiticFungus(model.ParasiticFungus);
 
-            return RedirectToRoute("/Post/ViewAll");
+            return RedirectToAction("ViewDetails", new { postId = model.ParasiticFungus.Id, postType = "ParasiticFungus" });
         }
 
 
@@ -208,7 +208,7 @@ namespace EncycloBookProject.Controllers
             model.Publisher = user;
             await services.EditBacteria(model);
 
-            return RedirectToRoute("/Post/ViewAll");
+            return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "Bacteria" });
         }
         [HttpGet]
         public IActionResult EditDeadlyBacteria(int id)
@@ -253,9 +253,10 @@ namespace EncycloBookProject.Controllers
 
             }
             await services.EditDeadlyBacteria(model.DeadlyBacteria);
-  
 
-            return RedirectToRoute("/Post/ViewAll");
+
+            return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "DeadlyBacteria" });
+
         }
         public IActionResult EditVirus(int id)
         {
@@ -299,9 +300,9 @@ namespace EncycloBookProject.Controllers
 
             }
             await services.EditVirus(model.Virus);
- 
 
-            return RedirectToRoute("/Post/ViewAll");
+            return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "Virus" });
+
         }
         [HttpPost]
         public async Task<IActionResult> DeletePost(int postId, string postType)
@@ -310,7 +311,7 @@ namespace EncycloBookProject.Controllers
             await services.DeletePost(postId, postType);
 
 
-            return RedirectToPage("/Post/ViewAll");
+            return RedirectToAction("ViewAll", "Post");
         }
     }
 

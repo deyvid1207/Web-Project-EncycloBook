@@ -553,12 +553,15 @@ namespace EncycloBookServices
         public async Task DeletePost(int id, string type)
         {
             var post = FindPost(id, type);
+            var comments = new List<Comment>();    
             if (post != null)
             {
                 switch (type)
                 {
                     case "Animal":
                         dbContext.Animals.Remove((Animal)post);
+
+                        
                         break;
                     case "Plant":
                         dbContext.Plants.Remove((Plant)post);
@@ -582,6 +585,9 @@ namespace EncycloBookServices
                         throw new ArgumentException("Post must be assigned!");
 
                 }
+                comments = post.Comments.ToList();
+
+                dbContext.Comments.RemoveRange(comments);
             }
             await dbContext.SaveChangesAsync();
         }

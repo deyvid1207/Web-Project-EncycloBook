@@ -2368,7 +2368,10 @@ progress {
         transition: none;
     }
 }
-
+.btn-fix {
+    min-width: 30%;
+    margin-left: 4em;
+}
 .form-control:hover:not(:disabled):not([readonly])::file-selector-button {
     background-color: #dde0e3;
 }
@@ -12794,8 +12797,18 @@ Userbutton {
     max-width: 70%;
     background-color: teal
 }
-.btnscr {
-    margin-left: 1em;
+.row-newp {
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    column-gap: 10px;
+}
+.btn-new-np {
+    margin-left: 4em;
+    min-width: 100%;
+ 
+}
+btnscr-np {
+    margin-left: 5em;
 }
 .row button:hover {
     background-color: steelblue;

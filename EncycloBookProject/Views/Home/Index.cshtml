@@ -3,10 +3,21 @@
 @using EncycloData.Models;
 @using EncycloData;
 @inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager;
 
 @{
     ViewData["Title"] = "Home Page";
 
+    ApplicationUser user = null;
+    if (User.Identity.Name == null)
+    {
+        
+    }
+    else
+    {
+         user = UserManager.Users.First(x => x.Email == User.Identity.Name);
+    }
+        
 }
 
 <html lang="en" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
@@ -141,6 +152,9 @@
             transform-origin: top right
         }
 
+        .btn-fixr {
+            margin-left: 6em;
+        }
         .fa-layers-bottom-right {
             bottom: var(--fa-bottom,0);
             right: var(--fa-right,0);
@@ -880,13 +894,15 @@
                 <div class="row">
                     <div class="col-lg-4 ms-auto">
                         <p class="paragraph  ">View all posts!</p>
-                        <button class="btn btn-primary">View all</button>
+                        <form asp-controller="Post" asp-action="ViewAll" method="get">
+                            <button type="submit" class="btn-fix btn btn-primary ">View all</button>
+                        </form>
                     </div>
                     <div class="col-lg-4 me-auto">
                         <p class="paragraph  ">Learn more about us!</p>
-
-                        <a class="btn btn-primary" method="get" type="submit" href="Home/About">Learn More</a>
-
+                        <form asp-controller="Home" asp-action="About" method="get">
+                        <button class="btn-fixr btn btn-primary" method="get" type="submit" href="Home/About">Learn More</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -909,11 +925,16 @@
                     <div class="divgrid div-left">
                         <div class="col-lg-6 text-center">
                             <p class="paragraph ">View all posts!</p>
-                            <a href="Post/ViewAll" class="btn btn-primary btn-new">View all</a>
+                            <form asp-controller="Post" asp-action="ViewAll" method="get"> 
+                            <button type="submit" class="btn btn-primary btn-new">View all</button>
+                            </form>
                         </div>
                         <div class="col-lg-6 text-center">
                             <p class="paragraph">View your posts!</p>
-                            <button class="btn btn-primary btn-new">View your posts</button>
+                            <form asp-controller="Account" asp-action="AccountPost" method="get">
+                                <input type="hidden" name="username" value="@user.UserName" />
+                            <button type="submit"class="btn btn-primary btn-new">View your posts</button>
+                            </form>
                         </div>
                     </div>
                     <div class="divgrid div-right">

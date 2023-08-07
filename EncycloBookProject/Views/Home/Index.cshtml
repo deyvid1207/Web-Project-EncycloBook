@@ -946,7 +946,10 @@
                         </div>
                         <div class="col-lg-6 text-center">
                             <p class="paragraph par-new">Your details!</p>
+                            <form asp-controller="Account" asp-action="AccountDetails" method="get">
+                                <input type="hidden" name="username" value="@user.UserName" />
                             <button class="btn btn-primary btn-new" method="get" type="submit">Your details</button>
+                            </form>
                         </div>
                     </div>
                 </div>

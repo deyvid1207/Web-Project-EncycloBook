@@ -1,3 +1,369 @@
 ﻿@using EncycloData;
 @model ApplicationUser;
 
+ 
+ <style>.custom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+    .del-but {
+        background-color: #ff0000; /* Red background color */
+        color: #ffffff; /* White text color */
+        padding: 8px 16px; /* Add some padding to make it visually more appealing */
+        border: none; /* Remove default border */
+        border-radius: 4px; /* Add rounded corners */
+        cursor: pointer; /* Change the cursor to a pointer when hovering */
+    }
+
+        .del-but:hover {
+            background-color: #cc0000; /* Darker red background color on hover */
+        }
+    .custom-card {
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        max-width: 140%;
+        width: 130%;
+        margin-top: 20%;
+    }
+
+.custom-form {
+  display: flex;
+  gap: 20px;
+}
+
+    .custom-left-side {
+        flex: 0.7;
+    }
+
+.custom-left-top {
+  background-color: #3d5af1;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+}
+
+.custom-left-top h4 {
+  margin: 0;
+}
+
+.custom-left-top p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.custom-carousel {
+  margin-top: 20px;
+}
+
+.custom-carousel img {
+  border-radius: 4px;
+}
+
+    .custom-right-side {
+        flex: 2;
+    }
+
+.custom-right-side h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.custom-right-side h5 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+    .maxt {
+        max-width: 50%;
+    }
+.custom-input_text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.custom-input_text input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-input_text span {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #888;
+}
+
+.custom-pay button {
+  background-color: #3d5af1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.custom-pay button:hover {
+  background-color: #2a42c8;
+}
+
+.custom-payemnts {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+.custom-payemnts i {
+  margin-right: 5px;
+}
+
+.custom-powered {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #888;
+}
+
+.custom-powered img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.custom-powered a {
+  color: #3d5af1;
+  text-decoration: none;
+}
+
+/* Additional styles for the carousel indicators */
+.custom-carousel-indicators {
+  position: relative;
+  bottom: 15px;
+}
+
+    .divgrid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+        .divgrid .text-center {
+            flex: 1;
+            margin: 0;
+        }
+
+    .div-right {
+        flex-direction: row-reverse;
+    }
+
+    /* Existing styles... */
+
+.custom-carousel-indicators button {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+    .mint {
+        max-width: 20%;
+        margin-right: 3em;
+        margin-bottom: 15em;
+    }
+.custom-carousel-indicators button.active {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start; /* Move buttons slightly upwards */
+        gap: 20px; /* Adjust the gap as needed */
+        margin-top: 20px;
+    }
+
+    .button-column {
+        flex: 1;
+        text-align: center;
+    }
+
+    .btn-new {
+        padding: 10px 20px; /* Adjust the padding for bigger buttons */
+        font-size: 14px; /* Adjust the font size for bigger buttons */
+    }
+
+    /* Rest of your existing styles... */
+
+
+    /* Rest of your existing styles... */
+
+/* Media query for responsive design */
+@@media screen and (max-width: 600px) {
+  .custom-form {
+    flex-direction: column;
+  }
+
+  .custom-left-side,
+  .custom-right-side {
+    width: 100%;
+  }
+}</style>
+
+
+
+<div class="custom-container">
+    <div class="custom-card mint">
+        <div class="custom-form">
+            <div class="custom-left-side">
+                <div class="custom-left-top">
+
+                    <h4>Account Details</h4>
+                    <p>@Model.UserName</p>
+                </div>
+                <div id="carouselExampleIndicators" class="custom-carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                    </div>
+                    <div class="carousel-inner">
+                        <img src="https://icon-library.com/images/my-account-icon/my-account-icon-3.jpg" class="maxt" alt="...">
+                    </div>
+                   
+                </div>
+
+                <h5>Go back</h5>
+                <a class="btn btn-primary btn-ou" href="/">Back</a>
+
+            </div>
+           
+        </div>
+             
+                </div>
+                <div class="left_text">
+
+
+ 
+            <div class="custom-right-side">
+               
+                <div class="input_div">
+                    <div class="input_text _input">
+                        <dt>Email</dt>
+                        <dd>@Model.Email.ToLower()</dd>
+                        <i class="fa fa-credit-card"></i>
+                    </div>
+                    <div class="cvv_month">
+                        <div class="input_text ">
+                            <h5>Your posts</h5>
+                            <label>@Model.Posts.Count</label>
+                         
+                        </div>
+                    <div class="input_text ">
+                        <h5>Your comments</h5>
+                        <label>@Model.Comments.Count</label>
+
+                    </div>
+                    <div class="input_text ">
+                        <h5>Your most liked post</h5>
+                        @if (Model.Posts.Any())
+                        {
+                            var mostLikedPost = Model.Posts.OrderByDescending(post => post.Likes.Count()).FirstOrDefault();
+                            <label>@(mostLikedPost != null ? mostLikedPost.Title : "No posts")</label>
+                            <form method="get">
+                                <input type="hidden" name="postId" value="@mostLikedPost.Id" />
+                                <input type="hidden" name="postType" value="@mostLikedPost.GetType().ToString().Remove(0, 19)" />
+                                <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">See it!</button>
+
+                            </form>
+                        }
+                        else
+                        {
+                            <label>No posts</label>
+                        }
+
+                    </div>
+                    <div class="input_text ">
+                        <h5>Your most recent post</h5>
+                        @if (Model.Posts.Any())
+                        {
+                            var mostrecentPost = Model.Posts.OrderByDescending(post => post.PublishedOn).FirstOrDefault();
+                            <label>@(mostrecentPost != null ? mostrecentPost.Title : "No posts")</label>
+                            <form method="get">
+                                <input type="hidden" name="postId" value="@mostrecentPost.Id" />
+                                <input type="hidden" name="postType" value="@mostrecentPost.GetType().ToString().Remove(0, 19)" />
+                                <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">See it!</button>
+
+                            </form>
+                        }
+                        else
+                        {
+                            <label>No posts</label>
+                        }
+
+                    </div>
+                    <div class="input_text ">
+                        <h5>Your most recent Comment</h5>
+                        @if (Model.Comments.Any())
+                        {
+                            var mostRecentComment = Model.Comments.OrderByDescending(comment => comment.PublishedOn).FirstOrDefault();
+                            <label>@(mostRecentComment != null ? mostRecentComment.Content: "No comment")</label>
+                        }
+                        else
+                        {
+                            <label>No comments</label>
+                        }
+
+                    </div>
+                    </div>          
+
+                        
+                        </div>
+                    
+
+                </div>
+            </div>
+            <div >
+       
+    </div>
+        </div>
+
+<div class="button-container">
+    <div class="col-lg-6 text-center button-column">
+        <form asp-controller="Post" asp-action="ViewAll" method="get">
+            <button type="submit" class="btn btn-sm btn-primary btn-new">View all</button>
+        </form>
+    </div>
+    <div class="col-lg-6 text-center button-column">
+        <form asp-controller="Account" asp-action="AccountPost" method="get">
+            <input type="hidden" name="username" value="@Model.UserName" />
+            <button type="submit" class="btn btn-sm btn-primary btn-new">View your posts</button>
+        </form>
+    </div>
+    <div class="col-lg-6 text-center button-column">
+        <form>
+            <button class="btn btn-sm btn-primary btn-new" method="get" type="submit" asp-controller="Home" asp-action="About">Learn More</button>
+        </form>
+    </div>
+    <div class="col-lg-6 text-center button-column">
+        <form asp-controller="Post" asp-action="Publish" method="get">
+            <button class="btn btn-sm btn-primary btn-new" method="get" type="submit">Publish</button>
+        </form>
+    </div>
+</div>
+</div>

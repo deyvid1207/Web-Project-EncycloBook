@@ -12792,10 +12792,15 @@ html {
     max-width: 70%;
     background-color: teal
 }
-
+.edit {
+    min-width: 260%;
+}
 Userbutton {
     max-width: 70%;
     background-color: teal
+}
+.comments-list-m {
+    margin-top: 7em;
 }
 .row-newp {
     display: grid;

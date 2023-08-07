@@ -31,6 +31,13 @@ namespace EncycloBookProject.Controllers
 
  
         }
+        [HttpGet]
+        public IActionResult AccountDetails(string username)
+        {
+            var user = services.GetUser(username);
+
+            return View(user);
+        }
     }
 }
  

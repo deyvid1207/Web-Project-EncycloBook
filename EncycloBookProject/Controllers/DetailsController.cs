@@ -76,9 +76,9 @@ namespace EncycloBookProject.Controllers
             {
                 model.Animal.Food = model.Foods.FirstOrDefault(x => x.Name == food);
             }
-            if (IsWild == "true")
+            if (IsWild == "True")
             {
-                model.Animal.IsWild = false;
+                model.Animal.IsWild = true;
 
             }
             else

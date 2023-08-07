@@ -6,7 +6,6 @@ connection.start()
         // Enable the "Add comment" button after the connection is established.
         document.getElementById("addcomment").disabled = false;
 
-        // In your JavaScript code
         connection.on("ReceiveComment", (user, comment, time) => {
             // Create a new comment element and append it to the comments section
             const newCommentElement = document.createElement("div");
@@ -27,7 +26,6 @@ connection.start()
         return console.error(err.toString());
     });
 
-// In your JavaScript code
 document.getElementById("addcomment").addEventListener("click", () => {
     const commentInput = document.getElementById("messageInput");
     const userInput = document.getElementById("userName");

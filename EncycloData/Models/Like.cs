@@ -22,8 +22,6 @@ namespace EncycloData.Models
         [ForeignKey("User")]
         public Guid UserId { get; set; }
         public DateTime LikedOn { get; set; }
-
-        // Navigation properties
         public virtual Post Post { get; set; }
         public virtual ApplicationUser User { get; set; }
     }

@@ -382,7 +382,7 @@ namespace EncycloBookServices
 
             return post;
       
-        }
+         }
         public async Task LikePost(Post post, string username)
         {
      
@@ -423,7 +423,7 @@ namespace EncycloBookServices
 
                 dbContext.Comments.Add(comment);
                 post.Comments.Add(comment);
-                user.Comments.Add(comment);
+      
             }
  
          

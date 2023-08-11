@@ -12,7 +12,6 @@ namespace EncycloData.Models
     {
        
 
-        public int Likes { get; set; } = 0;
 
         [Required]
         [MinLength(3)]

@@ -594,7 +594,6 @@ C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\D
 C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\System.Composition.Runtime.dll
 C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\System.Composition.TypedParts.dll
 C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
@@ -1051,3 +1050,6 @@ C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\obj\De
 C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBookProject.genruntimeconfig.cache
 C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\ref\EncycloBookProject.dll
 C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\libman.json
+C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\nunit.framework.dll
+C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\EncycloBookProject\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll

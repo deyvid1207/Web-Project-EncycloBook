@@ -332,3 +332,12 @@ C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\Tests\bin\Debug\net6.0\E
 C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\Tests\bin\Debug\net6.0\EncycloData.dll
 C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\Tests\bin\Debug\net6.0\EncycloBookServices.pdb
 C:\Users\drn12\Documents\GitHub\Web-Project-EncycloBook\Tests\bin\Debug\net6.0\EncycloData.pdb
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\Tests.csproj.AssemblyReference.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\Tests.AssemblyInfoInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\Tests.AssemblyInfo.cs
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\Tests.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\Tests.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\refint\Tests.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\Tests.pdb

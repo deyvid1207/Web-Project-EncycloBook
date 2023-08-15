@@ -1,0 +1,12 @@
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\bin\Debug\net6.0\EncycloBook.Common.deps.json
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\bin\Debug\net6.0\EncycloBook.Common.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\bin\Debug\net6.0\EncycloBook.Common.pdb
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.csproj.AssemblyReference.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.AssemblyInfoInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.AssemblyInfo.cs
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\obj\Debug\net6.0\refint\EncycloBook.Common.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.pdb
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Common\obj\Debug\net6.0\ref\EncycloBook.Common.dll

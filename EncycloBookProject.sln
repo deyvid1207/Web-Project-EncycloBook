@@ -3,13 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncycloBookProject", "EncycloBookProject\EncycloBookProject.csproj", "{B6AE535D-8AD6-448A-A9D0-1CCC914BCEC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncycloBook.Web", "EncycloBookProject\EncycloBook.Web.csproj", "{B6AE535D-8AD6-448A-A9D0-1CCC914BCEC9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncycloData", "EncycloData\EncycloData.csproj", "{F84E60C9-EEE1-4CC2-A7F0-4DBAD385BDEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncycloBook.Data", "EncycloData\EncycloBook.Data.csproj", "{F84E60C9-EEE1-4CC2-A7F0-4DBAD385BDEF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncycloBookServices", "EncycloBookServices\EncycloBookServices.csproj", "{73827056-5430-42D6-A7D4-2C6DD673DC27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncycloBook.Tests", "Tests\EncycloBook.Tests.csproj", "{FF8C333F-E383-4B5E-AE4C-64EFE2208674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{FF8C333F-E383-4B5E-AE4C-64EFE2208674}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncycloBook.Common", "Common\EncycloBook.Common.csproj", "{4F36B931-B80F-4D4A-B008-0AB6C56B43AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{059B883A-666F-46EE-892B-DD916EA413C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F4AF55CE-E336-49B7-85E1-E36BFE1714FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncycloBook.Data.Models", "EncycloBook.Data.Models\EncycloBook.Data.Models.csproj", "{2A8BCDF2-6EAC-42EC-B5A3-6B28BFB0DAFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{ED3C23C5-0A3A-4FD2-8495-A53D7E311707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncycloBook.ViewModels", "EncycloBook.ViewModels\EncycloBook.ViewModels.csproj", "{99AD0302-EC9B-44FE-A38E-C31B27E3BB57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncycloBook.Services", "EncycloBook.Services\EncycloBook.Services.csproj", "{9C80A2EE-C1E3-42D2-893D-F0F2391ADA50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,17 +37,36 @@ Global
 		{F84E60C9-EEE1-4CC2-A7F0-4DBAD385BDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F84E60C9-EEE1-4CC2-A7F0-4DBAD385BDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F84E60C9-EEE1-4CC2-A7F0-4DBAD385BDEF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73827056-5430-42D6-A7D4-2C6DD673DC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73827056-5430-42D6-A7D4-2C6DD673DC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73827056-5430-42D6-A7D4-2C6DD673DC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73827056-5430-42D6-A7D4-2C6DD673DC27}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF8C333F-E383-4B5E-AE4C-64EFE2208674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF8C333F-E383-4B5E-AE4C-64EFE2208674}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF8C333F-E383-4B5E-AE4C-64EFE2208674}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF8C333F-E383-4B5E-AE4C-64EFE2208674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F36B931-B80F-4D4A-B008-0AB6C56B43AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F36B931-B80F-4D4A-B008-0AB6C56B43AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F36B931-B80F-4D4A-B008-0AB6C56B43AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F36B931-B80F-4D4A-B008-0AB6C56B43AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A8BCDF2-6EAC-42EC-B5A3-6B28BFB0DAFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8BCDF2-6EAC-42EC-B5A3-6B28BFB0DAFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8BCDF2-6EAC-42EC-B5A3-6B28BFB0DAFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8BCDF2-6EAC-42EC-B5A3-6B28BFB0DAFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99AD0302-EC9B-44FE-A38E-C31B27E3BB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99AD0302-EC9B-44FE-A38E-C31B27E3BB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99AD0302-EC9B-44FE-A38E-C31B27E3BB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99AD0302-EC9B-44FE-A38E-C31B27E3BB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C80A2EE-C1E3-42D2-893D-F0F2391ADA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C80A2EE-C1E3-42D2-893D-F0F2391ADA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C80A2EE-C1E3-42D2-893D-F0F2391ADA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C80A2EE-C1E3-42D2-893D-F0F2391ADA50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B6AE535D-8AD6-448A-A9D0-1CCC914BCEC9} = {059B883A-666F-46EE-892B-DD916EA413C4}
+		{F84E60C9-EEE1-4CC2-A7F0-4DBAD385BDEF} = {F4AF55CE-E336-49B7-85E1-E36BFE1714FC}
+		{2A8BCDF2-6EAC-42EC-B5A3-6B28BFB0DAFD} = {F4AF55CE-E336-49B7-85E1-E36BFE1714FC}
+		{99AD0302-EC9B-44FE-A38E-C31B27E3BB57} = {059B883A-666F-46EE-892B-DD916EA413C4}
+		{9C80A2EE-C1E3-42D2-893D-F0F2391ADA50} = {ED3C23C5-0A3A-4FD2-8495-A53D7E311707}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4903F370-A33A-4891-8354-E558480D561B}

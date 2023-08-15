@@ -1,20 +1,25 @@
-﻿using EncycloBookServices.Contacts;
+﻿using EncycloBook.Data.Models.Posts;
+using EncycloBook.Services.EditServices.Contracts;
+using EncycloBook.Services.FoodServices.Contracts;
+using EncycloBook.Services.PostServices.Contracts;
+using EncycloBook.Services.SymptomServices.Contracts;
+using EncycloBook.Services.UserServices.Contracts;
+using EncycloBookServices.Contacts;
 using EncycloData.Migrations;
-using EncycloData.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EncycloBookProject.Controllers
 {
     public class AccountController : BaseController
     {
-        public AccountController(IEncycloServices services) : base(services)
+        public AccountController(IPostServices postServices, IFoodServices foodServices, ISymptomServices symptomServices, IEditServices editServices, IUserServices userServices) : base(postServices, foodServices, symptomServices, editServices, userServices)
         { 
         }
         [HttpGet]
         public IActionResult AccountPost(string username)
         {
-            var user = services.GetUser(username);
-            var model = services.ViewAll();
+            var user = userServices.GetUser(username);
+            var model = postServices.ViewAll();
             List<Post> filtered = model.Posts.Where(x => x.PublisherId == user.Id).ToList();
 
             return View(filtered);

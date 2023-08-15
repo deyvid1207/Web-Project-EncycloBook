@@ -1,0 +1,5 @@
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookServices\obj\Debug\net6.0\EncycloBook.Core.csproj.AssemblyReference.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookServices\obj\Debug\net6.0\EncycloBook.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookServices\obj\Debug\net6.0\EncycloBook.Core.AssemblyInfoInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookServices\obj\Debug\net6.0\EncycloBook.Core.AssemblyInfo.cs
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookServices\obj\Debug\net6.0\EncycloBook.Core.csproj.CoreCompileInputs.cache

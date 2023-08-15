@@ -1,4 +1,6 @@
-﻿using EncycloBookServices.Contacts;
+﻿using EncycloBook.Data.Models.Models;
+using EncycloBook.Data.Models.Posts;
+using EncycloBookServices.Contacts;
 using EncycloBookServices.Models;
 using EncycloData;
 using EncycloData.Models;

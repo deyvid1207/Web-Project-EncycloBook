@@ -1,5 +1,4 @@
-﻿using EncycloData;
-using EncycloData.Models;
+﻿using EncycloData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using EncycloBookProject.Models;
 using Microsoft.EntityFrameworkCore;
+using EncycloBook.Data.Models.Models;
+using EncycloBook.Data.Models.Properties;
+using EncycloBook.Data.Models.Posts;
+using EncycloBook.Data.Models;
 
 namespace EncycloBookServices.Contacts
 {

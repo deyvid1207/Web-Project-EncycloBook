@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using EncycloData;
+using EncycloBook.Data.Models;
 
 namespace EncycloBookProject.Areas.Identity.Pages.Account
 {

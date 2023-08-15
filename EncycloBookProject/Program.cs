@@ -1,9 +1,10 @@
+using EncycloBook.Data;
+using EncycloBook.Data.Models;
 using EncycloBookProject.Hubs;
 using EncycloBookServices;
 using EncycloBookServices.Contacts;
-using EncycloData;
 using Microsoft.AspNetCore.Identity;
- 
+
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 

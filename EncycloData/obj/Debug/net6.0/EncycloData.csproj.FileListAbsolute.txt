@@ -46,3 +46,15 @@ C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloData\obj\Debug\net
 C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\refint\EncycloData.dll
 C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\EncycloData.pdb
 C:\Users\ACER\Documents\GitHub\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\ref\EncycloData.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\bin\Debug\net6.0\EncycloData.deps.json
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\bin\Debug\net6.0\EncycloData.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\bin\Debug\net6.0\EncycloData.pdb
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\EncycloData.csproj.AssemblyReference.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\EncycloData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\EncycloData.AssemblyInfoInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\EncycloData.AssemblyInfo.cs
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\EncycloData.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\EncycloData.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\refint\EncycloData.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\EncycloData.pdb
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloData\obj\Debug\net6.0\ref\EncycloData.dll

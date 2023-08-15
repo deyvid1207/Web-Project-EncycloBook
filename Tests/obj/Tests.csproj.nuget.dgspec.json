@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\Tests\\Tests.csproj": {}
+    "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj": {
+    "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBook.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj",
-        "projectName": "EncycloBookServices",
-        "projectPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj",
-        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\obj\\",
+        "projectUniqueName": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBook.Core.csproj",
+        "projectName": "EncycloBook.Core",
+        "projectPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBook.Core.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloBookServices\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj": {
-                "projectPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj"
+              "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
+                "projectPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
               }
             }
           }
@@ -73,21 +73,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj": {
+    "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj",
-        "projectName": "EncycloData",
-        "projectPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj",
-        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\obj\\",
+        "projectUniqueName": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj",
+        "projectName": "EncycloBook.Data",
+        "projectPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -150,21 +150,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\Tests\\Tests.csproj": {
+    "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\Tests\\Tests.csproj",
+        "projectUniqueName": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\Tests\\obj\\",
+        "projectPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -178,11 +178,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj": {
-                "projectPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBookServices.csproj"
+              "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBook.Core.csproj": {
+                "projectPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloBookServices\\EncycloBook.Core.csproj"
               },
-              "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj": {
-                "projectPath": "C:\\Users\\drn12\\Documents\\GitHub\\Web-Project-EncycloBook\\EncycloData\\EncycloData.csproj"
+              "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
+                "projectPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
               }
             }
           }
@@ -234,7 +234,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,15 @@
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\obj\Debug\net6.0\EncycloBook.Data.Models.csproj.AssemblyReference.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\obj\Debug\net6.0\EncycloBook.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\obj\Debug\net6.0\EncycloBook.Data.Models.AssemblyInfoInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\obj\Debug\net6.0\EncycloBook.Data.Models.AssemblyInfo.cs
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\obj\Debug\net6.0\EncycloBook.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\bin\Debug\net6.0\EncycloBook.Data.Models.deps.json
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\bin\Debug\net6.0\EncycloBook.Data.Models.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\bin\Debug\net6.0\EncycloBook.Data.Models.pdb
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\bin\Debug\net6.0\EncycloBook.Common.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\bin\Debug\net6.0\EncycloBook.Common.pdb
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\obj\Debug\net6.0\EncycloBook.Data.Models.csproj.CopyComplete
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\obj\Debug\net6.0\EncycloBook.Data.Models.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\obj\Debug\net6.0\refint\EncycloBook.Data.Models.dll
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\obj\Debug\net6.0\EncycloBook.Data.Models.pdb
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBook.Data.Models\obj\Debug\net6.0\ref\EncycloBook.Data.Models.dll

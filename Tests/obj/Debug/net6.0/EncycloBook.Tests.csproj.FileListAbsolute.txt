@@ -1,0 +1,6 @@
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\EncycloBook.Tests.csproj.AssemblyReference.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\EncycloBook.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\EncycloBook.Tests.AssemblyInfoInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\EncycloBook.Tests.AssemblyInfo.cs
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\Tests\obj\Debug\net6.0\EncycloBook.Tests.csproj.CoreCompileInputs.cache

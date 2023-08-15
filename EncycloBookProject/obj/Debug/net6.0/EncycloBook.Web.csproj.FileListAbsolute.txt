@@ -1,0 +1,8 @@
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.csproj.AssemblyReference.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.AssemblyInfoInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.AssemblyInfo.cs
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.RazorAssemblyInfo.cache
+C:\Users\ACER\Documents\GitHub\New-Web-Project-EncycloBook\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.RazorAssemblyInfo.cs

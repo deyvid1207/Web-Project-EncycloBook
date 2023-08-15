@@ -1,8 +1,9 @@
 using EncycloBookServices;
 using EncycloBookServices.Contacts;
-using EncycloData;
+using EncycloBook.Data.Models.Posts;
+
 using EncycloData.Migrations;
-using EncycloData.Models;
+using EncycloBook.Data.Models;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Linq;
 using System.Security.Policy;
+using EncycloBook.Data;
 
 namespace Tests
 {

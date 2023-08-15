@@ -1,19 +1,37 @@
 using EncycloBook.Data;
 using EncycloBook.Data.Models;
 using EncycloBookProject.Hubs;
-using EncycloBookServices;
-using EncycloBookServices.Contacts;
 using Microsoft.AspNetCore.Identity;
 
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using EncycloBook.Services.FoodServices.Contracts;
+using EncycloBook.Data.Models.Properties;
+using EncycloBook.Services.FoodServices;
+using EncycloBook.Services.PostServices;
+using EncycloBook.Services.PostServices.Contracts;
+using EncycloBook.Services.AllPostsServices.Contracts;
+using EncycloBook.Services.AllPostsServices;
+using EncycloBook.Services.SymptomServices.Contracts;
+using EncycloBook.Services.SymptomServices;
+using EncycloBook.Services.EditServices.Contracts;
+using EncycloBook.Services.EditServices;
+using EncycloBook.Services.UserServices.Contracts;
+using EncycloBook.Services.UserServices;
+using EncycloBook.Services.CommentServices.Contracts;
+using EncycloBook.Services.CommentServices;
 
 var builder = WebApplication.CreateBuilder(args);
  
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddScoped<IEncycloServices, EncycloServices>();
+builder.Services.AddScoped<IFoodServices, FoodServices>();
+builder.Services.AddScoped<ISymptomServices, SymptomServces>();
+builder.Services.AddScoped<IEditServices, EditServices>();
+builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddScoped<ICommentServices, CommentServices>();
+builder.Services.AddScoped<IPostServices, PostServices>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()

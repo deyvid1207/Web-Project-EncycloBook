@@ -1,4 +1,5 @@
-﻿using EncycloData.Models;
+﻿using EncycloBook.Data.Models.Posts;
+using EncycloBook.Data.Models.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;

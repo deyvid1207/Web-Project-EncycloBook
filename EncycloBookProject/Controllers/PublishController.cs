@@ -1,18 +1,35 @@
-﻿using EncycloBookServices;
-using EncycloBookServices.Contacts;
-using EncycloBookServices.Models;
-using EncycloData.Models;
+﻿
+using EncycloBook.Services.AllPostsServices.Contracts;
+using EncycloBook.Services.EditServices.Contracts;
+using EncycloBook.Services.FoodServices.Contracts;
+using EncycloBook.Services.PostServices.Contracts;
+using EncycloBook.Services.SymptomServices.Contracts;
+using EncycloBook.Services.UserServices.Contracts;
+using EncycloBook.ViewModels.PostModels;
+using EncycloBook.Data.Models.Posts;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.IIS.Core;
 using Microsoft.DotNet.Scaffolding.Shared.Project;
 
 namespace EncycloBookProject.Controllers
 {
-    public class PublishController : BaseController
+    public class PublishController : Controller
     {
-    
 
-        public PublishController(IEncycloServices services) : base(services)
+        private readonly IPostServices postServices;
+        private readonly IUserServices userServices;
+        private readonly IAllPostServices allPostServices;
+        private readonly IFoodServices foodServices;
+        private readonly ISymptomServices symptomServices;
+        private readonly IEditServices editServices;
+        public PublishController(IPostServices postServices, IFoodServices foodServices, ISymptomServices symptomServices, IEditServices editServices, IUserServices userServices, IAllPostServices allPostServices)
         {
+            this.postServices = postServices;
+            this.userServices = userServices;
+            this.allPostServices = allPostServices;
+            this.foodServices = foodServices;
+            this.symptomServices = symptomServices;
+            this.editServices = editServices;     
         }
 
         [HttpPost]
@@ -41,14 +58,14 @@ namespace EncycloBookProject.Controllers
         public IActionResult Animal()
         {
             var AnimalVM = new AnimalWithFoodViewModel();
-            AnimalVM.Foods = services.GetFood();
+            AnimalVM.Foods = foodServices.GetFood();
             return View(AnimalVM);
         }
         [HttpPost]
         public async Task<IActionResult> Animal(AnimalWithFoodViewModel model)
         {
-            model.Foods = services.GetFood();
-            var user = services.GetUser(User.Identity.Name);
+            model.Foods = foodServices.GetFood();
+            var user = userServices.GetUser(User.Identity.Name);
             string Aclass = Request.Form["class"];
             string food = Request.Form["food"];
             string IsWild = Request.Form["wild"];
@@ -74,7 +91,7 @@ namespace EncycloBookProject.Controllers
             model.Animal.PublisherId = user.Id;
             model.Animal.Publisher = user;
 
-            await services.PostAnimalAsync(model.Animal);
+            await postServices.PostAnimalAsync(model.Animal);
 
             return RedirectToAction("ViewAll", "Post");
         }
@@ -111,14 +128,14 @@ namespace EncycloBookProject.Controllers
                 leaveType = "Simple";
 
             }
-            var user = services.GetUser(User.Identity.Name);
+            var user = userServices.GetUser(User.Identity.Name);
             model.PublisherId = user.Id;
             model.RootType = root;
             model.StemType = stem;
             model.Publisher = user;
             model.Color = color;
             model.LeaveType = leaveType;
-            await services.PostPlantAsync(model);
+            await postServices.PostPlantAsync(model);
 
             return RedirectToAction("ViewAll", "Post");
         }
@@ -126,7 +143,7 @@ namespace EncycloBookProject.Controllers
         public IActionResult Fungus()
         {
             var FungusVM = new FungusWithSymptomsViewModel();
-            FungusVM.SymptomList = services.GetSymptoms();
+            FungusVM.SymptomList = symptomServices.GetSymptoms();
             return View(FungusVM);
         }
         [HttpPost]
@@ -150,11 +167,11 @@ namespace EncycloBookProject.Controllers
             string Symptom = Request.Form["symptoms"];
             if (Symptom == null)
             {
-                model.ParasiticFungus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Id == 1);
+                model.ParasiticFungus.Symptom = symptomServices.GetSymptoms().FirstOrDefault(x => x.Id == 1);
             }
             else
             {
-                model.ParasiticFungus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
+                model.ParasiticFungus.Symptom = symptomServices.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
 
             }
             switch (Host)
@@ -190,19 +207,19 @@ namespace EncycloBookProject.Controllers
             {
                 model.ParasiticFungus.IsPoisonous = true;
             }
-            var user = services.GetUser(User.Identity.Name);
+            var user = userServices.GetUser(User.Identity.Name);
             model.ParasiticFungus.PublisherId = user.Id;
             model.ParasiticFungus.Publisher = user;
             model.ParasiticFungus.Color = color;
             model.ParasiticFungus.GillsType = gillsType;
-            await services.PostFungusAsync(model.ParasiticFungus);
+            await postServices.PostFungusAsync(model.ParasiticFungus);
             return RedirectToAction("ViewAll", "Post");
         }
         [HttpGet]
         public IActionResult Bacteria()
         {
             var BacteriaVM = new BacteriaWithSymptomsViewModel();
-            BacteriaVM.SymptomList = services.GetSymptoms();
+            BacteriaVM.SymptomList = symptomServices.GetSymptoms();
             return View(BacteriaVM);
         }
         [HttpPost]
@@ -216,11 +233,11 @@ namespace EncycloBookProject.Controllers
                 string Symptom = Request.Form["symptoms"];
                 if (Symptom == null)
                 {
-                    model.DeadlyBacteria.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Id == 1);
+                    model.DeadlyBacteria.Symptom = symptomServices.GetSymptoms().FirstOrDefault(x => x.Id == 1);
                 }
                 else
                 {
-                    model.DeadlyBacteria.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
+                    model.DeadlyBacteria.Symptom = symptomServices.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
 
                 }
                 switch (Host)
@@ -238,16 +255,16 @@ namespace EncycloBookProject.Controllers
             {   
                 model.DeadlyBacteria.IsDeadly = false;
             }
-            var user = services.GetUser(User.Identity.Name);
+            var user = userServices.GetUser(User.Identity.Name);
             model.DeadlyBacteria.PublisherId = user.Id;
             model.DeadlyBacteria.Publisher = user;
-            await services.PostBacteriaAsync(model.DeadlyBacteria);
+            await postServices.PostBacteriaAsync(model.DeadlyBacteria);
             return RedirectToAction("ViewAll", "Post");
         }
         public IActionResult Virus()
         {
             var ViruswSymptoms = new VirusWithSymptomsViewModel();
-            ViruswSymptoms.SymptomList = services.GetSymptoms();
+            ViruswSymptoms.SymptomList = symptomServices.GetSymptoms();
             return View(ViruswSymptoms);
         }
         [HttpPost]
@@ -257,11 +274,11 @@ namespace EncycloBookProject.Controllers
             string Symptom = Request.Form["symptoms"];
             if (Symptom == null)
             {
-                model.Virus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Id == 1);
+                model.Virus.Symptom = symptomServices.GetSymptoms().FirstOrDefault(x => x.Id == 1);
             }
             else
             {
-                model.Virus.Symptom = services.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
+                model.Virus.Symptom = symptomServices.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
 
             }
             switch (Host)
@@ -274,10 +291,10 @@ namespace EncycloBookProject.Controllers
                     break;
 
             }
-            var user = services.GetUser(User.Identity.Name);
+            var user = userServices.GetUser(User.Identity.Name);
             model.Virus.PublisherId = user.Id;
             model.Virus.Publisher = user;
-            await services.PostVirusAsync(model.Virus);
+            await postServices.PostVirusAsync(model.Virus);
             return RedirectToAction("ViewAll", "Post");
         }
     }

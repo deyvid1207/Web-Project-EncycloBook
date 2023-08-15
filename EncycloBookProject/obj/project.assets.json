@@ -4057,6 +4057,35 @@
         "runtime": {
           "bin/placeholder/EncycloBook.Data.Models.dll": {}
         }
+      },
+      "EncycloBook.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EncycloBook.Data": "1.0.0",
+          "EncycloBook.Data.Models": "1.0.0",
+          "EncycloBook.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EncycloBook.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EncycloBook.Services.dll": {}
+        }
+      },
+      "EncycloBook.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EncycloBook.Data": "1.0.0",
+          "EncycloBook.Data.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EncycloBook.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EncycloBook.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -11417,11 +11446,21 @@
       "type": "project",
       "path": "../EncycloBook.Data.Models/EncycloBook.Data.Models.csproj",
       "msbuildProject": "../EncycloBook.Data.Models/EncycloBook.Data.Models.csproj"
+    },
+    "EncycloBook.Services/1.0.0": {
+      "type": "project",
+      "path": "../EncycloBook.Services/EncycloBook.Services.csproj",
+      "msbuildProject": "../EncycloBook.Services/EncycloBook.Services.csproj"
+    },
+    "EncycloBook.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../EncycloBook.ViewModels/EncycloBook.ViewModels.csproj",
+      "msbuildProject": "../EncycloBook.ViewModels/EncycloBook.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "EncycloBook.Data >= 1.0.0",
+      "EncycloBook.Services >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.15",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.20",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.20",
@@ -11433,19 +11472,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ACER\\.nuget\\packages\\": {}
+    "C:\\Users\\drn12\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj",
+      "projectUniqueName": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj",
       "projectName": "EncycloBook.Web",
-      "projectPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj",
-      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloBookProject\\obj\\",
+      "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj",
+      "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+      "outputPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBookProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11453,15 +11492,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
-              "projectPath": "C:\\Users\\ACER\\Documents\\GitHub\\New-Web-Project-EncycloBook\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
+            "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj": {
+              "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj"
             }
           }
         }
@@ -11530,7 +11568,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },

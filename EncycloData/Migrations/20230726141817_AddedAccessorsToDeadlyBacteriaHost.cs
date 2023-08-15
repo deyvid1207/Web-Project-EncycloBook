@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace EncycloData.Migrations
+namespace EncycloBook.Data.Migrations
 {
     public partial class AddedAccessorsToDeadlyBacteriaHost : Migration
     {

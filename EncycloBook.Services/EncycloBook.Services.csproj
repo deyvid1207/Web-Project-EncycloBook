@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EncycloBook.Data.Models\EncycloBook.Data.Models.csproj" />
+    <ProjectReference Include="..\EncycloBook.ViewModels\EncycloBook.ViewModels.csproj" />
     <ProjectReference Include="..\EncycloData\EncycloBook.Data.csproj" />
   </ItemGroup>
 

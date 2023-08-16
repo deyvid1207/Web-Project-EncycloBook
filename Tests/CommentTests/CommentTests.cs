@@ -31,6 +31,12 @@ namespace EncycloBook.Tests.CommentTests
             this.commentServices = new CommentServices(this.dbContext);
 
         }
+        [TearDown]
+        public void TearDown()
+        {
+            // Dispose of the current DbContext to clear the in-memory database
+            this.dbContext.Dispose();
+        }
         [Test]
         public async Task CommentPostAddsCommentToPostAndUserWhenUserNotNull()
         {
@@ -57,11 +63,11 @@ namespace EncycloBook.Tests.CommentTests
                 IsWild = true, // Set whether the animal is wild or not};
 
             };
-            dbContext.Add(post);
+            await dbContext.AddAsync(post);
             await dbContext.SaveChangesAsync();
 
 
-            dbContext.Add(user);
+            await dbContext.AddAsync(user);
             await dbContext.SaveChangesAsync();
 
             var comment = new Comment()
@@ -85,7 +91,7 @@ namespace EncycloBook.Tests.CommentTests
         public async Task CommentPostDoesNotAddCommentWhenUserIsNull()
         {
 
-            ApplicationUser user = null;
+           
             // Test data setup
             var post = new Animal()
             {
@@ -103,7 +109,7 @@ namespace EncycloBook.Tests.CommentTests
                 IsWild = true, // Set whether the animal is wild or not};
 
             };
-            dbContext.Add(post);
+            await dbContext.AddAsync(post);
             await dbContext.SaveChangesAsync();
 
             var comment = new Comment()
@@ -115,10 +121,100 @@ namespace EncycloBook.Tests.CommentTests
             };
 
             // Act
-            await commentServices.CommentPost(post, user, comment);
+            await commentServices.CommentPost(post, null, comment);
 
             // Assert
             Assert.AreEqual(0, post.Comments.Count);
+
+        }
+        [Test]
+        public async Task CommentGetsAddedCorrectly()
+        {
+
+            var user = new ApplicationUser
+            {
+                Id = Guid.NewGuid(),
+                UserName = "testUser",
+                Email = "test@example.com"
+            };
+            // Test data setup
+            var post = new Animal()
+            {
+                Id = 1,
+                Title = "Test Animal",
+                DiscoveredBy = "Discoverer Name", // Replace with actual discoverer name
+                PublishedOn = DateTime.Now, // Set the publication date and time
+                ImgURL = "https://example.com/image.jpg", // Replace with actual image URL
+                Description = "This is a test animal description.", // Replace with the description
+                PublisherId = Guid.NewGuid(), // Replace with actual publisher's GUID
+                Location = "Test Location", // Set the animal's location
+                AnimalClass = "Mammalia", // Set the animal's class
+                AnimalSubClass = "Mammal", // Set the animal's subclass
+                FoodId = 1, // Set the Food ID
+                IsWild = true, // Set whether the animal is wild or not};
+
+            };
+            await dbContext.AddAsync(post);
+            await dbContext.SaveChangesAsync();
+
+            var comment = new Comment()
+            {
+                Id = 1,
+                Content = "Test!",
+                PublishedOn = DateTime.Now,
+                PublisherId = Guid.NewGuid(),
+            };
+
+            // Act
+            await commentServices.CommentPost(post, user, comment);
+
+            // Assert
+            Assert.AreEqual("Test!", post.Comments.FirstOrDefault(x => x.Id == 1).Content);
+
+        }
+        [Test]
+        public async Task CommentGetsAddedCorrectlyToUserComments()
+        {
+
+            var user = new ApplicationUser
+            {
+                Id = Guid.NewGuid(),
+                UserName = "testUser",
+                Email = "test@example.com"
+            };
+            // Test data setup
+            var post = new Animal()
+            {
+                Id = 1,
+                Title = "Test Animal",
+                DiscoveredBy = "Discoverer Name", // Replace with actual discoverer name
+                PublishedOn = DateTime.Now, // Set the publication date and time
+                ImgURL = "https://example.com/image.jpg", // Replace with actual image URL
+                Description = "This is a test animal description.", // Replace with the description
+                PublisherId = Guid.NewGuid(), // Replace with actual publisher's GUID
+                Location = "Test Location", // Set the animal's location
+                AnimalClass = "Mammalia", // Set the animal's class
+                AnimalSubClass = "Mammal", // Set the animal's subclass
+                FoodId = 1, // Set the Food ID
+                IsWild = true, // Set whether the animal is wild or not};
+
+            };
+           await dbContext.AddAsync(post);
+            await dbContext.SaveChangesAsync();
+
+            var comment = new Comment()
+            {
+                Id = 1,
+                Content = "Test!",
+                PublishedOn = DateTime.Now,
+                PublisherId = Guid.NewGuid(),
+            };
+
+            // Act
+            await commentServices.CommentPost(post, user, comment);
+
+            // Assert
+            Assert.AreEqual("Test!", user.Comments.FirstOrDefault(x => x.Id == 1).Content);
 
         }
     }

@@ -15,7 +15,7 @@ namespace EncycloBook.Services.PostServices.Contracts
         public Task PostFungusAsync(ParasiticFungus model);
         public Task PostBacteriaAsync(DeadlyBacteria model);
         public Task PostVirusAsync(Virus model);
-        public Post FindPost(int id, string type);
+        public Task<Post> FindPost(int id, string type);
         public Task LikePost(Post post, string username);
         public Task CommentPost(Post post, ApplicationUser username, Comment comment);
         public Task DeletePost(int id, string type);

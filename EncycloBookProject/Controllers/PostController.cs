@@ -46,7 +46,7 @@ namespace EncycloBookProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Like(int itemId, string type, string ViewD, string anchor)
         {
-            var post = postServices.FindPost(itemId, type);
+            var post = await postServices.FindPost(itemId, type);
             await postServices.LikePost(post, User.Identity.Name);
             switch (ViewD)
             {

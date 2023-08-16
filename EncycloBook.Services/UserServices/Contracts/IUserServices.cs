@@ -9,7 +9,7 @@ namespace EncycloBook.Services.UserServices.Contracts
 {
     public interface IUserServices
     {
-        public ApplicationUser GetUser(string name);
+        public Task<ApplicationUser> GetUser(string name);
  
     }
 }

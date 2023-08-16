@@ -65,7 +65,7 @@ namespace EncycloBookProject.Controllers
         public async Task<IActionResult> Animal(AnimalWithFoodViewModel model)
         {
             model.Foods = foodServices.GetFood();
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             string Aclass = Request.Form["class"];
             string food = Request.Form["food"];
             string IsWild = Request.Form["wild"];
@@ -128,7 +128,7 @@ namespace EncycloBookProject.Controllers
                 leaveType = "Simple";
 
             }
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             model.PublisherId = user.Id;
             model.RootType = root;
             model.StemType = stem;
@@ -207,7 +207,7 @@ namespace EncycloBookProject.Controllers
             {
                 model.ParasiticFungus.IsPoisonous = true;
             }
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             model.ParasiticFungus.PublisherId = user.Id;
             model.ParasiticFungus.Publisher = user;
             model.ParasiticFungus.Color = color;
@@ -255,7 +255,7 @@ namespace EncycloBookProject.Controllers
             {   
                 model.DeadlyBacteria.IsDeadly = false;
             }
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             model.DeadlyBacteria.PublisherId = user.Id;
             model.DeadlyBacteria.Publisher = user;
             await postServices.PostBacteriaAsync(model.DeadlyBacteria);
@@ -291,7 +291,7 @@ namespace EncycloBookProject.Controllers
                     break;
 
             }
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             model.Virus.PublisherId = user.Id;
             model.Virus.Publisher = user;
             await postServices.PostVirusAsync(model.Virus);

@@ -21,18 +21,18 @@ namespace EncycloBookProject.Controllers
             this.allPostServices = allPostServices;
         }
         [HttpGet]
-        public IActionResult AccountPost(string username)
+        public async Task<IActionResult> AccountPost(string username)
         {
-            var user = userServices.GetUser(username);
+            var user = await userServices.GetUser(username);
             var model = allPostServices.ViewAll();
             List<Post> filtered = model.Posts.Where(x => x.PublisherId == user.Id).ToList();
 
             return View(filtered);
         }
         [HttpGet]
-        public IActionResult SearchAcc(string username, string input)
+        public async Task<IActionResult> SearchAcc(string username, string input)
         {
-            var user = userServices.GetUser(username);
+            var user = await userServices.GetUser(username);
             var model = allPostServices.ViewAll();
             var selected = allPostServices.SearchAsync(input);
             List<Post> filtered = selected.Posts.Where(x => x.PublisherId == user.Id).ToList();
@@ -42,9 +42,9 @@ namespace EncycloBookProject.Controllers
  
         }
         [HttpGet]
-        public IActionResult AccountDetails(string username)
+        public async Task<IActionResult> AccountDetails(string username)
         {
-            var user = userServices.GetUser(username);
+            var user = await userServices.GetUser(username);
 
             return View(user);
         }

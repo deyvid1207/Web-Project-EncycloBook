@@ -28,7 +28,7 @@ namespace EncycloBook.Services.EditServices
         public async Task EditAnimal(Animal post)
         {
 
-            Animal curPost = (Animal)postServices.FindPost(post.Id, "Animal");
+            Animal curPost = (Animal)await postServices.FindPost(post.Id, "Animal");
             curPost.Title = post.Title;
             curPost.ImgURL = post.ImgURL;
             curPost.Food = post.Food;
@@ -46,7 +46,7 @@ namespace EncycloBook.Services.EditServices
         public async Task EditPlant(Plant post)
         {
 
-            Plant curPost = (Plant)postServices.FindPost(post.Id, "Plant");
+            Plant curPost = (Plant)await postServices.FindPost(post.Id, "Plant");
             curPost.Title = post.Title;
             curPost.ImgURL = post.ImgURL;
             curPost.StemType = post.StemType;
@@ -64,7 +64,7 @@ namespace EncycloBook.Services.EditServices
         public async Task EditFungus(Fungus post)
         {
 
-            Fungus curPost = (Fungus)postServices.FindPost(post.Id, "Fungus");
+            Fungus curPost = (Fungus)await postServices.FindPost(post.Id, "Fungus");
             curPost.Title = post.Title;
             curPost.ImgURL = post.ImgURL;
             curPost.IsPoisonous = post.IsPoisonous;
@@ -82,7 +82,7 @@ namespace EncycloBook.Services.EditServices
         public async Task EditParasiticFungus(ParasiticFungus post)
         {
 
-            ParasiticFungus curPost = (ParasiticFungus)postServices.FindPost(post.Id, "ParasiticFungus");
+            ParasiticFungus curPost = (ParasiticFungus)await postServices.FindPost(post.Id, "ParasiticFungus");
             curPost.Title = post.Title;
             curPost.ImgURL = post.ImgURL;
             curPost.IsPoisonous = post.IsPoisonous;
@@ -102,7 +102,7 @@ namespace EncycloBook.Services.EditServices
         public async Task EditBacteria(Bacteria post)
         {
 
-            Bacteria curPost = (Bacteria)postServices.FindPost(post.Id, "Bacteria");
+            Bacteria curPost = (Bacteria)await postServices.FindPost(post.Id, "Bacteria");
             curPost.Title = post.Title;
             curPost.ImgURL = post.ImgURL;
             curPost.BacteriaFamily = post.BacteriaFamily;
@@ -116,7 +116,7 @@ namespace EncycloBook.Services.EditServices
         public async Task EditDeadlyBacteria(DeadlyBacteria post)
         {
 
-            DeadlyBacteria curPost = (DeadlyBacteria)postServices.FindPost(post.Id, "DeadlyBacteria");
+            DeadlyBacteria curPost = (DeadlyBacteria)await postServices.FindPost(post.Id, "DeadlyBacteria");
             curPost.Title = post.Title;
             curPost.Host = post.Host;
             curPost.Symptom = post.Symptom;
@@ -132,7 +132,7 @@ namespace EncycloBook.Services.EditServices
         public async Task EditVirus(Virus post)
         {
 
-            Virus curPost = (Virus)postServices.FindPost(post.Id, "Virus");
+            Virus curPost = (Virus)await postServices.FindPost(post.Id, "Virus");
             curPost.Title = post.Title;
             curPost.VirusHost = post.VirusHost;
             curPost.Symptom = post.Symptom;

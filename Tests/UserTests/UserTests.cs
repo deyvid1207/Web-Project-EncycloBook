@@ -28,9 +28,15 @@ namespace EncycloBook.Tests.UserTests
             this.userServices = new UserServices(this.dbContext);
 
         }
+        [TearDown]
+        public void TearDown()
+        {
+            // Dispose of the current DbContext to clear the in-memory database
+            this.dbContext.Dispose();
+        }
 
         [Test]
-        public void UserGetsFoundCorrect()
+        public async Task UserGetsFoundCorrect()
         {
             var guid = Guid.NewGuid();
             var testUser = new ApplicationUser()
@@ -38,9 +44,15 @@ namespace EncycloBook.Tests.UserTests
                 Id = guid,
                 UserName = "adminTest",
                 Email = "Test@gmail.com",
+                
             };
-            this.dbContext.Users.Add(testUser);
-            var user = userServices.GetUser("adminTest");
+
+            await this.dbContext.Users.AddAsync(testUser);
+         
+                await this.dbContext.SaveChangesAsync(); // Save changes to the database
+           
+
+            var user = await userServices.GetUser("Test@gmail.com");
             Assert.IsNotNull(user);
             Assert.AreEqual(guid, user.Id);
         }

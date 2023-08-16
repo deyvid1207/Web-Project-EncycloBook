@@ -31,6 +31,12 @@ namespace EncycloBook.Tests.LikeTests
             this.postServices = new PostServices(this.dbContext);
 
         }
+        [TearDown]
+        public void TearDown()
+        {
+            // Dispose of the current DbContext to clear the in-memory database
+            this.dbContext.Dispose();
+        }
         [Test]
         public async Task LikePostAddsLikeWhenNotAlreadyLiked()
         {
@@ -41,8 +47,8 @@ namespace EncycloBook.Tests.LikeTests
                 UserName = "testUser",
                 Email = "test@example.com"
             };
-            dbContext.Users.Add(user);
-
+           await dbContext.Users.AddAsync(user);
+            await dbContext.SaveChangesAsync();
             var post = new Animal
             {
                 Id = 1,
@@ -58,14 +64,14 @@ namespace EncycloBook.Tests.LikeTests
                 FoodId = 1, // Set the Food ID
                 IsWild = true // Set whether the animal is wild or not
             };
-            dbContext.Animals.Add(post);
+           await dbContext.Animals.AddAsync(post);
             await dbContext.SaveChangesAsync();
 
             // Act
             await postServices.LikePost(post, user.UserName);
-            var likedPost = dbContext.Animals
+            var likedPost = await dbContext.Animals
                 .Include(a => a.Likes)
-                .FirstOrDefault(a => a.Id == post.Id);
+                .FirstOrDefaultAsync(a => a.Id == post.Id);
 
             // Assert
             Assert.NotNull(likedPost);
@@ -82,6 +88,8 @@ namespace EncycloBook.Tests.LikeTests
                 UserName = "adminTest",
                 Email = "Test@gmail.com",
             };
+            await dbContext.AddAsync(user);
+            await dbContext.SaveChangesAsync();
             // Test data setup
             var post = new Animal()
             {
@@ -98,13 +106,12 @@ namespace EncycloBook.Tests.LikeTests
                 FoodId = 1, // Set the Food ID
                 IsWild = true, // Set whether the animal is wild or not};
             };
-            dbContext.Add(post);
+            await dbContext.AddAsync(post);
             await dbContext.SaveChangesAsync();
 
 
 
-            dbContext.Add(user);
-            await dbContext.SaveChangesAsync();
+       
 
             var like = new Like() { PostId = post.Id, UserId = user.Id };
             dbContext.Add(like);
@@ -116,6 +123,38 @@ namespace EncycloBook.Tests.LikeTests
             // Assert
             Assert.AreEqual(0, post.Likes.Count);
             // Additional assertions for likes can be added here
+        }
+        [Test]
+        public async Task LikePostDoesntLikeWhenUserIsNull()
+        {
+            // Arrange
+            var post = new Animal
+            {
+                Id = 1,
+                Title = "Test Animal",
+                DiscoveredBy = "Discoverer Name", // Replace with actual discoverer name
+                PublishedOn = DateTime.Now, // Set the publication date and time
+                ImgURL = "https://example.com/image.jpg", // Replace with actual image URL
+                Description = "This is a test animal description.", // Replace with the description
+                PublisherId = Guid.NewGuid(), // Replace with actual publisher's GUID
+                Location = "Test Location", // Set the animal's location
+                AnimalClass = "Mammalia", // Set the animal's class
+                AnimalSubClass = "Mammal", // Set the animal's subclass
+                FoodId = 1, // Set the Food ID
+                IsWild = true // Set whether the animal is wild or not
+            };
+            await dbContext.Animals.AddAsync(post);
+            await dbContext.SaveChangesAsync();
+
+            // Act
+            await postServices.LikePost(post, null);
+            var likedPost = await dbContext.Animals
+                .Include(a => a.Likes)
+                .FirstOrDefaultAsync(a => a.Id == post.Id);
+
+            // Assert
+            Assert.AreEqual(0, likedPost.Likes.Count);
+
         }
     }
 }

@@ -31,6 +31,12 @@ namespace EncycloBook.Tests.PostTests
             this.postServices = new PostServices(this.dbContext);
 
         }
+        [TearDown]
+        public void TearDown()
+        {
+            // Dispose of the current DbContext to clear the in-memory database
+            this.dbContext.Dispose();
+        }
         [Test]
         public async Task AnimalGetsAddedCorrect()
         {
@@ -63,7 +69,7 @@ namespace EncycloBook.Tests.PostTests
             await postServices.PostAnimalAsync(Girrafe);
 
             // Retrieve the added animal from the context
-            var addedAnimal = dbContext.Animals.FirstOrDefault(a => a.Title == "Giraffaae");
+            var addedAnimal = await dbContext.Animals.FirstOrDefaultAsync(a => a.Title == "Giraffaae");
 
             // Assert that the added animal is not null
             Assert.NotNull(addedAnimal);
@@ -72,6 +78,7 @@ namespace EncycloBook.Tests.PostTests
             Assert.AreEqual(Girrafe.Title, addedAnimal.Title);
 
         }
+       
         [Test]
         public async Task PlantGetsAddedCorrect()
         {
@@ -102,7 +109,7 @@ namespace EncycloBook.Tests.PostTests
             await postServices.PostPlantAsync(Plant);
 
             // Retrieve the added animal from the context
-            var addedPlant = dbContext.Plants.FirstOrDefault(a => a.Title == "Test");
+            var addedPlant = await dbContext.Plants.FirstOrDefaultAsync(a => a.Title == "Test");
 
             // Assert that the added animal is not null
             Assert.NotNull(addedPlant);
@@ -144,7 +151,7 @@ namespace EncycloBook.Tests.PostTests
             await postServices.PostFungusAsync(test);
 
             // Retrieve the added animal from the context
-            var addedFungus = dbContext.Fungi.FirstOrDefault(a => a.Title == "Test");
+            var addedFungus = await dbContext.Fungi.FirstOrDefaultAsync(a => a.Title == "Test");
 
             // Assert that the added animal is not null
             Assert.NotNull(addedFungus);
@@ -188,7 +195,7 @@ namespace EncycloBook.Tests.PostTests
             await postServices.PostFungusAsync(test);
 
             // Retrieve the added animal from the context
-            var addedFungus = dbContext.Fungi.FirstOrDefault(a => a.Title == "Test");
+            var addedFungus = await dbContext.Fungi.FirstOrDefaultAsync(a => a.Title == "Test");
 
             // Assert that the added animal is not null
             Assert.NotNull(addedFungus);
@@ -229,7 +236,7 @@ namespace EncycloBook.Tests.PostTests
             await postServices.PostVirusAsync(test);
                 
             // Retrieve the added animal from the context
-            var addedVirus = dbContext.Viruses.FirstOrDefault(a => a.Title == "Test");
+            var addedVirus = await dbContext.Viruses.FirstOrDefaultAsync(a => a.Title == "Test");
 
             // Assert that the added animal is not null
             Assert.NotNull(addedVirus);
@@ -271,7 +278,7 @@ namespace EncycloBook.Tests.PostTests
             await postServices.PostBacteriaAsync(test);
 
             // Retrieve the added animal from the context
-            var addedBac = dbContext.Bacteria.FirstOrDefault(a => a.Title == "Test");
+            var addedBac = await dbContext.Bacteria.FirstOrDefaultAsync(a => a.Title == "Test");
 
             // Assert that the added animal is not null
             Assert.NotNull(addedBac);
@@ -312,7 +319,7 @@ namespace EncycloBook.Tests.PostTests
             await postServices.PostBacteriaAsync(test);
 
             // Retrieve the added animal from the context
-            var addedBac = dbContext.Bacteria.FirstOrDefault(a => a.Title == "Test");
+            var addedBac = await dbContext.Bacteria.FirstOrDefaultAsync(a => a.Title == "Test");
 
             // Assert that the added animal is not null
             Assert.NotNull(addedBac);

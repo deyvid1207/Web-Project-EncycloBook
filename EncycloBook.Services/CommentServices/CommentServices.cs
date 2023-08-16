@@ -29,9 +29,8 @@ namespace EncycloBook.Services.CommentServices
             else
             {
 
-                dbContext.Comments.Add(comment);
+              await  dbContext.Comments.AddAsync(comment);
                 post.Comments.Add(comment);
-
             }
 
 

@@ -33,14 +33,14 @@ namespace EncycloBookProject.Controllers
 
         }
 
-        public IActionResult ViewDetails(int postId, string postType)
+        public async Task<IActionResult> ViewDetails(int postId, string postType)
         {
 
-            var post = postServices.FindPost(postId, postType);
+            var post = await postServices.FindPost(postId, postType);
 
             return View(post);
         }
-        public IActionResult AddComment(int postId, string postType, string username, string content)
+        public async Task  <IActionResult> AddComment(int postId, string postType, string username, string content)
         {
             if (string.IsNullOrEmpty(content))
             {
@@ -52,8 +52,8 @@ namespace EncycloBookProject.Controllers
             {
 
            
-            var post = postServices.FindPost(postId, postType);
-            var user = userServices.GetUser(username);
+            var post =  await postServices.FindPost(postId, postType);
+            var user = await userServices.GetUser(username);
             var comment = new Comment()
             {
                 Content = content,
@@ -61,20 +61,20 @@ namespace EncycloBookProject.Controllers
                 Publisher = user,
                 PublisherId = user.Id
             };
-           commentServices.CommentPost(post, user, comment);
+          await commentServices.CommentPost(post, user, comment);
 
             }
             return RedirectToAction("ViewDetails", new { postId = postId, postType = postType });
         }
 
         [HttpGet]
-        public  IActionResult EditAnimal(int id)
+        public async  Task<IActionResult> EditAnimal(int id)
         {
 
             var AnimalVM = new AnimalWithFoodViewModel();
             AnimalVM.Foods = foodServices.GetFood();
     
-            AnimalVM.Animal = (Animal)postServices.FindPost(id, "Animal");
+            AnimalVM.Animal =   (Animal)await postServices.FindPost(id, "Animal");
 
             return View(AnimalVM);
         }
@@ -83,7 +83,7 @@ namespace EncycloBookProject.Controllers
         {
 
             model.Foods = foodServices.GetFood();
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             string Aclass = Request.Form["class"];
             string food = Request.Form["food"];
             string IsWild = Request.Form["wild"];
@@ -116,13 +116,13 @@ namespace EncycloBookProject.Controllers
 
 
         [HttpGet]
-        public IActionResult EditPlant(int id)
+        public async Task<IActionResult> EditPlant(int id)
         {
 
           
 
 
-           var  Plant = (Plant)postServices.FindPost(id, "Plant");
+           var  Plant = (Plant)await postServices.FindPost(id, "Plant");
 
             return View(Plant);
         }
@@ -132,7 +132,7 @@ namespace EncycloBookProject.Controllers
 
       
          
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             model.PublisherId = user.Id;
             model.Publisher = user;
             await editServices.EditPlant(model);
@@ -140,11 +140,11 @@ namespace EncycloBookProject.Controllers
             return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "Plant" });
         }
         [HttpGet]
-        public IActionResult EditFungus(int id)
+        public async Task<IActionResult> EditFungus(int id)
         {
 
 
-            var Fungus = (Fungus)postServices.FindPost(id, "Fungus");
+            var Fungus = (Fungus)await postServices.FindPost(id, "Fungus");
 
             return View(Fungus);
         }
@@ -154,7 +154,7 @@ namespace EncycloBookProject.Controllers
 
 
 
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             model.PublisherId = user.Id;
             model.Publisher = user;
             await editServices.EditFungus(model);
@@ -162,12 +162,12 @@ namespace EncycloBookProject.Controllers
             return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "Fungus" });
         }
         [HttpGet]
-        public IActionResult EditParasiticFungus(int id)
+        public async Task<IActionResult> EditParasiticFungus(int id)
         {
 
 
             var FungusVM = new FungusWithSymptomsViewModel();
-            FungusVM.ParasiticFungus = (ParasiticFungus)postServices.FindPost(id, "ParasiticFungus");
+            FungusVM.ParasiticFungus = (ParasiticFungus)await postServices.FindPost(id, "ParasiticFungus");
             FungusVM.id = id;
             FungusVM.SymptomList = symptomServices.GetSymptoms();
             return View(FungusVM);
@@ -200,7 +200,7 @@ namespace EncycloBookProject.Controllers
                 model.ParasiticFungus.Symptom = symptomServices.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
 
             }
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             model.ParasiticFungus.PublisherId = user.Id;
             model.ParasiticFungus.Publisher = user;
             await editServices.EditParasiticFungus(model.ParasiticFungus);
@@ -210,12 +210,12 @@ namespace EncycloBookProject.Controllers
 
 
         [HttpGet]
-        public IActionResult EditBacteria(int id)
+        public async Task<IActionResult> EditBacteria(int id)
         {
 
 
             var Bacteria = new Bacteria();
-            Bacteria = (Bacteria)postServices.FindPost(id, "Bacteria");
+            Bacteria = (Bacteria)await postServices.FindPost(id, "Bacteria");
             return View(Bacteria);
 
 
@@ -224,7 +224,7 @@ namespace EncycloBookProject.Controllers
         public async Task<IActionResult> EditBacteria(Bacteria model)
         {
 
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             model.PublisherId = user.Id;
             model.Publisher = user;
             await editServices.EditBacteria(model);
@@ -232,12 +232,12 @@ namespace EncycloBookProject.Controllers
             return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "Bacteria" });
         }
         [HttpGet]
-        public IActionResult EditDeadlyBacteria(int id)
+        public async Task<IActionResult> EditDeadlyBacteria(int id)
         {
 
 
             var BacteriaVm = new BacteriaWithSymptomsViewModel();
-            BacteriaVm.DeadlyBacteria = (DeadlyBacteria)postServices.FindPost(id, "DeadlyBacteria");
+            BacteriaVm.DeadlyBacteria = (DeadlyBacteria)await postServices.FindPost(id, "DeadlyBacteria");
             BacteriaVm.SymptomList = symptomServices.GetSymptoms();
             BacteriaVm.Id = id;
             return View(BacteriaVm);
@@ -248,7 +248,7 @@ namespace EncycloBookProject.Controllers
         public async Task<IActionResult> EditDeadlyBacteria(BacteriaWithSymptomsViewModel model)
         {
 
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             model.DeadlyBacteria.PublisherId = user.Id;
             model.DeadlyBacteria.Id = model.Id;
             model.DeadlyBacteria.Publisher = user;
@@ -279,12 +279,12 @@ namespace EncycloBookProject.Controllers
             return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "DeadlyBacteria" });
 
         }
-        public IActionResult EditVirus(int id)
+        public async Task<IActionResult> EditVirus(int id)
         {
 
 
             var VirusVm = new VirusWithSymptomsViewModel();
-            VirusVm.Virus = (Virus)postServices.FindPost(id, "Virus");
+            VirusVm.Virus = (Virus)await postServices.FindPost(id, "Virus");
             VirusVm.SymptomList = symptomServices.GetSymptoms();
             VirusVm.Id = id;
             return View(VirusVm);
@@ -295,7 +295,7 @@ namespace EncycloBookProject.Controllers
         public async Task<IActionResult> EditVirus(VirusWithSymptomsViewModel model)
         {
 
-            var user = userServices.GetUser(User.Identity.Name);
+            var user = await userServices.GetUser(User.Identity.Name);
             model.Virus.PublisherId = user.Id;
             model.Virus.Id = model.Id;
             model.Virus.Publisher = user;

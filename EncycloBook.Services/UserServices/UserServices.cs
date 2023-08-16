@@ -20,10 +20,10 @@ namespace EncycloBook.Services.UserServices
             this.dbContext = dbContext;
         }
 
-        public ApplicationUser GetUser(string name)
+        public async Task<ApplicationUser> GetUser(string name)
         {
-            var user = dbContext.Users.Include(x => x.Comments).Include(x => x.Posts).ThenInclude(x => x.Likes).Include(x => x.Posts)
-        .ThenInclude(post => post.Comments).FirstOrDefault(x => x.Email == name);
+            var user = await dbContext.Users.Include(x => x.Comments).Include(x => x.Posts).ThenInclude(x => x.Likes).Include(x => x.Posts)
+        .ThenInclude(post => post.Comments).FirstOrDefaultAsync(x => x.Email == name);
             if (user == null)
             {
                 return null;

@@ -33,8 +33,14 @@ namespace EncycloBook.Tests.PostTests
             this.allpostServices = new AllPostServices(this.dbContext);
 
         }
+        [TearDown]
+        public void TearDown()
+        {
+            // Dispose of the current DbContext to clear the in-memory database
+            this.dbContext.Dispose();
+        }
         [Test]
-        public void ViewAllReturnsAllPosts()
+        public async Task ViewAllReturnsAllPosts()
         {
             var guid = Guid.NewGuid();
             var testUser = new ApplicationUser()
@@ -80,9 +86,9 @@ namespace EncycloBook.Tests.PostTests
                 PublisherId = guid, // Set the foreign key value};
             };
 
-            dbContext.AddRange(animal, plant);
+          await  dbContext.AddRangeAsync(animal, plant);
 
-            dbContext.SaveChanges();
+           await dbContext.SaveChangesAsync();
 
             var result = allpostServices.ViewAll();
 

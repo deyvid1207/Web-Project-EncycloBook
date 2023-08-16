@@ -278,38 +278,38 @@ namespace EncycloBook.Services.PostServices
             await dbContext.SaveChangesAsync();
 
         }
-        public Post FindPost(int id, string type)
+        public  async Task<Post> FindPost(int id, string type)
         {
             Post post;
             switch (type)
             {
                 case "Animal":
                     post = new Animal();
-                    post = dbContext.Animals.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Food).Include(x => x.Likes).FirstOrDefault(a => a.Id == id);
+                    post = await dbContext.Animals.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Food).Include(x => x.Likes).FirstOrDefaultAsync(a => a.Id == id);
                     break;
                 case "Plant":
                     post = new Plant();
-                    post = dbContext.Plants.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).FirstOrDefault(a => a.Id == id);
+                    post = await dbContext.Plants.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).FirstOrDefaultAsync(a => a.Id == id);
                     break;
                 case "Fungus":
                     post = new Fungus();
-                    post = dbContext.Fungi.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).FirstOrDefault(a => a.Id == id);
+                    post =await dbContext.Fungi.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).FirstOrDefaultAsync(a => a.Id == id);
                     break;
                 case "Virus":
                     post = new Virus();
-                    post = dbContext.Viruses.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
+                    post = await dbContext.Viruses.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).Include(x => x.Symptom).FirstOrDefaultAsync(a => a.Id == id);
                     break;
                 case "Bacteria":
                     post = new Bacteria();
-                    post = dbContext.Bacteria.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).FirstOrDefault(a => a.Id == id);
+                    post = await dbContext.Bacteria.Include(a => a.Publisher).Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).FirstOrDefaultAsync(a => a.Id == id);
                     break;
                 case "DeadlyBacteria":
                     post = new DeadlyBacteria();
-                    post = dbContext.Bacteria.OfType<DeadlyBacteria>().Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
+                    post = await dbContext.Bacteria.OfType<DeadlyBacteria>().Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefaultAsync(a => a.Id == id);
                     break;
                 case "ParasiticFungus":
                     post = new ParasiticFungus();
-                    post = dbContext.Fungi.OfType<ParasiticFungus>().Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefault(a => a.Id == id);
+                    post = await dbContext.Fungi.OfType<ParasiticFungus>().Include(a => a.Comments).ThenInclude(c => c.Publisher).Include(x => x.Likes).Include(a => a.Publisher).Include(x => x.Symptom).FirstOrDefaultAsync(a => a.Id == id);
                     break;
                 default:
                     throw new ArgumentException("Post must be assigned!");
@@ -322,7 +322,7 @@ namespace EncycloBook.Services.PostServices
         public async Task LikePost(Post post, string username)
         {
 
-            var user = dbContext.Users.FirstOrDefault(x => x.UserName == username);
+            var user = await dbContext.Users.FirstOrDefaultAsync(x => x.UserName == username);
             if (user == null)
             {
 
@@ -357,7 +357,7 @@ namespace EncycloBook.Services.PostServices
             else
             {
 
-                dbContext.Comments.Add(comment);
+               await dbContext.Comments.AddAsync(comment);
                 post.Comments.Add(comment);
 
             }
@@ -368,7 +368,7 @@ namespace EncycloBook.Services.PostServices
 
         public async Task DeletePost(int id, string type)
         {
-            var post = FindPost(id, type);
+            var post = await FindPost(id, type);
             var comments = new List<Comment>();
             if (post != null)
             {
@@ -376,8 +376,6 @@ namespace EncycloBook.Services.PostServices
                 {
                     case "Animal":
                         dbContext.Animals.Remove((Animal)post);
-
-
                         break;
                     case "Plant":
                         dbContext.Plants.Remove((Plant)post);

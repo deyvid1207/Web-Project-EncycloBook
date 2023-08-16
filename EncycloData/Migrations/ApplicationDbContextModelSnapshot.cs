@@ -22,7 +22,7 @@ namespace EncycloBook.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("EncycloData.ApplicationUser", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -88,7 +88,7 @@ namespace EncycloBook.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Comment", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Comment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -119,7 +119,87 @@ namespace EncycloBook.Data.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Food", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Like", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("LikedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Like");
+                });
+
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Post", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<Guid?>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(750)
+                        .HasColumnType("nvarchar(750)");
+
+                    b.Property<string>("DiscoveredBy")
+                        .IsRequired()
+                        .HasMaxLength(75)
+                        .HasColumnType("nvarchar(75)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImgURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PublishedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("PublisherId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("YearDiscovered")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("PublisherId");
+
+                    b.ToTable("Post");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Post");
+                });
+
+            modelBuilder.Entity("EncycloBook.Data.Models.Properties.Food", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -178,88 +258,7 @@ namespace EncycloBook.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Like", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("LikedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("PostId")
-                        .HasMaxLength(50)
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PostId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Like");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.Post", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<Guid?>("ApplicationUserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(750)
-                        .HasColumnType("nvarchar(750)");
-
-                    b.Property<string>("DiscoveredBy")
-                        .IsRequired()
-                        .HasMaxLength(75)
-                        .HasColumnType("nvarchar(75)");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImgURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("PublishedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("PublisherId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<DateTime>("YearDiscovered")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId");
-
-                    b.HasIndex("PublisherId");
-
-                    b.ToTable("Post");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Post");
-                });
-
-            modelBuilder.Entity("EncycloData.Models.Symptom", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Properties.Symptom", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -454,9 +453,9 @@ namespace EncycloBook.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Animal", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Animal", b =>
                 {
-                    b.HasBaseType("EncycloData.Models.Post");
+                    b.HasBaseType("EncycloBook.Data.Models.Posts.Post");
 
                     b.Property<string>("AnimalClass")
                         .IsRequired()
@@ -482,9 +481,9 @@ namespace EncycloBook.Data.Migrations
                     b.HasDiscriminator().HasValue("Animal");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Bacteria", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Bacteria", b =>
                 {
-                    b.HasBaseType("EncycloData.Models.Post");
+                    b.HasBaseType("EncycloBook.Data.Models.Posts.Post");
 
                     b.Property<string>("BacteriaFamily")
                         .IsRequired()
@@ -497,9 +496,9 @@ namespace EncycloBook.Data.Migrations
                     b.HasDiscriminator().HasValue("Bacteria");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Fungus", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Fungus", b =>
                 {
-                    b.HasBaseType("EncycloData.Models.Post");
+                    b.HasBaseType("EncycloBook.Data.Models.Posts.Post");
 
                     b.Property<string>("Color")
                         .IsRequired()
@@ -529,9 +528,9 @@ namespace EncycloBook.Data.Migrations
                     b.HasDiscriminator().HasValue("Fungus");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Plant", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Plant", b =>
                 {
-                    b.HasBaseType("EncycloData.Models.Post");
+                    b.HasBaseType("EncycloBook.Data.Models.Posts.Post");
 
                     b.Property<string>("Color")
                         .IsRequired()
@@ -561,9 +560,9 @@ namespace EncycloBook.Data.Migrations
                     b.HasDiscriminator().HasValue("Plant");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Virus", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Virus", b =>
                 {
-                    b.HasBaseType("EncycloData.Models.Post");
+                    b.HasBaseType("EncycloBook.Data.Models.Posts.Post");
 
                     b.Property<int>("SymptomId")
                         .HasColumnType("int")
@@ -584,9 +583,9 @@ namespace EncycloBook.Data.Migrations
                     b.HasDiscriminator().HasValue("Virus");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.DeadlyBacteria", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.DeadlyBacteria", b =>
                 {
-                    b.HasBaseType("EncycloData.Models.Bacteria");
+                    b.HasBaseType("EncycloBook.Data.Models.Posts.Bacteria");
 
                     b.Property<string>("Host")
                         .IsRequired()
@@ -600,9 +599,9 @@ namespace EncycloBook.Data.Migrations
                     b.HasDiscriminator().HasValue("DeadlyBacteria");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.ParasiticFungus", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.ParasiticFungus", b =>
                 {
-                    b.HasBaseType("EncycloData.Models.Fungus");
+                    b.HasBaseType("EncycloBook.Data.Models.Posts.Fungus");
 
                     b.Property<string>("Host")
                         .IsRequired()
@@ -618,13 +617,13 @@ namespace EncycloBook.Data.Migrations
                     b.HasDiscriminator().HasValue("ParasiticFungus");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Comment", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Comment", b =>
                 {
-                    b.HasOne("EncycloData.Models.Post", null)
+                    b.HasOne("EncycloBook.Data.Models.Posts.Post", null)
                         .WithMany("Comments")
                         .HasForeignKey("PostId");
 
-                    b.HasOne("EncycloData.ApplicationUser", "Publisher")
+                    b.HasOne("EncycloBook.Data.Models.ApplicationUser", "Publisher")
                         .WithMany("Comments")
                         .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -633,15 +632,15 @@ namespace EncycloBook.Data.Migrations
                     b.Navigation("Publisher");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Like", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Like", b =>
                 {
-                    b.HasOne("EncycloData.Models.Post", "Post")
+                    b.HasOne("EncycloBook.Data.Models.Posts.Post", "Post")
                         .WithMany("Likes")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EncycloData.ApplicationUser", "User")
+                    b.HasOne("EncycloBook.Data.Models.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -652,13 +651,13 @@ namespace EncycloBook.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Post", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Post", b =>
                 {
-                    b.HasOne("EncycloData.ApplicationUser", null)
+                    b.HasOne("EncycloBook.Data.Models.ApplicationUser", null)
                         .WithMany("Posts")
                         .HasForeignKey("ApplicationUserId");
 
-                    b.HasOne("EncycloData.ApplicationUser", "Publisher")
+                    b.HasOne("EncycloBook.Data.Models.ApplicationUser", "Publisher")
                         .WithMany()
                         .HasForeignKey("PublisherId")
                         .IsRequired();
@@ -677,7 +676,7 @@ namespace EncycloBook.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
-                    b.HasOne("EncycloData.ApplicationUser", null)
+                    b.HasOne("EncycloBook.Data.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -686,7 +685,7 @@ namespace EncycloBook.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("EncycloData.ApplicationUser", null)
+                    b.HasOne("EncycloBook.Data.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -701,7 +700,7 @@ namespace EncycloBook.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EncycloData.ApplicationUser", null)
+                    b.HasOne("EncycloBook.Data.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -710,16 +709,16 @@ namespace EncycloBook.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.HasOne("EncycloData.ApplicationUser", null)
+                    b.HasOne("EncycloBook.Data.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Animal", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Animal", b =>
                 {
-                    b.HasOne("EncycloData.Models.Food", "Food")
+                    b.HasOne("EncycloBook.Data.Models.Properties.Food", "Food")
                         .WithMany()
                         .HasForeignKey("FoodId")
                         .IsRequired();
@@ -727,9 +726,9 @@ namespace EncycloBook.Data.Migrations
                     b.Navigation("Food");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Virus", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Virus", b =>
                 {
-                    b.HasOne("EncycloData.Models.Symptom", "Symptom")
+                    b.HasOne("EncycloBook.Data.Models.Properties.Symptom", "Symptom")
                         .WithMany()
                         .HasForeignKey("SymptomId")
                         .IsRequired();
@@ -737,9 +736,9 @@ namespace EncycloBook.Data.Migrations
                     b.Navigation("Symptom");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.DeadlyBacteria", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.DeadlyBacteria", b =>
                 {
-                    b.HasOne("EncycloData.Models.Symptom", "Symptom")
+                    b.HasOne("EncycloBook.Data.Models.Properties.Symptom", "Symptom")
                         .WithMany()
                         .HasForeignKey("SymptomId")
                         .IsRequired();
@@ -747,9 +746,9 @@ namespace EncycloBook.Data.Migrations
                     b.Navigation("Symptom");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.ParasiticFungus", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.ParasiticFungus", b =>
                 {
-                    b.HasOne("EncycloData.Models.Symptom", "Symptom")
+                    b.HasOne("EncycloBook.Data.Models.Properties.Symptom", "Symptom")
                         .WithMany()
                         .HasForeignKey("SymptomId")
                         .IsRequired();
@@ -757,14 +756,14 @@ namespace EncycloBook.Data.Migrations
                     b.Navigation("Symptom");
                 });
 
-            modelBuilder.Entity("EncycloData.ApplicationUser", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.ApplicationUser", b =>
                 {
                     b.Navigation("Comments");
 
                     b.Navigation("Posts");
                 });
 
-            modelBuilder.Entity("EncycloData.Models.Post", b =>
+            modelBuilder.Entity("EncycloBook.Data.Models.Posts.Post", b =>
                 {
                     b.Navigation("Comments");
 

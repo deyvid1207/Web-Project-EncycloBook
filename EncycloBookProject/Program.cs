@@ -26,12 +26,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+builder.Services.AddScoped<IPostServices, PostServices>();
 builder.Services.AddScoped<IFoodServices, FoodServices>();
 builder.Services.AddScoped<ISymptomServices, SymptomServces>();
 builder.Services.AddScoped<IEditServices, EditServices>();
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<ICommentServices, CommentServices>();
-builder.Services.AddScoped<IPostServices, PostServices>();
+builder.Services.AddScoped<IAllPostServices, AllPostServices>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()

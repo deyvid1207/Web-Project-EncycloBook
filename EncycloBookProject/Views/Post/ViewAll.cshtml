@@ -1,7 +1,6 @@
-﻿﻿@    using EncycloData;
-@    using Microsoft.AspNetCore.Identity;
-@    using EncycloData;
-    using EncycloBook.Data.Models;
+﻿@using EncycloBook.ViewModels.AllViewModel;
+@using Microsoft.AspNetCore.Identity;
+@using EncycloBook.Data.Models;
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @model AllViewModel
@@ -88,7 +87,7 @@
                         {
                  <form asp-controller="Post" asp-action="Like" method="post">
     <input type="hidden" name="itemId" value="@item.Id" />
-    <input type="hidden" name="type" value="@item.GetType().ToString().Remove(0, 19)" />
+    <input type="hidden" name="type" value="@item.GetType().ToString().Remove(0, 30)" />
                             <input type="hidden" name="ViewD" value="ViewAll" />
                       
                                 <button type="submit" class="btn btn-primary" id="likewithoutacc">
@@ -112,7 +111,7 @@
                             {
                                    <form asp-controller="Post" asp-action="Like" method="post">
     <input type="hidden" name="itemId" value="@item.Id" />
-    <input type="hidden" name="type" value="@item.GetType().ToString().Remove(0, 19)" />
+    <input type="hidden" name="type" value="@item.GetType().ToString().Remove(0, 30)" />
                             <input type="hidden" name="ViewD" value="ViewAll" />
                       
                                 <button type="submit" class="btn btn-primary" id="like">
@@ -152,7 +151,7 @@
                       
                     <form method="get">
                             <input type="hidden" name="postId" value="@item.Id" />
-                            <input type="hidden" name="postType" value="@item.GetType().ToString().Remove(0, 19)" />
+                            <input type="hidden" name="postType" value="@item.GetType().ToString().Remove(0, 30)" />
                         <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">Details</button>
                    
                         </form>
@@ -163,7 +162,7 @@
                                 <input type="hidden" name="type" value="@item.GetType()" />
                                 @{
                                     string action = "";
-                                    @switch (item.GetType().ToString().Remove(0, 19))
+                                    @switch (item.GetType().ToString().Remove(0, 30))
                                     {
                                         case "Animal":
                                             action = "EditAnimal";

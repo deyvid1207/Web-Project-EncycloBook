@@ -1,5 +1,4 @@
-﻿@using EncycloBookServices.Models;
-@using EncycloData.Models;
+﻿@using EncycloBook.ViewModels.PostModels;
 @model DeadlyBacteriaSafeBacteriaViewModel;
 
 
@@ -22,13 +21,13 @@
     </div>
     <div class="zip_state">
         <h6>Discovered in</h6>
-            @if (Model.Bacteria.YearDiscovered.Year < 0)
+            @if (Model.Bacteria.YearDiscovered < 0)
         {
-                <label>@Math.Abs(Model.Bacteria.YearDiscovered.Year) BC</label>
+                <label>@Math.Abs(Model.Bacteria.YearDiscovered) BC</label>
         }
             else
             {
-                <label>@Model.Bacteria.YearDiscovered.Year</label>
+                <label>@Model.Bacteria.YearDiscovered</label>
             }
     </div>
 
@@ -58,13 +57,13 @@
         </div>
         <div class="zip_state">
             <h6>Discovered in</h6>
-            @if (Model.DeadlyBacteria.YearDiscovered.Year < 0)
+            @if (Model.DeadlyBacteria.YearDiscovered < 0)
             {
-                <label>@Math.Abs(Model.DeadlyBacteria.YearDiscovered.Year) BC</label>
+                <label>@Math.Abs(Model.DeadlyBacteria.YearDiscovered) BC</label>
             }
             else
             {
-                <label>@Model.DeadlyBacteria.YearDiscovered.Year</label>
+                <label>@Model.DeadlyBacteria.YearDiscovered</label>
 
             }
           

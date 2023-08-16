@@ -1,5 +1,4 @@
-﻿@using EncycloBookServices.Models;
-@using EncycloData.Models;
+﻿@using EncycloBook.ViewModels.PostModels;
 @model ParFungusSafeFungus;
 
 
@@ -29,13 +28,13 @@
     </div>
     <div class="zip_state">
         <h6>Discovered in</h6>
-            @if (Model.Fungus.YearDiscovered.Year < 0)
+            @if (Model.Fungus.YearDiscovered < 0)
         {
-                <label>@Math.Abs(Model.Fungus.YearDiscovered.Year) BC</label>
+                <label>@Math.Abs(Model.Fungus.YearDiscovered) BC</label>
         }
             else
             {
-                <label>@Model.Fungus.YearDiscovered.Year</label>
+                <label>@Model.Fungus.YearDiscovered</label>
             }
     </div>
 
@@ -87,13 +86,13 @@ else
         </div>
         <div class="zip_state">
             <h6>Discovered in</h6>
-            @if (Model.ParasiticFungus.YearDiscovered.Year < 0)
+            @if (Model.ParasiticFungus.YearDiscovered < 0)
             {
-                <label>@Math.Abs(Model.ParasiticFungus.YearDiscovered.Year) BC</label>
+                <label>@Math.Abs(Model.ParasiticFungus.YearDiscovered) BC</label>
             }
             else
             {
-                <label>@Model.ParasiticFungus.YearDiscovered.Year</label>
+                <label>@Model.ParasiticFungus.YearDiscovered</label>
             }
         </div>
 

@@ -1,5 +1,4 @@
 ﻿using EncycloBook.Data.Models.Posts;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;

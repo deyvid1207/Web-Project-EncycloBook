@@ -16,7 +16,7 @@ namespace EncycloBook.Services.EditServices
         private readonly ApplicationDbContext dbContext;
         private readonly IPostServices postServices;
 
-        public EditServices(ApplicationDbContext dbContext, PostServices.PostServices postServices)
+        public EditServices(ApplicationDbContext dbContext, IPostServices postServices)
         {
             this.dbContext = dbContext;
             this.postServices = postServices;

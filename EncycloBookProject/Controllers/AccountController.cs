@@ -5,7 +5,6 @@ using EncycloBook.Services.FoodServices.Contracts;
 using EncycloBook.Services.PostServices.Contracts;
 using EncycloBook.Services.SymptomServices.Contracts;
 using EncycloBook.Services.UserServices.Contracts;
-using EncycloData.Migrations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EncycloBookProject.Controllers

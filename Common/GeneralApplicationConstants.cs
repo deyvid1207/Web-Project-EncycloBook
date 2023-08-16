@@ -10,11 +10,11 @@ namespace Common
     {
         public static class PostConstants
         {
-            public const int DescriptionMaxLength = 15;
-            public const int DescriptionMinLength = 750;
+            public const int DescriptionMinLength = 15;
+            public const int DescriptionMaxLength = 750;
 
-            public const int TitleMaxLength = 3;
-            public const int TitleMinLength = 50;
+            public const int TitleMinLength = 3;
+            public const int TitleMaxLength = 50;
 
             public const int CommentContentMaxLength = 50;
             public const int CommentContentMinLength = 1;

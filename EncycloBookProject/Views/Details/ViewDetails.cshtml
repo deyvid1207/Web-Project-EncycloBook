@@ -1,13 +1,13 @@
-﻿@using EncycloBookServices.Models;
-@using EncycloData.Models;
-@using EncycloData;
+﻿@using EncycloBook.Data.Models;
+@using EncycloBook.Data.Models.Posts;
+@using EncycloBook.ViewModels.PostModels;
 @using Microsoft.AspNetCore.Identity;
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @model Post;
 @{
     var type = Model.GetType().ToString();
-    type = type.Remove(0, 19);
+    type = type.Remove(0, 30);
     Animal a = new Animal();
     Plant p = new Plant();
     ParFungusSafeFungus FunViewModel = new ParFungusSafeFungus();
@@ -254,7 +254,7 @@
                     }
                  <form asp-controller="Post" asp-action="Like" method="post">
     <input type="hidden" name="itemId" value="@Model.Id" />
-                        <input type="hidden" name="type" value="@Model.GetType().ToString().Remove(0, 19)" />
+                        <input type="hidden" name="type" value="@Model.GetType().ToString().Remove(0, 30)" />
                         <input type="hidden" name="ViewD" value="ViewDetails" />
     <button type="submit" class="btn btn-primary" id="like">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="32" height="32" viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">

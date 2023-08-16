@@ -1,4 +1,4 @@
-﻿@using EncycloData.Models;
+﻿@using EncycloBook.Data.Models.Posts;
 @model Plant;
 
 <div class="input_text">
@@ -36,13 +36,13 @@
     </div>
     <div class="zip_state">
         <h6>Discovered in</h6>
-        @if (Model.YearDiscovered.Year < 0)
+        @if (Model.YearDiscovered < 0)
         {
-            <label>@Math.Abs(Model.YearDiscovered.Year) BC</label>
+            <label>@Math.Abs(Model.YearDiscovered) BC</label>
         }
         else
         {
-            <label>@Model.YearDiscovered.Year</label>
+            <label>@Model.YearDiscovered</label>
         }
     </div>
 

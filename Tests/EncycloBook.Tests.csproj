@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EncycloBook.Services\EncycloBook.Services.csproj" />
     <ProjectReference Include="..\EncycloData\EncycloBook.Data.csproj" />
   </ItemGroup>
 

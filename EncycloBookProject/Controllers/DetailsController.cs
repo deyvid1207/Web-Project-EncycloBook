@@ -1,13 +1,14 @@
 ﻿
 using EncycloBook.Data.Models.Posts;
 using EncycloBook.Services.AllPostsServices.Contracts;
+using EncycloBook.Services.CommentServices.Contracts;
 using EncycloBook.Services.EditServices.Contracts;
 using EncycloBook.Services.FoodServices.Contracts;
 using EncycloBook.Services.PostServices.Contracts;
 using EncycloBook.Services.SymptomServices.Contracts;
 using EncycloBook.Services.UserServices.Contracts;
 using EncycloBook.ViewModels.PostModels;
-using EncycloData;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace EncycloBookProject.Controllers
@@ -19,13 +20,15 @@ namespace EncycloBookProject.Controllers
         private readonly IAllPostServices allPostServices;
         private readonly IFoodServices foodServices;
         private readonly ISymptomServices symptomServices;
+        private readonly ICommentServices commentServices;
         private readonly IEditServices editServices;
-        public DetailsController(IPostServices postServices, IFoodServices foodServices, ISymptomServices symptomServices, IEditServices editServices, IUserServices userServices, IAllPostServices allPostServices)
+        public DetailsController(IPostServices postServices, IFoodServices foodServices, ISymptomServices symptomServices, IEditServices editServices,ICommentServices commentServices, IUserServices userServices, IAllPostServices allPostServices)
         {
             this.postServices = postServices;
             this.userServices = userServices;
             this.allPostServices = allPostServices;
             this.foodServices = foodServices;
+            this.commentServices = commentServices;
                 
 
         }
@@ -50,7 +53,7 @@ namespace EncycloBookProject.Controllers
 
            
             var post = postServices.FindPost(postId, postType);
-                var user = userServices.GetUser(username);
+            var user = userServices.GetUser(username);
             var comment = new Comment()
             {
                 Content = content,
@@ -58,7 +61,7 @@ namespace EncycloBookProject.Controllers
                 Publisher = user,
                 PublisherId = user.Id
             };
-           c.CommentPost(post, user, comment);
+           commentServices.CommentPost(post, user, comment);
 
             }
             return RedirectToAction("ViewDetails", new { postId = postId, postType = postType });

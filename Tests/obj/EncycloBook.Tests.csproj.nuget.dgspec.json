@@ -99,10 +99,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNet.Identity.EntityFramework": {
-              "target": "Package",
-              "version": "[2.2.4, )"
-            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.15, )"
@@ -116,6 +112,133 @@
               "version": "[6.0.20, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj",
+        "projectName": "EncycloBook.Services",
+        "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj"
+              },
+              "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj"
+              },
+              "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj",
+        "projectName": "EncycloBook.ViewModels",
+        "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj"
+              },
+              "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
@@ -176,10 +299,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNet.Identity.EntityFramework": {
-              "target": "Package",
-              "version": "[2.2.4, )"
-            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.15, )"
@@ -198,7 +317,7 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.15, )"
+              "version": "[6.0.20, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -253,6 +372,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj"
+              },
               "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
                 "projectPath": "D:\\FirstWeb\\Project\\Web-Project-Encycko\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
               }

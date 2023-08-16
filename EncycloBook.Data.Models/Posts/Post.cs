@@ -12,7 +12,6 @@ namespace EncycloBook.Data.Models.Posts
         {
             Comments = new List<Comment>();
             Likes = new List<Like>();
-            YearDiscovered = DateTime.Now;
         }
 
         public int Id { get; set; }
@@ -21,7 +20,7 @@ namespace EncycloBook.Data.Models.Posts
         [MaxLength(DiscovererMaxLength)]
         public string DiscoveredBy { get; set; }
         [Required]
-        public DateTime YearDiscovered { get; set; }
+        public int YearDiscovered { get; set; }
 
         [Required]
         [MinLength(TitleMinLength)]

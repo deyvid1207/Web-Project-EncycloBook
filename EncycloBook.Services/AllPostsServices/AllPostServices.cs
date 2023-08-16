@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using EncycloBook.Services.AllPostsServices.Contracts;
 
 namespace EncycloBook.Services.AllPostsServices
 {
-    public class AllPostServices
+    public class AllPostServices : IAllPostServices
     {
         private readonly ApplicationDbContext dbContext;
 

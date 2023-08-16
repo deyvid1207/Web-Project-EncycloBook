@@ -1,5 +1,4 @@
-﻿@using EncycloBookServices.Models;
-@using EncycloData.Models;
+﻿@using EncycloBook.ViewModels.PostModels;
 @model VirusWithSymptomsViewModel;
 
 <div class="input_text">
@@ -18,13 +17,13 @@
     </div>
     <div class="zip_state">
         <h6>Discovered in</h6>
-        @if (Model.Virus.YearDiscovered.Year < 0)
+        @if (Model.Virus.YearDiscovered < 0)
         {
-            <label>@Math.Abs(Model.Virus.YearDiscovered.Year) BC</label>
+            <label>@Math.Abs(Model.Virus.YearDiscovered) BC</label>
         }
         else
         {
-            <label>@Model.Virus.YearDiscovered.Year</label>
+            <label>@Model.Virus.YearDiscovered</label>
         }
     </div>
 

@@ -12,8 +12,11 @@ using EncycloBook.Services.PostServices;
 using EncycloBook.Data.Models.Posts;
 using EncycloBook.Data.Models;
 
+
 namespace EncycloBook.Tests.PostTests
 {
+
+    [TestFixture]
     public class AddTests
     {
         private ApplicationDbContext dbContext;
@@ -24,19 +27,15 @@ namespace EncycloBook.Tests.PostTests
         {
             // Initialize an in-memory database context for testing
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: "TestDatabase")
+                .UseInMemoryDatabase(databaseName: "TestDatabase" + Guid.NewGuid().ToString())
                 .Options;
 
             this.dbContext = new ApplicationDbContext(options);
             this.postServices = new PostServices(this.dbContext);
 
         }
-        [TearDown]
-        public void TearDown()
-        {
-            // Dispose of the current DbContext to clear the in-memory database
-            this.dbContext.Dispose();
-        }
+    
+    
         [Test]
         public async Task AnimalGetsAddedCorrect()
         {
@@ -75,10 +74,18 @@ namespace EncycloBook.Tests.PostTests
             Assert.NotNull(addedAnimal);
 
             // Assert the properties of the added animal
-            Assert.AreEqual(Girrafe.Title, addedAnimal.Title);
+            Assert.That(Girrafe.Title, Is.EqualTo(addedAnimal.Title));
+            Assert.That(Girrafe.AnimalClass, Is.EqualTo(addedAnimal.AnimalClass));
+            Assert.That(Girrafe.AnimalSubClass, Is.EqualTo(addedAnimal.AnimalSubClass));
+            Assert.That(Girrafe.Description, Is.EqualTo(addedAnimal.Description));
 
         }
-       
+        [Test]
+        public async Task PostAnimalThrowsWhenNull()
+        {
+            Assert.ThrowsAsync<Exception>(async() => await postServices.PostAnimalAsync(null));
+
+        }
         [Test]
         public async Task PlantGetsAddedCorrect()
         {
@@ -115,8 +122,13 @@ namespace EncycloBook.Tests.PostTests
             Assert.NotNull(addedPlant);
 
             // Assert the properties of the added animal
-            Assert.AreEqual(Plant.Title, addedPlant.Title);
+            Assert.That(Plant.Title, Is.EqualTo(addedPlant.Title));
             // ... (other property assertions)
+        }
+        [Test]
+        public async Task PostPlantThrowsWhenNull()
+        {
+            Assert.ThrowsAsync<Exception>(async () => await postServices.PostPlantAsync(null));
         }
         [Test]
         public async Task FungusGetsAddedCorrect()
@@ -157,8 +169,13 @@ namespace EncycloBook.Tests.PostTests
             Assert.NotNull(addedFungus);
 
             // Assert the properties of the added animal
-            Assert.AreEqual(test.Title, addedFungus.Title);
+            Assert.That(test.Title, Is.EqualTo(addedFungus.Title));
             // ... (other property assertions)
+        }
+        [Test]
+        public async Task PostFungusThrowsWhenNull()
+        {
+            Assert.ThrowsAsync<Exception>(async () => await postServices.PostFungusAsync(null));
         }
         [Test]
         public async Task ParasiticFungusGetsAddedCorrect()
@@ -201,7 +218,7 @@ namespace EncycloBook.Tests.PostTests
             Assert.NotNull(addedFungus);
 
             // Assert the properties of the added animal
-            Assert.AreEqual(test.Title, addedFungus.Title);
+            Assert.That(test.Title, Is.EqualTo(addedFungus.Title));
             // ... (other property assertions)
         }
         [Test]
@@ -242,8 +259,13 @@ namespace EncycloBook.Tests.PostTests
             Assert.NotNull(addedVirus);
 
             // Assert the properties of the added animal
-            Assert.AreEqual(test.Title, addedVirus.Title);
+            Assert.That(test.Title, Is.EqualTo(addedVirus.Title));
             // ... (other property assertions)
+        }
+        [Test]
+        public async Task PostVirusThrowsWhenNull()
+        {
+            Assert.ThrowsAsync<Exception>(async () => await postServices.PostVirusAsync(null));
         }
         [Test]
         public async Task BacteraGetsAddedCorrect()
@@ -284,8 +306,13 @@ namespace EncycloBook.Tests.PostTests
             Assert.NotNull(addedBac);
 
             // Assert the properties of the added animal
-            Assert.AreEqual(test.Title, addedBac.Title);
+            Assert.That(test.Title, Is.EqualTo( addedBac.Title));
             // ... (other property assertions)
+        }
+        [Test]
+        public async Task PostBacteriaThrowsWhenNull()
+        {
+            Assert.ThrowsAsync<Exception>(async () => await postServices.PostBacteriaAsync(null));
         }
         [Test]
         public async Task DeadlyBacteraGetsAddedCorrect()
@@ -325,7 +352,7 @@ namespace EncycloBook.Tests.PostTests
             Assert.NotNull(addedBac);
 
             // Assert the properties of the added animal
-            Assert.AreEqual(test.Title, addedBac.Title);
+            Assert.That(test.Title,Is.EqualTo( addedBac.Title));
             // ... (other property assertions)
         }
     }

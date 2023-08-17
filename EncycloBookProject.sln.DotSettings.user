@@ -1,0 +1,37 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\drn12\AppData\Local\Temp\JetBrains\ReSharperPlatformVs17\vAny_1c04cfcd\CoverageData\_EncycloBookProject.937398130\Snapshot\snapshot.utdcvr</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=38c63888_002D2445_002D4642_002Da3c3_002D62e4a5c83ff1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="PlantGetsEditedCorrect" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PostTests.EditTests.PlantGetsEditedCorrect&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=86990330_002De8c1_002D4676_002D80f7_002Dc83c8cf40898/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AnimalGetsEditedCorrect" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PostTests.EditTests.AnimalGetsEditedCorrect&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PostTests.AddTests.AnimalGetsAddedCorrect&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PostTests.AddTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PostTests.EditTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.LikeTests.LikeTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.UserTests.UserTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PostTests.MainPageTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.CommentTests.CommentTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PostTests.DeleteTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PropTests.FoodTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PropTests.SymptomTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a2991a1e_002D5a72_002D4558_002D825a_002Dec2cf6474eb4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AddTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PostTests.AddTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=cad17e9b_002Debe2_002D4d86_002Db7cb_002D54a07c7ba881/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DeleteWorksCorrectlyWhenTypeIsAnimal" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::FF8C333F-E383-4B5E-AE4C-64EFE2208674::net6.0::EncycloBook.Tests.PostTests.DeleteTests.DeleteWorksCorrectlyWhenTypeIsAnimal&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	</wpf:ResourceDictionary>

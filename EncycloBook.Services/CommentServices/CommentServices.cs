@@ -22,9 +22,10 @@ namespace EncycloBook.Services.CommentServices
         public async Task CommentPost(Post post, ApplicationUser user, Comment comment)
         {
 
-            if (user == null)
+            if (user == null || post == null || comment == null)
             {
-
+                // Handle the case when any parameter is null, such as throwing an exception
+                throw new ArgumentException("Invalid input parameters");
             }
             else
             {

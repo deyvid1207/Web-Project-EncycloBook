@@ -350,9 +350,9 @@ namespace EncycloBook.Services.PostServices
         public async Task CommentPost(Post post, ApplicationUser user, Comment comment)
         {
 
-            if (user == null)
+            if (user == null || post == null || comment == null)
             {
-
+                throw new ArgumentException("Invalid input parameters");
             }
             else
             {

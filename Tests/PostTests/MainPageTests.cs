@@ -14,6 +14,7 @@ using EncycloBook.Data.Models;
 
 namespace EncycloBook.Tests.PostTests
 {
+    [TestFixture]
     public class MainPageTests
     {
         private ApplicationDbContext dbContext;
@@ -25,19 +26,13 @@ namespace EncycloBook.Tests.PostTests
         {
             // Initialize an in-memory database context for testing
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: "TestDatabase")
+                .UseInMemoryDatabase(databaseName: "TestDatabase" + Guid.NewGuid().ToString())
                 .Options;
 
             this.dbContext = new ApplicationDbContext(options);
             this.postServices = new PostServices(this.dbContext);
             this.allpostServices = new AllPostServices(this.dbContext);
 
-        }
-        [TearDown]
-        public void TearDown()
-        {
-            // Dispose of the current DbContext to clear the in-memory database
-            this.dbContext.Dispose();
         }
         [Test]
         public async Task ViewAllReturnsAllPosts()
@@ -92,7 +87,7 @@ namespace EncycloBook.Tests.PostTests
 
             var result = allpostServices.ViewAll();
 
-            Assert.AreEqual(2, result.Posts.Count);
+            Assert.That(2, Is.EqualTo(result.Posts.Count));
 
         }
         [Test]
@@ -150,8 +145,8 @@ namespace EncycloBook.Tests.PostTests
             var result = allpostServices.SearchAsync("lion");
 
             // Assert
-            Assert.AreEqual(1, result.Posts.Count);
-            Assert.AreEqual("Lion", result.Posts[0].Title);
+            Assert.That(1, Is.EqualTo(result.Posts.Count));
+            Assert.That("Lion", Is.EqualTo(result.Posts[0].Title));
             // Additional assertions for specific properties can be added here
         }
         [Test]
@@ -210,7 +205,7 @@ namespace EncycloBook.Tests.PostTests
             var result = allpostServices.SearchAsync(null);
 
             // Assert
-            Assert.AreEqual(2, result.Posts.Count); // Adjust count based on your test data
+            Assert.That(2, Is.EqualTo(result.Posts.Count)); // Adjust count based on your test data
             // Additional assertions for specific properties can be added here
         }
         

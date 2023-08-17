@@ -21,20 +21,14 @@ namespace EncycloBook.Tests.UserTests
         {
             // Initialize an in-memory database context for testing
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: "TestDatabase")
+                .UseInMemoryDatabase(databaseName: "TestDatabase" + Guid.NewGuid().ToString())
                 .Options;
 
             this.dbContext = new ApplicationDbContext(options);
             this.userServices = new UserServices(this.dbContext);
 
         }
-        [TearDown]
-        public void TearDown()
-        {
-            // Dispose of the current DbContext to clear the in-memory database
-            this.dbContext.Dispose();
-        }
-
+    
         [Test]
         public async Task UserGetsFoundCorrect()
         {
@@ -54,7 +48,15 @@ namespace EncycloBook.Tests.UserTests
 
             var user = await userServices.GetUser("Test@gmail.com");
             Assert.IsNotNull(user);
-            Assert.AreEqual(guid, user.Id);
+            Assert.That(guid, Is.EqualTo(user.Id));
+        }
+        [Test]
+        public async Task UserReturnsNullWhenNotFound()
+        {
+  
+
+            var user = await userServices.GetUser(null);
+            Assert.IsNull(user);
         }
     }
 }

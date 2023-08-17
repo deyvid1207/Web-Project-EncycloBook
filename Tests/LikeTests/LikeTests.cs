@@ -24,18 +24,12 @@ namespace EncycloBook.Tests.LikeTests
         {
             // Initialize an in-memory database context for testing
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: "TestDatabase")
+                .UseInMemoryDatabase(databaseName: "TestDatabase" + Guid.NewGuid().ToString())
                 .Options;
 
             this.dbContext = new ApplicationDbContext(options);
             this.postServices = new PostServices(this.dbContext);
 
-        }
-        [TearDown]
-        public void TearDown()
-        {
-            // Dispose of the current DbContext to clear the in-memory database
-            this.dbContext.Dispose();
         }
         [Test]
         public async Task LikePostAddsLikeWhenNotAlreadyLiked()
@@ -75,8 +69,8 @@ namespace EncycloBook.Tests.LikeTests
 
             // Assert
             Assert.NotNull(likedPost);
-            Assert.AreEqual(1, likedPost.Likes.Count);
-            Assert.AreEqual(user.Id, likedPost.Likes.First().UserId);
+            Assert.That(1, Is.EqualTo(likedPost.Likes.Count));
+            Assert.That(user.Id, Is.EqualTo(likedPost.Likes.First().UserId));
         }
 
         [Test]
@@ -121,7 +115,7 @@ namespace EncycloBook.Tests.LikeTests
             await postServices.LikePost(post, user.UserName);
 
             // Assert
-            Assert.AreEqual(0, post.Likes.Count);
+            Assert.That(0, Is.EqualTo(post.Likes.Count));
             // Additional assertions for likes can be added here
         }
         [Test]
@@ -153,7 +147,7 @@ namespace EncycloBook.Tests.LikeTests
                 .FirstOrDefaultAsync(a => a.Id == post.Id);
 
             // Assert
-            Assert.AreEqual(0, likedPost.Likes.Count);
+            Assert.That(0, Is.EqualTo(likedPost.Likes.Count));
 
         }
     }

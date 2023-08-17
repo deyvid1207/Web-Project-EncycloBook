@@ -4,6 +4,7 @@
 @using Microsoft.AspNetCore.Identity;
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+@inject RoleManager<IdentityRole<Guid>> RoleManager
 @model Post;
 @{
     var type = Model.GetType().ToString();
@@ -342,7 +343,7 @@
 
                   
                   
-                    @if (user == Model.Publisher)
+                    @if (user == Model.Publisher || User.IsInRole("Admin"))
                     {
                         <div>
                            <form   method="get">
@@ -403,6 +404,10 @@
                     <h3 class="media-heading user_name">@item.Publisher.UserName</h3>
                     <p>@item.Content</p>
                     <p class="pull-right"><small>@item.PublishedOn</small></p>
+
+                    @if (item.PublisherId == user.Id || User.IsInRole("Admin"))
+                       {  <a asp-controller="Details" asp-action="RemoveComment" asp-route-commentid="@item.Id" asp-route-postId="@Model.Id" asp-route-postType="@type" asp-route-username="@User.Identity.Name" class="btn btn-outline-dark mt-auto">Delete Comment</a>
+                    }
                 </div>
             </div>
         }

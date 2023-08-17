@@ -59,6 +59,7 @@ namespace EncycloBookProject.Controllers
                 Content = content,
                 PublishedOn = DateTime.Now,
                 Publisher = user,
+                PostId = postId,
                 PublisherId = user.Id
             };
           await commentServices.CommentPost(post, user, comment);
@@ -333,6 +334,14 @@ namespace EncycloBookProject.Controllers
 
 
             return RedirectToAction("ViewAll", "Post");
+        }
+     
+        public async Task<IActionResult> RemoveComment (int commentid, int postId, string postType, string username)
+        {
+            var user = await userServices.GetUser(username);
+            var post = await postServices.FindPost(postId, postType);
+            await commentServices.RemoveComment(post, user, commentid);
+            return RedirectToAction("ViewDetails", new { postId = postId, postType = postType });
         }
     }
 

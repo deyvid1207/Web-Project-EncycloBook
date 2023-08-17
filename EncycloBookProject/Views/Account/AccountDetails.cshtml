@@ -282,7 +282,7 @@
                             <label>@(mostLikedPost != null ? mostLikedPost.Title : "No posts")</label>
                             <form method="get">
                                 <input type="hidden" name="postId" value="@mostLikedPost.Id" />
-                                <input type="hidden" name="postType" value="@mostLikedPost.GetType().ToString().Remove(0, 19)" />
+                                <input type="hidden" name="postType" value="@mostLikedPost.GetType().ToString().Remove(0, 30)" />
                                 <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">See it!</button>
 
                             </form>
@@ -301,7 +301,7 @@
                             <label>@(mostrecentPost != null ? mostrecentPost.Title : "No posts")</label>
                             <form method="get">
                                 <input type="hidden" name="postId" value="@mostrecentPost.Id" />
-                                <input type="hidden" name="postType" value="@mostrecentPost.GetType().ToString().Remove(0, 19)" />
+                                <input type="hidden" name="postType" value="@mostrecentPost.GetType().ToString().Remove(0, 30)" />
                                 <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">See it!</button>
 
                             </form>

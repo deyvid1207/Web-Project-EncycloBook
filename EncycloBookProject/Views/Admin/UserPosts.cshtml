@@ -1,0 +1,101 @@
+﻿@using EncycloBook.Data.Models.Posts;
+ 
+@model List<Post>
+@{
+    var user = Model.FirstOrDefault().Publisher;
+
+}
+<h2 class="tite">@user.UserName comments</h2>
+<style>
+
+    .row div {
+        width: 110%;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 4fr 4fr;
+        column-gap: 5%;
+    }
+
+    .hr-stopper {
+        margin-right: 3em;
+        min-width 80%:;
+    }
+
+    .tite {
+        margin-top: 5em;
+        margin-left: 17em;
+    }
+
+    
+</style>
+<div class="row">
+
+    @foreach (var post in Model)
+    {
+        <div class="col-md-6" style="margin-top: 4em">
+            <div class="card mb-4 mb-md-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Post Id</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@post.Id</p>
+                        </div>
+                    </div>
+                    <hr class="hr-stopper">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Published on</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@post.PublishedOn</p>
+                        </div>
+                    </div>
+                    <hr class="hr-stopper">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Likes</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@post.Likes.Count</p>                 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Last Comment on Post Id </p>
+                        </div>
+                        <div class="col-sm-9">
+                            @if (post.Comments.Any())
+                            {
+                                <p class="text-muted mb-0">@post.Comments.OrderBy(x => x.PublishedOn).First().Content</p>
+
+                            }
+                 
+                            <form method="get">
+                                <input type="hidden" name="postId" value="@post.Id" />
+                                <input type="hidden" name="postType" value="@post.GetType().ToString().Remove(0, 30)" />
+                                <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">ViewPosts</button>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <hr class="hr-stopper">
+                    <form method="post">
+                        <input type="hidden" name="postId" value="@post.Id" />
+                        <input type="hidden" name="postType" value="@post.GetType().ToString().Remove(0, 30)" />
+                        <button type="submit" asp-controller="Details" asp-action="DeletePost" class=" del-but">Delete post</button>
+                    </form>
+                    <hr class="hr-stopper">
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>

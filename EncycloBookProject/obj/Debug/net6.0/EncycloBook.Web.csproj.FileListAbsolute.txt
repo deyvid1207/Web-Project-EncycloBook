@@ -278,3 +278,4 @@ D:\FirstWeb\Project\Web-Project-Encycko\Web-Project-EncycloBook\EncycloBookProje
 D:\FirstWeb\Project\Web-Project-Encycko\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.pdb
 D:\FirstWeb\Project\Web-Project-Encycko\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.genruntimeconfig.cache
 D:\FirstWeb\Project\Web-Project-Encycko\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\ref\EncycloBook.Web.dll
+D:\FirstWeb\Project\Web-Project-Encycko\Web-Project-EncycloBook\EncycloBookProject\obj\Debug\net6.0\EncycloBook.Web.MvcApplicationPartsAssemblyInfo.cs

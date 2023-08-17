@@ -1,0 +1,85 @@
+﻿@using EncycloBook.ViewModels.UserViewModel;
+ @model AllUsersViewModel
+ <style>
+
+    .row div {
+        width: 110%;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 4fr 4fr;
+        column-gap: 5%;
+    }
+
+    .hr-stopper {
+        margin-right: 3em;
+        min-width 80%:;
+    }
+    .tite {
+        margin-top: 5em;
+        margin-left: 17em;
+    }
+ </style>
+<h2 class="tite">Admin Panel</h2>
+<div class="row">
+  
+
+    @foreach (var user in Model.Users)
+    {
+        <div class="col-md-6" style="margin-top: 4em">
+            <div class="card mb-4 mb-md-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Account Id</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@user.Id</p>
+                        </div>
+                    </div>
+                    <hr class="hr-stopper">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Account Name</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@user.UserName</p>
+                        </div>
+                    </div>
+                    <hr class="hr-stopper">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Account Comments</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@user.Comments.Count</p>
+                            @if (@user.Comments.Count != 0)
+                            {
+                           
+                                <a asp-controller="Admin" asp-action="UserComments" asp-route-userId="@user.Id" class="btn btn-outline-dark mt-auto hr-stopper">View @user.UserName's comments</a>
+
+                            }
+                            
+                        </div>
+                    </div>
+                    <hr class="hr-stopper">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Account posts: </p>
+                            <p class="text-muted mb-0">@user.Posts.Count</p>
+                            @if (@user.Comments.Count != 0)
+                            {
+
+                                <a asp-controller="Admin" asp-action="UserPosts" asp-route-userId="@user.Id" class="btn btn-outline-dark mt-auto hr-stopper">View @user.UserName's comments</a>
+
+                            }
+                        </div>
+                      
+                    </div>
+                    <hr class="hr-stopper">
+                </div>
+            </div>
+        </div>
+    }
+</div>

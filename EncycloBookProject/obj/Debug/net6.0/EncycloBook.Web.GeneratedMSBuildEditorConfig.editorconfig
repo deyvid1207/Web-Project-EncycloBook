@@ -52,6 +52,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2NvdW50UG9zdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/FirstWeb/Project/Web-Project-Encycko/Web-Project-EncycloBook/EncycloBookProject/Views/Admin/AdminPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5QYW5lbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FirstWeb/Project/Web-Project-Encycko/Web-Project-EncycloBook/EncycloBookProject/Views/Admin/UserComments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckNvbW1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FirstWeb/Project/Web-Project-Encycko/Web-Project-EncycloBook/EncycloBookProject/Views/Admin/UserPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlclBvc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/FirstWeb/Project/Web-Project-Encycko/Web-Project-EncycloBook/EncycloBookProject/Views/Details/EditAnimal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1xFZGl0QW5pbWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

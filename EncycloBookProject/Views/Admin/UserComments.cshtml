@@ -1,0 +1,91 @@
+﻿@using EncycloBook.ViewModels.CommentViewModel;
+
+@model CommentsWithUserId
+    @{
+        var user = Model.comments.FirstOrDefault(x => x.PublisherId == Model.Userid).Publisher;
+        
+    }
+<h2 class="tite">@user.UserName comments</h2>
+<style>
+
+    .row div {
+        width: 110%;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 4fr 4fr;
+        column-gap: 5%;
+    }
+
+    .hr-stopper {
+        margin-right: 3em;
+        min-width 80%:;
+    }
+
+    .tite {
+        margin-top: 5em;
+        margin-left: 17em;
+    }
+</style>
+<div class="row">
+    
+    @foreach (var comment in Model.comments)
+    {
+        <div class="col-md-6" style="margin-top: 4em">
+            <div class="card mb-4 mb-md-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Comment Id</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@comment.Id</p>
+                        </div>
+                    </div>
+                    <hr class="hr-stopper">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Comment Content</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@comment.Content</p>
+                        </div>
+                    </div>
+                    <hr class="hr-stopper">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Commented on</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@comment.PublishedOn</p>
+                            <a>View @user.UserName comments</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Commented on Post Id </p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@comment.PostId</p>
+                            <form method="get">
+                                <input type="hidden" name="postId" value="@comment.PostId" />
+                                <input type="hidden" name="postType" value="@comment.Post.GetType().ToString().Remove(0, 30)" />
+                                <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">ViewPosts</button>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <hr class="hr-stopper">
+                    <a asp-controller="Details" asp-action="RemoveComment" asp-route-commentid="@comment.Id" asp-route-postId="@comment.PostId" asp-route-postType="@comment.Post.GetType().ToString().Remove(0, 30)" asp-route-username="@User.Identity.Name" class="btn btn-outline-dark mt-auto">Delete Comment</a>
+                    <hr class="hr-stopper">
+                    <div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+    }
+
+        </div>

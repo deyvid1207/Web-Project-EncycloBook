@@ -138,7 +138,7 @@
 
                             <form method="get">
                                 <input type="hidden" name="postId" value="@item.Id" />
-                                <input type="hidden" name="postType" value="@item.GetType().ToString().Remove(0, 19)" />
+                                <input type="hidden" name="postType" value="@item.GetType().ToString().Remove(0, 30)" />
                                 <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">Details</button>
 
                             </form>

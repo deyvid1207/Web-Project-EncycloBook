@@ -3,6 +3,7 @@
 @using EncycloBook.Data.Models;
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+@inject RoleManager<IdentityRole<Guid>> RoleManager
 @model AllViewModel
 @{
     bool isAuth = false;
@@ -155,7 +156,7 @@
                         <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">Details</button>
                    
                         </form>
-                        @if (user == item.Publisher)
+                        @if (user == item.Publisher || User.IsInRole("Admin"))
                         {
                                   <form method="get">
                                 <input type="hidden" name="id" value="@item.Id" />

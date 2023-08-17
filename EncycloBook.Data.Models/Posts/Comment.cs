@@ -16,6 +16,10 @@ namespace EncycloBook.Data.Models.Posts
         public Guid PublisherId { get; set; }
         [Required]
         public ApplicationUser Publisher { get; set; } = null!;
+        [Required]
+        [ForeignKey("Post")]
+        public int PostId { get; set; }
+        public Post Post { get; set; }
 
 
         [Key]

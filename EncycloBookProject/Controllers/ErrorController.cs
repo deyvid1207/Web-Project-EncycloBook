@@ -20,5 +20,10 @@ namespace EncycloBook.Web.Controllers
             Response.StatusCode = 500;
             return View(ControllerVM);
         }
+        public IActionResult BadRequest()
+        {
+            Response.StatusCode = 400;
+            return View();
+        }
     }
 }

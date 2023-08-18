@@ -20,6 +20,7 @@ using EncycloBook.Services.UserServices.Contracts;
 using EncycloBook.Services.UserServices;
 using EncycloBook.Services.CommentServices.Contracts;
 using EncycloBook.Services.CommentServices;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
  
@@ -42,6 +43,10 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
  
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+});
 builder.Services.AddRazorPages();
 builder.Services.AddSignalR();
 var app = builder.Build();
@@ -72,6 +77,11 @@ app.Use(async (context, next) =>
         context.Request.Path = "/Error/NotFound";
         await next();
     }
+    if (context.Response.StatusCode == 400)
+    {
+        context.Request.Path = "/Error/BadRequest";
+        await next();
+    }
 });
 app.UseStaticFiles();
 
@@ -83,6 +93,15 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "AllPosts",
+        pattern: "/Post/ViewAll",
+        defaults: new { Controller = "Post", Action = "ViewAll" });
+    endpoints.MapDefaultControllerRoute();
+    endpoints.MapRazorPages();
+});
 
 app.MapRazorPages();
 app.MapHub<CommentHub>("/commentHub");

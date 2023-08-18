@@ -28,6 +28,7 @@ namespace EncycloBookProject.Controllers
             this.userServices = userServices;
             this.allPostServices = allPostServices;
             this.foodServices = foodServices;
+            this.symptomServices = symptomServices;
             this.commentServices = commentServices;
                 
 
@@ -69,6 +70,7 @@ namespace EncycloBookProject.Controllers
         }
 
         [HttpGet]
+   
         public async  Task<IActionResult> EditAnimal(int id)
         {
 
@@ -80,6 +82,7 @@ namespace EncycloBookProject.Controllers
             return View(AnimalVM);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditAnimal(AnimalWithFoodViewModel model)
         {
 
@@ -128,6 +131,7 @@ namespace EncycloBookProject.Controllers
             return View(Plant);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditPlant(Plant model)
         {
 
@@ -150,6 +154,7 @@ namespace EncycloBookProject.Controllers
             return View(Fungus);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditFungus(Fungus model)
         {
 
@@ -163,6 +168,7 @@ namespace EncycloBookProject.Controllers
             return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "Fungus" });
         }
         [HttpGet]
+
         public async Task<IActionResult> EditParasiticFungus(int id)
         {
 
@@ -176,6 +182,7 @@ namespace EncycloBookProject.Controllers
        
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditParasiticFungus(FungusWithSymptomsViewModel model)
         {
 
@@ -222,6 +229,7 @@ namespace EncycloBookProject.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditBacteria(Bacteria model)
         {
 
@@ -246,6 +254,7 @@ namespace EncycloBookProject.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditDeadlyBacteria(BacteriaWithSymptomsViewModel model)
         {
 
@@ -293,6 +302,7 @@ namespace EncycloBookProject.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditVirus(VirusWithSymptomsViewModel model)
         {
 
@@ -337,6 +347,7 @@ namespace EncycloBookProject.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeletePost(int postId, string postType)
         {
 

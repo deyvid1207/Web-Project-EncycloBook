@@ -90,9 +90,14 @@ namespace EncycloBookProject.Controllers
             } 
             model.Animal.PublisherId = user.Id;
             model.Animal.Publisher = user;
-
-            await postServices.PostAnimalAsync(model.Animal);
-
+            try
+            {
+                await postServices.PostAnimalAsync(model.Animal);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("InternalServerError", "Error", new { actionName = "Animal", controllerName = "Publish" });
+            }
             return RedirectToAction("ViewAll", "Post");
         }
 
@@ -135,7 +140,14 @@ namespace EncycloBookProject.Controllers
             model.Publisher = user;
             model.Color = color;
             model.LeaveType = leaveType;
-            await postServices.PostPlantAsync(model);
+            try
+            {
+                await postServices.PostPlantAsync(model);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("InternalServerError", "Error", new { actionName = "Plant", controllerName = "Publish" });
+            }
 
             return RedirectToAction("ViewAll", "Post");
         }
@@ -212,7 +224,15 @@ namespace EncycloBookProject.Controllers
             model.ParasiticFungus.Publisher = user;
             model.ParasiticFungus.Color = color;
             model.ParasiticFungus.GillsType = gillsType;
-            await postServices.PostFungusAsync(model.ParasiticFungus);
+            try
+            {
+                await postServices.PostFungusAsync(model.ParasiticFungus);
+            }
+            
+             catch (Exception ex)
+            {
+                  return RedirectToAction("InternalServerError", "Error", new { actionName = "Fungus", controllerName = "Publish" });
+            }
             return RedirectToAction("ViewAll", "Post");
         }
         [HttpGet]
@@ -258,7 +278,15 @@ namespace EncycloBookProject.Controllers
             var user = await userServices.GetUser(User.Identity.Name);
             model.DeadlyBacteria.PublisherId = user.Id;
             model.DeadlyBacteria.Publisher = user;
-            await postServices.PostBacteriaAsync(model.DeadlyBacteria);
+            try
+            {
+                await postServices.PostBacteriaAsync(model.DeadlyBacteria);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("InternalServerError", "Error", new { actionName = "Bacteria", controllerName = "Publish" });
+            }
+
             return RedirectToAction("ViewAll", "Post");
         }
         public IActionResult Virus()
@@ -294,7 +322,15 @@ namespace EncycloBookProject.Controllers
             var user = await userServices.GetUser(User.Identity.Name);
             model.Virus.PublisherId = user.Id;
             model.Virus.Publisher = user;
-            await postServices.PostVirusAsync(model.Virus);
+            try
+            {
+                await postServices.PostVirusAsync(model.Virus);
+            }
+         
+              catch (Exception ex)
+            {
+                return RedirectToAction("InternalServerError", "Error", new {actionName = "Virus", controllerName ="Publish"});
+            }
             return RedirectToAction("ViewAll", "Post");
         }
     }

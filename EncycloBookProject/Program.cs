@@ -59,6 +59,20 @@ else
 }
 
 app.UseHttpsRedirection();
+app.Use(async (context, next) =>
+{
+    if (context.Response.StatusCode == 500)
+    {
+        context.Request.Path = "/Error/InternalServerError";
+        await next();
+    }
+    await next();
+    if (context.Response.StatusCode == 404)
+    {
+        context.Request.Path = "/Error/NotFound";
+        await next();
+    }
+});
 app.UseStaticFiles();
 
 app.UseRouting();

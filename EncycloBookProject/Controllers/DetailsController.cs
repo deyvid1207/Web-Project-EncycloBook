@@ -46,7 +46,7 @@ namespace EncycloBookProject.Controllers
             {
                 // You may want to handle the case where the content is null or empty.
                 // For example, you could return an error message or perform some action.
-                return BadRequest("Comment content cannot be null or empty.");
+                return RedirectToAction("ViewDetails", new { postId = postId, postType = postType });
             }
             if (content != "COMMENT_VALUE_HERE")
             {
@@ -321,7 +321,17 @@ namespace EncycloBookProject.Controllers
                 model.Virus.Symptom = symptomServices.GetSymptoms().FirstOrDefault(x => x.Name == Symptom);
 
             }
-            await editServices.EditVirus(model.Virus);
+            try
+            {
+                 await editServices.EditVirus(model.Virus);
+            }
+            catch (Exception)
+            {
+
+                return RedirectToAction("InternalServerError", "Error");
+            }
+            
+
 
             return RedirectToAction("ViewDetails", new { postId = model.Id, postType = "Virus" });
 

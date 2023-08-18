@@ -56,8 +56,8 @@ namespace EncycloBookProject.Controllers
                 case "ViewDetails":
                     return RedirectToAction("ViewDetails", "Details", new { postId = itemId, postType = type, anchor = anchor });
                 default:
-                    throw new ArgumentException("Enter valid parameters!");
-                    
+                    return RedirectToAction("InternalServerError", "Error", new { actionName = "Like", controllerName = "Post" });
+
             }
          
         }

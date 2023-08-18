@@ -3,10 +3,11 @@ using static Common.GeneralApplicationConstants.PostConstants;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using EncycloBook.ViewModels;
 
 namespace EncycloBook.Data.Models.Posts
 {
-    public abstract class Post
+    public abstract class Post : IPostModel
     {
         public Post()
         {

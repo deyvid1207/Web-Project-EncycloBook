@@ -34,3 +34,15 @@ D:\Projects\Encyclo\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.
 D:\Projects\Encyclo\Web-Project-EncycloBook\Common\obj\Debug\net6.0\refint\EncycloBook.Common.dll
 D:\Projects\Encyclo\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.pdb
 D:\Projects\Encyclo\Web-Project-EncycloBook\Common\obj\Debug\net6.0\ref\EncycloBook.Common.dll
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\bin\Debug\net6.0\EncycloBook.Common.deps.json
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\bin\Debug\net6.0\EncycloBook.Common.dll
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\bin\Debug\net6.0\EncycloBook.Common.pdb
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.csproj.AssemblyReference.cache
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.AssemblyInfoInputs.cache
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.AssemblyInfo.cs
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.csproj.CoreCompileInputs.cache
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.dll
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\obj\Debug\net6.0\refint\EncycloBook.Common.dll
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\obj\Debug\net6.0\EncycloBook.Common.pdb
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\Common\obj\Debug\net6.0\ref\EncycloBook.Common.dll

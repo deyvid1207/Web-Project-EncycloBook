@@ -22,6 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Common\EncycloBook.Common.csproj" />
+    <ProjectReference Include="..\EncycloBook.Infrastructure\EncycloBook.Infrastructure.csproj" />
     <ProjectReference Include="..\EncycloBook.Services\EncycloBook.Services.csproj" />
   </ItemGroup>
 

@@ -96,9 +96,9 @@ app.MapControllerRoute(
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
-        name: "AllPosts",
-        pattern: "/Post/ViewAll",
-        defaults: new { Controller = "Post", Action = "ViewAll" });
+        name: "Post details",
+        pattern: "/Details/ViewDetails/{id}/{information}",
+        defaults: new { Controller = "Details", Action = "ViewDetails" });
     endpoints.MapDefaultControllerRoute();
     endpoints.MapRazorPages();
 });

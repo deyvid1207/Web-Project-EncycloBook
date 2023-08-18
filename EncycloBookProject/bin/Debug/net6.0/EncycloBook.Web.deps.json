@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "EncycloBook.Web/1.0.0": {
         "dependencies": {
+          "EncycloBook.Common": "1.0.0",
+          "EncycloBook.Infrastructure": "1.0.0",
           "EncycloBook.Services": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
@@ -2614,12 +2616,21 @@
       "EncycloBook.Data.Models/1.0.0": {
         "dependencies": {
           "EncycloBook.Common": "1.0.0",
+          "EncycloBook.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
           "Microsoft.AspNetCore.Identity.UI": "6.0.20"
         },
         "runtime": {
           "EncycloBook.Data.Models.dll": {}
+        }
+      },
+      "EncycloBook.Infrastructure/1.0.0": {
+        "dependencies": {
+          "EncycloBook.Common": "1.0.0"
+        },
+        "runtime": {
+          "EncycloBook.Infrastructure.dll": {}
         }
       },
       "EncycloBook.Services/1.0.0": {
@@ -4249,6 +4260,11 @@
       "sha512": ""
     },
     "EncycloBook.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EncycloBook.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

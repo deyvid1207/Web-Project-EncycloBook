@@ -1,0 +1,122 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj",
+        "projectName": "EncycloBook.Common",
+        "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj",
+        "projectName": "EncycloBook.Infrastructure",
+        "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

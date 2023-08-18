@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common\EncycloBook.Common.csproj" />
+    <ProjectReference Include="..\EncycloBook.Infrastructure\EncycloBook.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

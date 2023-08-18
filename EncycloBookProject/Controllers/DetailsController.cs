@@ -36,10 +36,18 @@ namespace EncycloBookProject.Controllers
 
         public async Task<IActionResult> ViewDetails(int postId, string postType)
         {
+            try
+            {
+                var post = await postServices.FindPost(postId, postType);
+                return View(post);
+            }
+    
+             catch (Exception e)
+            {
 
-            var post = await postServices.FindPost(postId, postType);
-
-            return View(post);
+                return RedirectToAction("NotFound", "Error");
+            }
+           
         }
         public async Task  <IActionResult> AddComment(int postId, string postType, string username, string content)
         {

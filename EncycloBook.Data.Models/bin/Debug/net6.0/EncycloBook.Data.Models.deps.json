@@ -9,6 +9,7 @@
       "EncycloBook.Data.Models/1.0.0": {
         "dependencies": {
           "EncycloBook.Common": "1.0.0",
+          "EncycloBook.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
           "Microsoft.AspNetCore.Identity.UI": "6.0.20"
@@ -231,6 +232,14 @@
         "runtime": {
           "EncycloBook.Common.dll": {}
         }
+      },
+      "EncycloBook.Infrastructure/1.0.0": {
+        "dependencies": {
+          "EncycloBook.Common": "1.0.0"
+        },
+        "runtime": {
+          "EncycloBook.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -416,6 +425,11 @@
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "EncycloBook.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EncycloBook.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

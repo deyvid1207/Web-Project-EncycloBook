@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj": {}
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj": {
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj",
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj",
         "projectName": "EncycloBook.Common",
-        "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\Common\\obj\\",
+        "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,21 +55,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj",
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj",
         "projectName": "EncycloBook.Data.Models",
-        "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\obj\\",
+        "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,8 +83,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj": {
-                "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj"
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj"
+              },
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj"
               }
             }
           }
@@ -128,21 +131,80 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj": {
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj",
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj",
+        "projectName": "EncycloBook.Infrastructure",
+        "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj",
         "projectName": "EncycloBook.Services",
-        "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Services\\obj\\",
+        "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -156,14 +218,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
-                "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj"
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj"
               },
-              "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj": {
-                "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj"
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj"
               },
-              "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
-                "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
               }
             }
           }
@@ -193,21 +255,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj": {
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj",
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj",
         "projectName": "EncycloBook.ViewModels",
-        "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\obj\\",
+        "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -221,11 +283,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
-                "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj"
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj"
               },
-              "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
-                "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
               }
             }
           }
@@ -255,21 +317,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj": {
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj",
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj",
         "projectName": "EncycloBook.Web",
-        "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBookProject\\obj\\",
+        "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBookProject\\EncycloBook.Web.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBookProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -277,15 +339,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj": {
-                "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj"
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\Common\\EncycloBook.Common.csproj"
+              },
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Infrastructure\\EncycloBook.Infrastructure.csproj"
+              },
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Services\\EncycloBook.Services.csproj"
               }
             }
           }
@@ -354,21 +421,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
+    "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj",
+        "projectUniqueName": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj",
         "projectName": "EncycloBook.Data",
-        "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloData\\obj\\",
+        "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj",
+        "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+        "outputPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -382,8 +449,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
-                "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj"
+              "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
+                "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj"
               }
             }
           }
@@ -443,7 +510,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

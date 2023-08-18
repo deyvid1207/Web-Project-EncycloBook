@@ -1,0 +1,15 @@
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\bin\Debug\net6.0\EncycloBook.Infrastructure.deps.json
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\bin\Debug\net6.0\EncycloBook.Infrastructure.dll
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\bin\Debug\net6.0\EncycloBook.Infrastructure.pdb
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\bin\Debug\net6.0\EncycloBook.Common.dll
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\bin\Debug\net6.0\EncycloBook.Common.pdb
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\obj\Debug\net6.0\EncycloBook.Infrastructure.csproj.AssemblyReference.cache
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\obj\Debug\net6.0\EncycloBook.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\obj\Debug\net6.0\EncycloBook.Infrastructure.AssemblyInfoInputs.cache
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\obj\Debug\net6.0\EncycloBook.Infrastructure.AssemblyInfo.cs
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\obj\Debug\net6.0\EncycloBook.Infrastructure.csproj.CoreCompileInputs.cache
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\obj\Debug\net6.0\EncycloBook.Infrastructure.csproj.CopyComplete
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\obj\Debug\net6.0\EncycloBook.Infrastructure.dll
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\obj\Debug\net6.0\refint\EncycloBook.Infrastructure.dll
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\obj\Debug\net6.0\EncycloBook.Infrastructure.pdb
+D:\FirstWeb\Project\Final\Web-Project-EncycloBook\EncycloBook.Infrastructure\obj\Debug\net6.0\ref\EncycloBook.Infrastructure.dll

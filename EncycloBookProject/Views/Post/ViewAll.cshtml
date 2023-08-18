@@ -1,6 +1,7 @@
 ﻿@using EncycloBook.ViewModels.AllViewModel;
 @using Microsoft.AspNetCore.Identity;
 @using EncycloBook.Data.Models;
+@using static EncycloBook.Infrastructure.Extensions.ModelExtensions
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @inject RoleManager<IdentityRole<Guid>> RoleManager
@@ -152,8 +153,9 @@
                       
                     <form method="get">
                             <input type="hidden" name="postId" value="@item.Id" />
-                            <input type="hidden" name="postType" value="@item.GetType().ToString().Remove(0, 30)" />
-                        <button class="btn btn-primary" type="submit" asp-controller="Details" asp-action="ViewDetails">Details</button>
+                                <input type="hidden" name="postType" value="@item.GetType().ToString().Remove(0, 30)" />
+                       
+                        <button class="btn btn-primary" type="submit" asp-route-information="@item.GetInformation()" asp-controller="Details" asp-action="ViewDetails">Details</button>
                    
                         </form>
                         @if (user == item.Publisher || User.IsInRole("Admin"))

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "EncycloBook.Infrastructure/1.0.0": {
+        "dependencies": {
+          "EncycloBook.Common": "1.0.0"
+        },
+        "runtime": {
+          "EncycloBook.Infrastructure.dll": {}
+        }
+      },
+      "EncycloBook.Common/1.0.0": {
+        "runtime": {
+          "EncycloBook.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EncycloBook.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EncycloBook.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

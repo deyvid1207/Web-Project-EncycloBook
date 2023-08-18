@@ -3963,6 +3963,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "EncycloBook.Common": "1.0.0",
+          "EncycloBook.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
           "Microsoft.AspNetCore.Identity.UI": "6.0.20"
@@ -3972,6 +3973,19 @@
         },
         "runtime": {
           "bin/placeholder/EncycloBook.Data.Models.dll": {}
+        }
+      },
+      "EncycloBook.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EncycloBook.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EncycloBook.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EncycloBook.Infrastructure.dll": {}
         }
       }
     }
@@ -11237,6 +11251,11 @@
       "type": "project",
       "path": "../EncycloBook.Data.Models/EncycloBook.Data.Models.csproj",
       "msbuildProject": "../EncycloBook.Data.Models/EncycloBook.Data.Models.csproj"
+    },
+    "EncycloBook.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../EncycloBook.Infrastructure/EncycloBook.Infrastructure.csproj",
+      "msbuildProject": "../EncycloBook.Infrastructure/EncycloBook.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -11246,19 +11265,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ACER\\.nuget\\packages\\": {}
+    "C:\\Users\\drn12\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj",
+      "projectUniqueName": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj",
       "projectName": "EncycloBook.ViewModels",
-      "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj",
-      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\obj\\",
+      "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\EncycloBook.ViewModels.csproj",
+      "packagesPath": "C:\\Users\\drn12\\.nuget\\packages\\",
+      "outputPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\drn12\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11272,11 +11291,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
-              "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj"
+            "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj": {
+              "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloBook.Data.Models\\EncycloBook.Data.Models.csproj"
             },
-            "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
-              "projectPath": "D:\\Projects\\Encyclo\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
+            "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj": {
+              "projectPath": "D:\\FirstWeb\\Project\\Final\\Web-Project-EncycloBook\\EncycloData\\EncycloBook.Data.csproj"
             }
           }
         }
@@ -11306,7 +11325,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
